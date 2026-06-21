@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<Tkb_GSA10020_B2C error="false">
+	<Name>GSA10020</Name>
+	<Desc> 체결추이(장후체결포함)</Desc>
+	<Code></Code>
+	<Route>GSA10020</Route>
+	<base21></base21>
+	<blocktype></blocktype>
+	<attytype>attr;</attytype>
+	<headtype></headtype>
+	<Journal>true</Journal>
+	<screenid>0020</screenid>
+	<Mid></Mid>
+	<Processor_info>hts</Processor_info>
+	<Tr_info>NIVS01</Tr_info>
+	<Page_num>0020</Page_num>
+	<HostExpireTime>15000</HostExpireTime>
+	<Input iName="" >
+		<I Name="krx_cd" Align="Left" Desc="거래소코드 KRX_CD" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_krx_cd" Align="Left" Desc="_거래소코드 KRX_CD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<I Name="is_cd" Align="Left" Desc="종목코드 IS_CD" Journal="N" Pad="SPC" Size="16" SizeEN="16" SizeKR="16" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_is_cd" Align="Left" Desc="_종목코드 IS_CD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<I Name="rcrd_c" Align="Left" Desc="레코드수 RCRD_C" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_rcrd_c" Align="Left" Desc="_레코드수 RCRD_C" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+	</Input>
+	<Output oName="" >
+		<O Name="lngth" Align="Left" Desc="길이C5" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="clsfP" Align="Left" Desc="구분자_C2" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="msg" Align="Left" Desc="메시지_C80" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="RecordSize" Align="Left" Desc="레코드길이" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="krx_cd" Align="Left" Desc="거래소코드 KRX_CD" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="_krx_cd" Align="Left" Desc="_거래소코드 KRX_CD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<O Name="is_cd" Align="Left" Desc="종목코드 IS_CD" Journal="N" Pad="SPC" Size="16" SizeEN="16" SizeKR="16" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="_is_cd" Align="Left" Desc="_종목코드 IS_CD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<O Name="mrkt_prc_clsf" Align="Left" Desc="시세구분 MRKT_PRC_CLSF" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="_mrkt_prc_clsf" Align="Left" Desc="_시세구분 MRKT_PRC_CLSF" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<O Name="rcrd_c" Align="Left" Desc="레코드수 RCRD_C" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="_rcrd_c" Align="Left" Desc="_레코드수 RCRD_C" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<O Name="out2_RecordSize" Align="Left" Desc="out2_레코드길이" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="out2" Repeat="0" Align="Left" Desc="" Journal="N" Pad="SPC" Size="0" SizeEN="0" SizeKR="0" Spec="struct" IOType="Record" UpperCase="N" Valid="Y" Default="" Encrypt="" >
+			<O1 Name="bsnss_dt" Align="Left" Desc="영업일자 BSNSS_DT" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_bsnss_dt" Align="Left" Desc="_영업일자 BSNSS_DT" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="dt" Align="Left" Desc="일자 DT" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_dt" Align="Left" Desc="_일자 DT" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="tm" Align="Left" Desc="시간 TM" Journal="N" Pad="SPC" Size="6" SizeEN="6" SizeKR="6" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_tm" Align="Left" Desc="_시간 TM" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="kor_dt" Align="Left" Desc="한국일자 KOR_DT" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_kor_dt" Align="Left" Desc="_한국일자 KOR_DT" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="kor_tm" Align="Left" Desc="한국시간 KOR_TM" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_kor_tm" Align="Left" Desc="_한국시간 KOR_TM" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="now_prc_p4" Align="Left" Desc="현재가P4 NOW_PRC_P4" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="4" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_now_prc_p4" Align="Left" Desc="_현재가P4 NOW_PRC_P4" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="bdy_cmpr_ccd" Align="Left" Desc="전일대비구분코드 BDY_CMPR_CCD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_bdy_cmpr_ccd" Align="Left" Desc="_전일대비구분코드 BDY_CMPR_CCD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="bdy_cmpr_p4" Align="Left" Desc="전일대비P4 BDY_CMPR_P4" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="4" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_bdy_cmpr_p4" Align="Left" Desc="_전일대비P4 BDY_CMPR_P4" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="up_dwn_r_p2" Align="Left" Desc="등락율P2 UP_DWN_R_P2" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_up_dwn_r_p2" Align="Left" Desc="_등락율P2 UP_DWN_R_P2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="ccls_q" Align="Left" Desc="체결수량 CCLS_Q" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_ccls_q" Align="Left" Desc="_체결수량 CCLS_Q" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="vlm" Align="Left" Desc="거래량 VLM" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_vlm" Align="Left" Desc="_거래량 VLM" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="s_askprc_p4" Align="Left" Desc="매도호가P4 S_ASKPRC_P4" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="4" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_s_askprc_p4" Align="Left" Desc="_매도호가P4 S_ASKPRC_P4" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="s_rv" Align="Left" Desc="매도잔량 S_RV" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_s_rv" Align="Left" Desc="_매도잔량 S_RV" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="b_askprc_p4" Align="Left" Desc="매수호가P4 B_ASKPRC_P4" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="4" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_b_askprc_p4" Align="Left" Desc="_매수호가P4 B_ASKPRC_P4" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="b_rv" Align="Left" Desc="매수잔량 B_RV" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_b_rv" Align="Left" Desc="_매수잔량 B_RV" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="now_prc_krw_p2" Align="Left" Desc="현재가원화P2 NOW_PRC_KRW_P2" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_now_prc_krw_p2" Align="Left" Desc="_현재가원화P2 NOW_PRC_KRW_P2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="bdy_cmpr_krw_p2" Align="Left" Desc="전일대비원화P2 BDY_CMPR_KRW_P2" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_bdy_cmpr_krw_p2" Align="Left" Desc="_전일대비원화P2 BDY_CMPR_KRW_P2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="ccls_clsf" Align="Left" Desc="체결구분 CCLS_CLSF (1:매수자체결 2:매도자체결)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_ccls_clsf" Align="Left" Desc="_체결구분 CCLS_CLSF (1:매수자체결 2:매도자체결)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="mkt_clsf" Align="Left" Desc="시장구분 MKT_CLSF (0:장중, 1:장전, 2:장후)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_mkt_clsf" Align="Left" Desc="_시장구분 MKT_CLSF (0:장중, 1:장전, 2:장후)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="mkt_aft_ccls_prc_p4" Align="Left" Desc="장후체결가P4 MKT_AFT_CCLS_PRC_P4" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="4" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_mkt_aft_ccls_prc_p4" Align="Left" Desc="_장후체결가P4 MKT_AFT_CCLS_PRC_P4" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="mkt_aft_ccls_prc_krw_p2" Align="Left" Desc="장후체결가원화P2 MKT_AFT_CCLS_PRC_KRW_P2" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_mkt_aft_ccls_prc_krw_p2" Align="Left" Desc="_장후체결가원화P2 MKT_AFT_CCLS_PRC_KRW_P2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="mkt_aft_cmpr_ccd" Align="Left" Desc="장후대비구분코드 MKT_AFT_CMPR_CCD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_mkt_aft_cmpr_ccd" Align="Left" Desc="_장후대비구분코드 MKT_AFT_CMPR_CCD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="mkt_aft_cmpr_p4" Align="Left" Desc="장후대비P4 MKT_AFT_CMPR_P4" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="4" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_mkt_aft_cmpr_p4" Align="Left" Desc="_장후대비P4 MKT_AFT_CMPR_P4" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="mkt_aft_up_dwn_r_p2" Align="Left" Desc="장후등락율P2 MKT_AFT_UP_DWN_R_P2" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_mkt_aft_up_dwn_r_p2" Align="Left" Desc="_장후등락율P2 MKT_AFT_UP_DWN_R_P2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="mkt_aft_cmpr_krw_p2" Align="Left" Desc="장후대비원화P2 MKT_AFT_CMPR_KRW_P2" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_mkt_aft_cmpr_krw_p2" Align="Left" Desc="_장후대비원화P2 MKT_AFT_CMPR_KRW_P2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		</O>
+	</Output>
+</Tkb_GSA10020_B2C>

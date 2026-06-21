@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<Tkb_IVU10420_B2C error="false">
+	<Name>IVU10420</Name>
+	<Desc> ATS통합-당일주요외국계거래원(MTS)</Desc>
+	<Code></Code>
+	<Route>IVU10420</Route>
+	<base21></base21>
+	<blocktype></blocktype>
+	<attytype>attr;</attytype>
+	<headtype></headtype>
+	<Journal>true</Journal>
+	<screenid>0420</screenid>
+	<Mid></Mid>
+	<Processor_info>hts</Processor_info>
+	<Tr_info>NIVS01</Tr_info>
+	<Page_num>0420</Page_num>
+	<HostExpireTime>15000</HostExpireTime>
+	<Input iName="" >
+		<I Name="excg_clsf" Align="Left" Desc="거래소구분 EXCG_CLSF (0:통합, 1:KRX, 2:NXT)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_excg_clsf" Align="Left" Desc="_거래소구분 EXCG_CLSF (0:통합, 1:KRX, 2:NXT)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<I Name="is_cd" Align="Left" Desc="종목코드 IS_CD" Journal="N" Pad="SPC" Size="6" SizeEN="6" SizeKR="6" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_is_cd" Align="Left" Desc="_종목코드 IS_CD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+	</Input>
+	<Output oName="" >
+		<O Name="lngth" Align="Left" Desc="길이C5" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="clsfP" Align="Left" Desc="구분자_C2" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="msg" Align="Left" Desc="메시지_C80" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="out_RecordSize" Align="Left" Desc="out_레코드길이" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="out" Repeat="0" Align="Left" Desc="" Journal="N" Pad="SPC" Size="0" SizeEN="0" SizeKR="0" Spec="struct" IOType="Record" UpperCase="N" Valid="Y" Default="" Encrypt="" >
+			<O1 Name="s_scrts_cmpny1" Align="Left" Desc="매도증권사1 S_SCRTS_CMPNY1" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_s_scrts_cmpny1" Align="Left" Desc="_매도증권사1 S_SCRTS_CMPNY1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="s_scrts_cmpny_nm1" Align="Left" Desc="매도증권사명1 S_SCRTS_CMPNY_NM1" Journal="N" Pad="SPC" Size="20" SizeEN="20" SizeKR="20" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_s_scrts_cmpny_nm1" Align="Left" Desc="_매도증권사명1 S_SCRTS_CMPNY_NM1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="s_q1" Align="Left" Desc="매도수량1 S_Q1" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_s_q1" Align="Left" Desc="_매도수량1 S_Q1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="s_incrs_dcrs1" Align="Left" Desc="매도증감1 S_INCRS_DCRS1" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_s_incrs_dcrs1" Align="Left" Desc="_매도증감1 S_INCRS_DCRS1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="s_rt1_p2" Align="Left" Desc="매도비율1P2 S_RT1_P2" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_s_rt1_p2" Align="Left" Desc="_매도비율1P2 S_RT1_P2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="b_scrts_cmpny1" Align="Left" Desc="매수증권사1 B_SCRTS_CMPNY1" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_b_scrts_cmpny1" Align="Left" Desc="_매수증권사1 B_SCRTS_CMPNY1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="b_scrts_cmpny_nm1" Align="Left" Desc="매수증권사명1 B_SCRTS_CMPNY_NM1" Journal="N" Pad="SPC" Size="20" SizeEN="20" SizeKR="20" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_b_scrts_cmpny_nm1" Align="Left" Desc="_매수증권사명1 B_SCRTS_CMPNY_NM1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="b_q1" Align="Left" Desc="매수수량1 B_Q1" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_b_q1" Align="Left" Desc="_매수수량1 B_Q1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="b_incrs_dcrs1" Align="Left" Desc="매수증감1 B_INCRS_DCRS1" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_b_incrs_dcrs1" Align="Left" Desc="_매수증감1 B_INCRS_DCRS1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="b_rt1_p2" Align="Left" Desc="매수비율1P2 B_RT1_P2" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_b_rt1_p2" Align="Left" Desc="_매수비율1P2 B_RT1_P2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		</O>
+	</Output>
+</Tkb_IVU10420_B2C>

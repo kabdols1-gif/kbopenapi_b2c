@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+!frontend/src/lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Local config
+.env
+.env.local
+.env.*.local
+key.txt
+
+# KIS
+/.master/
+/KIS/
+
+# Logs
+*.log
+.runtime/
+.runtime-openapi-test/
+
+# Local OpenAPI source spreadsheets
+/KB_B2C_OpenAPI_API목록_리스트_인프라시스템부_투자정보_수정.xlsx
+/KIS_OpenAPI_All_API_Document__한국투자증권_오픈API_전체문서_20260615_030000.xlsx
+/trx_b2c/
+
+# Local verification artifacts
+home-*-check.png
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Tool configs
+.serena/
+.claude/
+
+# Node (frontend)
+node_modules/
+.next/
+.vercel
+
+# uv
+.python-version
+
+# Local package caches
+.npm-cache/
+.pip-cache/

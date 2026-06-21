@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<Tkb_IVU10020_B2C error="false">
+	<Name>IVU10020</Name>
+	<Desc> ATS통합-외국인기관매매상위</Desc>
+	<Code></Code>
+	<Route>IVU10020</Route>
+	<base21></base21>
+	<blocktype></blocktype>
+	<attytype>attr;</attytype>
+	<headtype></headtype>
+	<Journal>true</Journal>
+	<screenid>0020</screenid>
+	<Mid></Mid>
+	<Processor_info>hts</Processor_info>
+	<Tr_info>NIVS01</Tr_info>
+	<Page_num>0020</Page_num>
+	<HostExpireTime>15000</HostExpireTime>
+	<Input iName="" >
+		<I Name="excg_clsf" Align="Left" Desc="거래소구분 EXCG_CLSF (0:통합, 1:KRX, 2:NXT)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_excg_clsf" Align="Left" Desc="_거래소구분 EXCG_CLSF (0:통합, 1:KRX, 2:NXT)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<I Name="mkt_clsf" Align="Left" Desc="시장구분 MKT_CLSF (0:거래소, 1:코스닥, 2:전체)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_mkt_clsf" Align="Left" Desc="_시장구분 MKT_CLSF (0:거래소, 1:코스닥, 2:전체)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<I Name="invstr_ccd" Align="Left" Desc="투자자구분코드 INVSTR_CCD (0:외국인 1:기관 2:외국인+기관 3:증권 4:보험 5:투신 6:사모펀드 7:은행 8:종금 9:기금 A:기타 B:국가지자체 C:개인 D:기타외국인)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_invstr_ccd" Align="Left" Desc="_투자자구분코드 INVSTR_CCD (0:외국인 1:기관 2:외국인+기관 3:증권 4:보험 5:투신 6:사모펀드 7:은행 8:종금 9:기금 A:기타 B:국가지자체 C:개인 D:기타외국인)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<I Name="prd_clsf" Align="Left" Desc="기간구분 PRD_CLSF (0:전일 1:1주 2:1달 3:3달 4:6달 5:1년 6:연초)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_prd_clsf" Align="Left" Desc="_기간구분 PRD_CLSF (0:전일 1:1주 2:1달 3:3달 4:6달 5:1년 6:연초)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		<I Name="rnk_clsf" Align="Left" Desc="순위구분 RNK_CLSF (0:순매수 1:순매도 2:지분증가 3:지분감소 4:연속순매수 5:연속순매도)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<I Name="_rnk_clsf" Align="Left" Desc="_순위구분 RNK_CLSF (0:순매수 1:순매도 2:지분증가 3:지분감소 4:연속순매수 5:연속순매도)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+	</Input>
+	<Output oName="" >
+		<O Name="lngth" Align="Left" Desc="길이C5" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="clsfP" Align="Left" Desc="구분자_C2" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="msg" Align="Left" Desc="메시지_C80" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="out_RecordSize" Align="Left" Desc="out_레코드길이" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="out" Repeat="0" Align="Left" Desc="" Journal="N" Pad="SPC" Size="0" SizeEN="0" SizeKR="0" Spec="struct" IOType="Record" UpperCase="N" Valid="Y" Default="" Encrypt="" >
+			<O1 Name="shrt_is_cd" Align="Left" Desc="단축종목코드 SHRT_IS_CD" Journal="N" Pad="SPC" Size="6" SizeEN="6" SizeKR="6" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_shrt_is_cd" Align="Left" Desc="_단축종목코드 SHRT_IS_CD" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="is_nm" Align="Left" Desc="종목명 IS_NM" Journal="N" Pad="SPC" Size="40" SizeEN="40" SizeKR="40" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_is_nm" Align="Left" Desc="_종목명 IS_NM" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="now_prc" Align="Left" Desc="현재가 NOW_PRC" Journal="N" Pad="SPC" Size="11" SizeEN="11" SizeKR="11" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_now_prc" Align="Left" Desc="_현재가 NOW_PRC" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="bdy_cmpr" Align="Left" Desc="전일대비 BDY_CMPR (기간,투자자동일)" Journal="N" Pad="SPC" Size="11" SizeEN="11" SizeKR="11" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_bdy_cmpr" Align="Left" Desc="_전일대비 BDY_CMPR (기간,투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="bdy_cmpr_ccd" Align="Left" Desc="전일대비구분코드 BDY_CMPR_CCD (기간,투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_bdy_cmpr_ccd" Align="Left" Desc="_전일대비구분코드 BDY_CMPR_CCD (기간,투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="filler" Align="Left" Desc="FILLER FILLER (기간,투자자동일)" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_filler" Align="Left" Desc="_FILLER FILLER (기간,투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="bdy_cmpr_r_p2" Align="Left" Desc="전일대비율P2 BDY_CMPR_R_P2 (기간,투자자동일)" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_bdy_cmpr_r_p2" Align="Left" Desc="_전일대비율P2 BDY_CMPR_R_P2 (기간,투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="vlm" Align="Left" Desc="거래량 VLM (기간,투자자동일)" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_vlm" Align="Left" Desc="_거래량 VLM (기간,투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="nt_b_s_q" Align="Left" Desc="순매수매도수량 NT_B_S_Q" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_nt_b_s_q" Align="Left" Desc="_순매수매도수량 NT_B_S_Q" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="nt_b_s_clsf" Align="Left" Desc="순매수매도구분 NT_B_S_CLSF (연속일수 매도매수구분)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_nt_b_s_clsf" Align="Left" Desc="_순매수매도구분 NT_B_S_CLSF (연속일수 매도매수구분)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="filler1" Align="Left" Desc="FILLER1 FILLER1" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_filler1" Align="Left" Desc="_FILLER1 FILLER1" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="cn_dy_c" Align="Left" Desc="연속일수 CN_DY_C (기간동일, 투자자다름.)" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_cn_dy_c" Align="Left" Desc="_연속일수 CN_DY_C (기간동일, 투자자다름.)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="invstr_prd_nt_b_dy_c" Align="Left" Desc="투자자기간순매수일수 INVSTR_PRD_NT_B_DY_C" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_invstr_prd_nt_b_dy_c" Align="Left" Desc="_투자자기간순매수일수 INVSTR_PRD_NT_B_DY_C" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="invstr_prd_nt_s_dy_c" Align="Left" Desc="투자자기간순매도일수 INVSTR_PRD_NT_S_DY_C" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_invstr_prd_nt_s_dy_c" Align="Left" Desc="_투자자기간순매도일수 INVSTR_PRD_NT_S_DY_C" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="hld_rt_p2" Align="Left" Desc="보유비율P2 HLD_RT_P2 (기간,투자자 동일)" Journal="N" Pad="SPC" Size="6" SizeEN="6" SizeKR="6" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_hld_rt_p2" Align="Left" Desc="_보유비율P2 HLD_RT_P2 (기간,투자자 동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="hld_rt_incrs_dcrs_r_p2" Align="Left" Desc="보유비율증감율P2 HLD_RT_INCRS_DCRS_R_P2 (기간다름 현보유율-기간전보유율)" Journal="N" Pad="SPC" Size="13" SizeEN="13" SizeKR="13" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_hld_rt_incrs_dcrs_r_p2" Align="Left" Desc="_보유비율증감율P2 HLD_RT_INCRS_DCRS_R_P2 (기간다름 현보유율-기간전보유율)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="ordr_psbl_q" Align="Left" Desc="주문가능수량 ORDR_PSBL_Q (기간,투자자 동일)" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_ordr_psbl_q" Align="Left" Desc="_주문가능수량 ORDR_PSBL_Q (기간,투자자 동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="vnsh_r_p4" Align="Left" Desc="소진율P4 VNSH_R_P4 (기간,투자자 동일)" Journal="N" Pad="SPC" Size="10" SizeEN="10" SizeKR="10" format="double" Spec="char" portion="4" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_vnsh_r_p4" Align="Left" Desc="_소진율P4 VNSH_R_P4 (기간,투자자 동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="is_lmt_rt_p4" Align="Left" Desc="종목한도비율P4 IS_LMT_RT_P4 (기간,투자자 동일)" Journal="N" Pad="SPC" Size="10" SizeEN="10" SizeKR="10" format="double" Spec="char" portion="4" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_is_lmt_rt_p4" Align="Left" Desc="_종목한도비율P4 IS_LMT_RT_P4 (기간,투자자 동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="prd_avr_vlm_p2" Align="Left" Desc="기간평균거래량P2 PRD_AVR_VLM_P2 (투자자동일)" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_prd_avr_vlm_p2" Align="Left" Desc="_기간평균거래량P2 PRD_AVR_VLM_P2 (투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="prd_cmpr_clsf_cd" Align="Left" Desc="기간대비구분코드 PRD_CMPR_CLSF_CD (1:증가 2:감소 0:보합)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_prd_cmpr_clsf_cd" Align="Left" Desc="_기간대비구분코드 PRD_CMPR_CLSF_CD (1:증가 2:감소 0:보합)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="filler2" Align="Left" Desc="FILLER2 FILLER2" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="char" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_filler2" Align="Left" Desc="_FILLER2 FILLER2" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="prd_cmpr_prc" Align="Left" Desc="기간대비가 PRD_CMPR_PRC (투자자동일)" Journal="N" Pad="SPC" Size="11" SizeEN="11" SizeKR="11" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_prd_cmpr_prc" Align="Left" Desc="_기간대비가 PRD_CMPR_PRC (투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="prd_cmpr_up_r_p2" Align="Left" Desc="기간대비상승율P2 PRD_CMPR_UP_R_P2 (투자자동일)" Journal="N" Pad="SPC" Size="13" SizeEN="13" SizeKR="13" format="double" Spec="char" portion="2" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_prd_cmpr_up_r_p2" Align="Left" Desc="_기간대비상승율P2 PRD_CMPR_UP_R_P2 (투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="prd_up_dy_c" Align="Left" Desc="기간상승일수 PRD_UP_DY_C (투자자동일)" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_prd_up_dy_c" Align="Left" Desc="_기간상승일수 PRD_UP_DY_C (투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+			<O1 Name="tl_bsnss_dy_c" Align="Left" Desc="총영업일수 TL_BSNSS_DY_C (투자자동일)" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" format="long" Spec="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+			<O1 Name="_tl_bsnss_dy_c" Align="Left" Desc="_총영업일수 TL_BSNSS_DY_C (투자자동일)" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" format="byte" Spec="byte" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
+		</O>
+	</Output>
+</Tkb_IVU10020_B2C>

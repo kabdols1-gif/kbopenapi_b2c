@@ -1,0 +1,4272 @@
+{
+  "generatedAt": "2026-06-18T18:12:17+09:00",
+  "sourceXmlDirectory": "C:\\Users\\kb1\\Desktop\\workspace\\OpenAPI\\KB_B2C",
+  "b2c": [
+    {
+      "id": "Tkb_SIQM4900_B2C",
+      "label": "SIQM4900 종목기본정보",
+      "method": "POST",
+      "endpoint": "/api/v1/siqm4900",
+      "transactionCode": "SIQM4900",
+      "description": "B2C XML 전문: 종목기본정보",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "stnd_is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SIQM4900_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SZQM0771_B2C",
+      "label": "SZQM0771 장운영상태 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/szqm0771",
+      "transactionCode": "SZQM0771",
+      "description": "B2C XML 전문: 장운영상태 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "dummy": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SZQM0771_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10140_B2C",
+      "label": "IVU10140 주식현재가",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10140",
+      "transactionCode": "IVU10140",
+      "description": "B2C XML 전문: 주식현재가",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "shrt_cd": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10140_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 2,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10070_B2C",
+      "label": "IVU10070 주식호가",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10070",
+      "transactionCode": "IVU10070",
+      "description": "B2C XML 전문: 주식호가",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "is_cd": "005930",
+          "ovtm_mkt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10070_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 2,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10080_B2C",
+      "label": "IVU10080 주식시간대별추이",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10080",
+      "transactionCode": "IVU10080",
+      "description": "B2C XML 전문: 주식시간대별추이",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "is_cd": "005930",
+          "ovtm_mkt_clsf": "1",
+          "inq_cnt": "10"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10080_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 4,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVM10050_B2C",
+      "label": "IVM10050 종목기업개요",
+      "method": "POST",
+      "endpoint": "/api/v1/ivm10050",
+      "transactionCode": "IVM10050",
+      "description": "B2C XML 전문: 종목기업개요",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVM10050_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVS11560_B2C",
+      "label": "IVS11560 통합차트",
+      "method": "POST",
+      "endpoint": "/api/v1/ivs11560",
+      "transactionCode": "IVS11560",
+      "description": "B2C XML 전문: 통합차트",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "info_ccd": "1",
+          "mkt_clsf": "1",
+          "chrt_clsf": "1",
+          "filler1": "",
+          "filler2": "",
+          "minute_tck_indx": "",
+          "is_cd": "005930",
+          "inq_clsf": "1",
+          "strt_dy": "",
+          "inq_cnt": "10"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVS11560_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10430_B2C",
+      "label": "IVU10430 종목별투자자",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10430",
+      "transactionCode": "IVU10430",
+      "description": "B2C XML 전문: 종목별투자자",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "is_cd": "005930",
+          "strt_dt": "20250101",
+          "end_dt": "20251231",
+          "amt_q_clsf": "1",
+          "trd_clsf": "1",
+          "acml_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10430_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 7,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10420_B2C",
+      "label": "IVU10420 당일주요외국계거래원",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10420",
+      "transactionCode": "IVU10420",
+      "description": "B2C XML 전문: 당일주요외국계거래원",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10420_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 2,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10450_B2C",
+      "label": "IVU10450 종목별프로그램매매추이",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10450",
+      "transactionCode": "IVU10450",
+      "description": "B2C XML 전문: 종목별프로그램매매추이",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "is_cd": "005930",
+          "amt_q_clsf": "1",
+          "prd_clsf": "1",
+          "inq_cnt": "10"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10450_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 5,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10020_B2C",
+      "label": "IVU10020 외국인기관매매상위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10020",
+      "transactionCode": "IVU10020",
+      "description": "B2C XML 전문: 외국인기관매매상위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "mkt_clsf": "1",
+          "invstr_ccd": "1",
+          "prd_clsf": "1",
+          "rnk_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10020_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 5,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVS11430_B2C",
+      "label": "IVS11430 테마그룹조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ivs11430",
+      "transactionCode": "IVS11430",
+      "description": "B2C XML 전문: 테마그룹조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "thm_cd": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVS11430_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVS10920_B2C",
+      "label": "IVS10920 프로그램매매상위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivs10920",
+      "transactionCode": "IVS10920",
+      "description": "B2C XML 전문: 프로그램매매상위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "indx_id": "",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "srt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVS10920_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 19,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10280_B2C",
+      "label": "IVU10280 거래량상위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10280",
+      "transactionCode": "IVU10280",
+      "description": "B2C XML 전문: 거래량상위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "mkt_clsf": "1",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "srt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10280_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 20,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10270_B2C",
+      "label": "IVU10270 급등/급락 상위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10270",
+      "transactionCode": "IVU10270",
+      "description": "B2C XML 전문: 급등/급락 상위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "mkt_clsf": "1",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "up_dwn_ccd": "1",
+          "minute_dy_ccd": "1",
+          "minute_dy_unt": "",
+          "crdt_cndt": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10270_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 23,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10210_B2C",
+      "label": "IVU10210 거래대금상위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10210",
+      "transactionCode": "IVU10210",
+      "description": "B2C XML 전문: 거래대금상위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "mkt_clsf": "1",
+          "thdy_bdy_clsf": "1",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "crdt_grp_clsf": "1",
+          "srt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10210_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 22,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10240_B2C",
+      "label": "IVU10240 등락률상위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10240",
+      "transactionCode": "IVU10240",
+      "description": "B2C XML 전문: 등락률상위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "mkt_clsf": "1",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "srt_clsf": "1",
+          "crdt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10240_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 21,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVS10910_B2C",
+      "label": "IVS10910 시가대비등락률상위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivs10910",
+      "transactionCode": "IVS10910",
+      "description": "B2C XML 전문: 시가대비등락률상위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "mkt_clsf": "1",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "srt_clsf": "1",
+          "crdt_cndt": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVS10910_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 20,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVS10920_B2C__2",
+      "label": "IVS10920 시가총액상위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivs10920",
+      "transactionCode": "IVS10920",
+      "description": "B2C XML 전문: 시가총액상위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "indx_id": "",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "srt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVS10920_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 19,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVS10920_B2C__3",
+      "label": "IVS10920 거래량급증",
+      "method": "POST",
+      "endpoint": "/api/v1/ivs10920",
+      "transactionCode": "IVS10920",
+      "description": "B2C XML 전문: 거래량급증",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "indx_id": "",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "srt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVS10920_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 19,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVS11190_B2C",
+      "label": "IVS11190 기간외등락률순위",
+      "method": "POST",
+      "endpoint": "/api/v1/ivs11190",
+      "transactionCode": "IVS11190",
+      "description": "B2C XML 전문: 기간외등락률순위",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "mkt_clsf": "1",
+          "srt_clsf": "1",
+          "thdy_bdy_clsf": "1",
+          "trgt_xcl_cd": "",
+          "vlm_clsf": "1",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVS11190_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 22,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVU10550_B2C",
+      "label": "IVU10550 신고/신저",
+      "method": "POST",
+      "endpoint": "/api/v1/ivu10550",
+      "transactionCode": "IVU10550",
+      "description": "B2C XML 전문: 신고/신저",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "excg_clsf": "1",
+          "mkt_clsf": "1",
+          "trgt_xcl": "",
+          "cptl_amt_inpt_ccd": "1",
+          "cptl_amt_inpt_strt": "",
+          "cptl_amt_inpt_end": "",
+          "prc_stn_inpt_ccd": "1",
+          "prc_stn_inpt_strt": "",
+          "prc_stn_inpt_end": "",
+          "opn_prc_tl_amt_inpt_ccd": "1",
+          "opn_prc_tl_amt_inpt_strt": "",
+          "opn_prc_tl_amt_inpt_end": "",
+          "vlm_inpt_ccd": "1",
+          "vlm_inpt_strt": "",
+          "vlm_inpt_end": "",
+          "pr_vl_prc_inpt_ccd": "1",
+          "pr_vl_prc_inpt_strt": "",
+          "pr_vl_prc_inpt_end": "",
+          "inq_cnt": "10",
+          "nw_stk_lw_ccd": "1",
+          "std_clsf": "1",
+          "prd_clsf": "1",
+          "excd_clsf": "1",
+          "crdt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVU10550_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 24,
+      "menu": "",
+      "sourceEncoding": "cp949"
+    },
+    {
+      "id": "Tkb_IVSA0070_B2C",
+      "label": "IVSA0070 시장종합",
+      "method": "POST",
+      "endpoint": "/api/v1/ivsa0070",
+      "transactionCode": "IVSA0070",
+      "description": "B2C XML 전문: 시장종합",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVSA0070_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVA60140_B2C",
+      "label": "IVA60140 세계지수",
+      "method": "POST",
+      "endpoint": "/api/v1/iva60140",
+      "transactionCode": "IVA60140",
+      "description": "B2C XML 전문: 세계지수",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "lnd_clsf": "1",
+          "prd_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVA60140_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 2,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVM30010_B2C",
+      "label": "IVM30010 업종랭킹",
+      "method": "POST",
+      "endpoint": "/api/v1/ivm30010",
+      "transactionCode": "IVM30010",
+      "description": "B2C XML 전문: 업종랭킹",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "mkt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVM30010_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVA60190_B2C",
+      "label": "IVA60190 환율종합",
+      "method": "POST",
+      "endpoint": "/api/v1/iva60190",
+      "transactionCode": "IVA60190",
+      "description": "B2C XML 전문: 환율종합",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVA60190_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVA10370_B2C",
+      "label": "IVA10370 증시주변자금동향",
+      "method": "POST",
+      "endpoint": "/api/v1/iva10370",
+      "transactionCode": "IVA10370",
+      "description": "B2C XML 전문: 증시주변자금동향",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVA10370_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_IVA10370_B2C__2",
+      "label": "IVA10370 증시주변자금동향",
+      "method": "POST",
+      "endpoint": "/api/v1/iva10370",
+      "transactionCode": "IVA10370",
+      "description": "B2C XML 전문: 증시주변자금동향",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_IVA10370_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 1,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQN3390_B2C",
+      "label": "SPQN3390 글로벌원마켓 증거금사용현황",
+      "method": "POST",
+      "endpoint": "/api/v1/spqn3390",
+      "transactionCode": "SPQN3390",
+      "description": "B2C XML 전문: 글로벌원마켓 증거금사용현황",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQN3390_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 3,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM0004_B2C",
+      "label": "SSQM0004 예수금내역",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm0004",
+      "transactionCode": "SSQM0004",
+      "description": "B2C XML 전문: 예수금내역",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "filler": "",
+          "pwd": "{{pwd}}",
+          "is_no": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM0004_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 5,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM0005_B2C",
+      "label": "SSQM0005 총 잔고 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm0005",
+      "transactionCode": "SSQM0005",
+      "description": "B2C XML 전문: 총 잔고 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "inq_clsf": "1",
+          "rnmcno": "",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "tl_val_amt": "",
+          "tl_tfnd_amt": "",
+          "tl_o_amt_psbl_amt": "",
+          "nxt_key": "",
+          "gds_grp_cd": "",
+          "ccls_stmt_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM0005_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM0006_B2C",
+      "label": "SSQM0006 평가손익 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm0006",
+      "transactionCode": "SSQM0006",
+      "description": "B2C XML 전문: 평가손익 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "inq_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "spclz_ordr_ccd": "1",
+          "trd_clsf": "1",
+          "act_cd": "",
+          "nxt_key": "",
+          "is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM0006_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 9,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM0009_B2C",
+      "label": "SSQM0009 총 자산평가 내역 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm0009",
+      "transactionCode": "SSQM0009",
+      "description": "B2C XML 전문: 총 자산평가 내역 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "inq_clsf": "1",
+          "rnmcno": "",
+          "emp_no": "",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "inq_std_clsf": "1",
+          "sum_cd": "",
+          "q_typ": "",
+          "scrts_ccd": "1",
+          "inq_dt": "20250617",
+          "inq_micro_ttm": "",
+          "lstng_dscnt_is_xcl_f": "10"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM0009_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 13,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM1801_B2C",
+      "label": "SSQM1801 보유주식 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm1801",
+      "transactionCode": "SSQM1801",
+      "description": "B2C XML 전문: 보유주식 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "inq_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "filler": "",
+          "pwd": "{{pwd}}",
+          "is_no": "",
+          "mkt_tm_ccd": "1",
+          "spclz_ordr_ccd": "1",
+          "act_cd": "",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM1801_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM2932_B2C",
+      "label": "SSQM2932 종합계좌 잔고현황 조회 (종합위탁계좌, 신연금저축계좌)",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm2932",
+      "transactionCode": "SSQM2932",
+      "description": "B2C XML 전문: 종합계좌 잔고현황 조회 (종합위탁계좌, 신연금저축계좌)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "inq_clsf": "1",
+          "scrts_ccd": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "bnd_val_wy_cd": "",
+          "excg_mktpr_ccd": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM2932_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 7,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM2952_B2C",
+      "label": "SSQM2952 계좌자산평가",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm2952",
+      "transactionCode": "SSQM2952",
+      "description": "B2C XML 전문: 계좌자산평가",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "excg_mktpr_ccd": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM2952_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 4,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQN2952_B2C",
+      "label": "SSQN2952 주식자산평가조회 (실시간)",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqn2952",
+      "transactionCode": "SSQN2952",
+      "description": "B2C XML 전문: 주식자산평가조회 (실시간)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "is_cd": "005930",
+          "sum_clsf": "1",
+          "pwd": "{{pwd}}",
+          "spclz_ordr_ccd": "1",
+          "nxt2_dy_tfnd_xcl_f": "",
+          "excg_mktpr_ccd": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQN2952_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 8,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SWQA2301_B2C",
+      "label": "SWQA2301 계좌원장 거래내역 조회 (위탁, 금융상품, 저축)",
+      "method": "POST",
+      "endpoint": "/api/v1/swqa2301",
+      "transactionCode": "SWQA2301",
+      "description": "B2C XML 전문: 계좌원장 거래내역 조회 (위탁, 금융상품, 저축)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "inq_clsf": "1",
+          "inq_clsf1": "1",
+          "inq_clsf2": "1",
+          "inq_clsf3": "1",
+          "inq_clsf4": "1",
+          "inq_clsf5": "1",
+          "inq_clsf6": "1",
+          "strt_dt": "20250101",
+          "end_dt": "20251231",
+          "is_no": "",
+          "strt_no": "",
+          "nxt_key": "",
+          "srt_clsf": "1",
+          "dl_clsf": "1",
+          "dl_md_ccd": "1",
+          "md_isnc_tno": "",
+          "crdt_crd_isnc_info": "",
+          "onl_prt_ccd": "1",
+          "isng_bl_at_trsns_xcl_f": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SWQA2301_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 22,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SWQB2301_B2C",
+      "label": "SWQB2301 계좌원장 거래내역 조회 (CMA)",
+      "method": "POST",
+      "endpoint": "/api/v1/swqb2301",
+      "transactionCode": "SWQB2301",
+      "description": "B2C XML 전문: 계좌원장 거래내역 조회 (CMA)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "inq_clsf": "1",
+          "inq_clsf1": "1",
+          "inq_clsf2": "1",
+          "inq_clsf3": "1",
+          "inq_clsf4": "1",
+          "inq_clsf5": "1",
+          "inq_clsf6": "1",
+          "strt_dt": "20250101",
+          "end_dt": "20251231",
+          "is_no": "",
+          "nxt_key": "",
+          "strt_no": "",
+          "dl_md_ccd": "1",
+          "md_isnc_tno": "",
+          "crdt_crd_isnc_info": "",
+          "onl_prt_ccd": "1",
+          "srt_clsf": "1",
+          "isng_bl_at_trsns_xcl_f": "",
+          "csh_asts_itst_i_amt_xcl_f": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SWQB2301_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 22,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SWQM2302_B2C",
+      "label": "SWQM2302 예수금조회",
+      "method": "POST",
+      "endpoint": "/api/v1/swqm2302",
+      "transactionCode": "SWQM2302",
+      "description": "B2C XML 전문: 예수금조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SWQM2302_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 3,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SWQM2412_B2C",
+      "label": "SWQM2412 거래내역상세 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/swqm2412",
+      "transactionCode": "SWQM2412",
+      "description": "B2C XML 전문: 거래내역상세 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnrl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "inq_dt": "20250617",
+          "dl_sq": "",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SWQM2412_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 6,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SWQN2302_B2C",
+      "label": "SWQN2302 익일익익일 출금가능금액 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/swqn2302",
+      "transactionCode": "SWQN2302",
+      "description": "B2C XML 전문: 익일익익일 출금가능금액 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "ccd": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SWQN2302_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 4,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SZQM6019_B2C",
+      "label": "SZQM6019 개인별쿠폰 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/szqm6019",
+      "transactionCode": "SZQM6019",
+      "description": "B2C XML 전문: 개인별쿠폰 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "rprst_cs_no": "",
+          "st_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SZQM6019_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 4,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM2121_B2C",
+      "label": "SSQM2121 계좌별매매가정산현황",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm2121",
+      "transactionCode": "SSQM2121",
+      "description": "B2C XML 전문: 계좌별매매가정산현황",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "trd_dt": "20250617",
+          "clsf": "1",
+          "trd_clsf": "1",
+          "ac_nm": "",
+          "s_ec_sum": "",
+          "b_ec_sum": "",
+          "stmt_dt": "20250617",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM2121_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 11,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM2392_B2C",
+      "label": "SSQM2392 기간매매손익현황",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm2392",
+      "transactionCode": "SSQM2392",
+      "description": "B2C XML 전문: 기간매매손익현황",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_no": "",
+          "ordr_dt_from": "",
+          "ordr_dt_to": "",
+          "trd_svrl_cst": "",
+          "trd_pl": "",
+          "trd_nt_pl": "",
+          "inq_clsf": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM2392_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 11,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM2442_B2C",
+      "label": "SSQM2442 일자별실현손익상세",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm2442",
+      "transactionCode": "SSQM2442",
+      "description": "B2C XML 전문: 일자별실현손익상세",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "is_cd": "005930",
+          "inq_strt_dt": "20250101",
+          "inq_end_dt": "20251231",
+          "md_clsf": "1",
+          "ac_pwd": "{{pwd}}",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM2442_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 8,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM2443_B2C",
+      "label": "SSQM2443 종목별기간실현손익",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm2443",
+      "transactionCode": "SSQM2443",
+      "description": "B2C XML 전문: 종목별기간실현손익",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "inq_strt_dt": "20250101",
+          "inq_end_dt": "20251231",
+          "md_clsf": "1",
+          "ac_pwd": "{{pwd}}",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM2443_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 7,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM5472_B2C",
+      "label": "SSQM5472 국내주식 소수점 매매 보유잔고내역 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm5472",
+      "transactionCode": "SSQM5472",
+      "description": "B2C XML 전문: 국내주식 소수점 매매 보유잔고내역 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "jb_ccd": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "std_dt": "20250617",
+          "hd_pin_no": "",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM5472_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 8,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM1802_B2C",
+      "label": "SSQM1802 매수주문가능금액 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm1802",
+      "transactionCode": "SSQM1802",
+      "description": "B2C XML 전문: 매수주문가능금액 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "filler": "",
+          "pwd": "{{pwd}}",
+          "is_no": "",
+          "bnd_mktio_ccd": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM1802_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 6,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSAM1801_B2C",
+      "label": "SSAM1801 현금매도주문",
+      "method": "POST",
+      "endpoint": "/api/v1/ssam1801",
+      "transactionCode": "SSAM1801",
+      "description": "B2C XML 전문: 현금매도주문",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "mkt_tm_clsf": "1",
+          "ordr_jb_clsf": "1",
+          "s_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "filler": "",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "ordr_q": "1",
+          "ordr_uprc": "",
+          "ordr_ccd": "1",
+          "crdt_typ_cd": "",
+          "ln_dt": "20250617",
+          "crct_clsf": "1",
+          "orgn_ordr_no": "",
+          "hts_pwd": "{{pwd}}",
+          "gtc_ccd": "1",
+          "ordr_mng_no": "",
+          "spclz_ordr_ccd": "1",
+          "acct_cd": "",
+          "gnl_ac_no1": "",
+          "gds_no1": "",
+          "sor_ordr_ccd": "1",
+          "stpd_prc": "",
+          "filler1": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSAM1801_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 25,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSAM1802_B2C",
+      "label": "SSAM1802 현금매수주문",
+      "method": "POST",
+      "endpoint": "/api/v1/ssam1802",
+      "transactionCode": "SSAM1802",
+      "description": "B2C XML 전문: 현금매수주문",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "mkt_tm_clsf": "1",
+          "ordr_jb_clsf": "1",
+          "s_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "filler": "",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "ordr_q": "1",
+          "ordr_uprc": "",
+          "ordr_ccd": "1",
+          "crdt_typ_cd": "",
+          "ln_dt": "20250617",
+          "crct_clsf": "1",
+          "orgn_ordr_no": "",
+          "hts_pwd": "{{pwd}}",
+          "gtc_ccd": "1",
+          "ordr_mng_no": "",
+          "spclz_ordr_ccd": "1",
+          "acct_cd": "",
+          "gnl_ac_no1": "",
+          "gds_no1": "",
+          "sor_ordr_ccd": "1",
+          "stpd_prc": "",
+          "filler1": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSAM1802_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 25,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSAM1805_B2C",
+      "label": "SSAM1805 정정주문",
+      "method": "POST",
+      "endpoint": "/api/v1/ssam1805",
+      "transactionCode": "SSAM1805",
+      "description": "B2C XML 전문: 정정주문",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "mkt_tm_clsf": "1",
+          "ordr_jb_clsf": "1",
+          "s_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "filler": "",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "ordr_q": "1",
+          "ordr_uprc": "",
+          "ordr_ccd": "1",
+          "crdt_typ_cd": "",
+          "ln_dt": "20250617",
+          "crct_clsf": "1",
+          "orgn_ordr_no": "",
+          "hts_pwd": "{{pwd}}",
+          "gtc_ccd": "1",
+          "ordr_mng_no": "",
+          "spclz_ordr_ccd": "1",
+          "acct_cd": "",
+          "gnl_ac_no1": "",
+          "gds_no1": "",
+          "sor_ordr_ccd": "1",
+          "stpd_prc": "",
+          "filler1": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSAM1805_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 25,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSAM1806_B2C",
+      "label": "SSAM1806 취소주문",
+      "method": "POST",
+      "endpoint": "/api/v1/ssam1806",
+      "transactionCode": "SSAM1806",
+      "description": "B2C XML 전문: 취소주문",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "mkt_tm_clsf": "1",
+          "ordr_jb_clsf": "1",
+          "s_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "filler": "",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "ordr_q": "1",
+          "ordr_uprc": "",
+          "ordr_ccd": "1",
+          "crdt_typ_cd": "",
+          "ln_dt": "20250617",
+          "crct_clsf": "1",
+          "orgn_ordr_no": "",
+          "hts_pwd": "{{pwd}}",
+          "gtc_ccd": "1",
+          "ordr_mng_no": "",
+          "spclz_ordr_ccd": "1",
+          "acct_cd": "",
+          "gnl_ac_no1": "",
+          "gds_no1": "",
+          "sor_ordr_ccd": "1",
+          "stpd_prc": "",
+          "filler1": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSAM1806_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 25,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQN5472_B2C",
+      "label": "SSQN5472 소수점 매매 주문가능금액 확인",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqn5472",
+      "transactionCode": "SSQN5472",
+      "description": "B2C XML 전문: 소수점 매매 주문가능금액 확인",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "ordr_amt": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQN5472_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 5,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSAM5762_B2C",
+      "label": "SSAM5762 소수점 매도",
+      "method": "POST",
+      "endpoint": "/api/v1/ssam5762",
+      "transactionCode": "SSAM5762",
+      "description": "B2C XML 전문: 소수점 매도",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "ordr_q_p6": "",
+          "ordr_amt": "",
+          "spclz_ordr_ccd": "1",
+          "dcml_ordr_std_ccd": "1",
+          "rsv_typ_ordr_f": "",
+          "rsv_typ_ordr_acpt_dt": "20250617",
+          "rsv_typ_ordr_sq": "",
+          "rsv_typ_ordr_sqc": "",
+          "rsv_amt": "",
+          "acpt_sq": "",
+          "cpn_cd": "",
+          "tv_s_est_f": "",
+          "dmstc_stk_dcml_trd_jb_ccd": "1",
+          "ordr_sqc": "",
+          "dmstc_stk_dcml_evnt_ccd": "1",
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSAM5762_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 20,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSAM5763_B2C",
+      "label": "SSAM5763 소수점 매수",
+      "method": "POST",
+      "endpoint": "/api/v1/ssam5763",
+      "transactionCode": "SSAM5763",
+      "description": "B2C XML 전문: 소수점 매수",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "ordr_q_p6": "",
+          "ordr_amt": "",
+          "spclz_ordr_ccd": "1",
+          "dcml_ordr_std_ccd": "1",
+          "rsv_typ_ordr_f": "",
+          "rsv_typ_ordr_acpt_dt": "20250617",
+          "rsv_typ_ordr_sq": "",
+          "rsv_typ_ordr_sqc": "",
+          "rsv_amt": "",
+          "acpt_sq": "",
+          "cpn_cd": "",
+          "tv_s_est_f": "",
+          "dmstc_stk_dcml_trd_jb_ccd": "1",
+          "ordr_sqc": "",
+          "dmstc_stk_dcml_evnt_ccd": "1",
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSAM5763_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 20,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSAM5764_B2C",
+      "label": "SSAM5764 소수점 주문 취소",
+      "method": "POST",
+      "endpoint": "/api/v1/ssam5764",
+      "transactionCode": "SSAM5764",
+      "description": "B2C XML 전문: 소수점 주문 취소",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "ordr_q_p6": "",
+          "ordr_amt": "",
+          "spclz_ordr_ccd": "1",
+          "dcml_ordr_std_ccd": "1",
+          "rsv_typ_ordr_f": "",
+          "rsv_typ_ordr_acpt_dt": "20250617",
+          "rsv_typ_ordr_sq": "",
+          "rsv_typ_ordr_sqc": "",
+          "rsv_amt": "",
+          "acpt_sq": "",
+          "cpn_cd": "",
+          "tv_s_est_f": "",
+          "dmstc_stk_dcml_trd_jb_ccd": "1",
+          "ordr_sqc": "",
+          "dmstc_stk_dcml_evnt_ccd": "1",
+          "filler": "",
+          "ordr_dt": "20250617",
+          "bnf_is_cd": "005930",
+          "trd_dl_ccd": "1",
+          "dmstc_stk_dcml_ordr_sq": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSAM5764_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 26,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM0831_B2C",
+      "label": "SSQM0831 예약주문처리 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm0831",
+      "transactionCode": "SSQM0831",
+      "description": "B2C XML 전문: 예약주문처리 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "ordr_dt": "20250617",
+          "nxt_key": "",
+          "trd_clsf": "1",
+          "hndl_clsf": "1",
+          "tv_rv_ccd": "1",
+          "end_dt": "20251231",
+          "is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM0831_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM0832_B2C",
+      "label": "SSQM0832 주문체결현황",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm0832",
+      "transactionCode": "SSQM0832",
+      "description": "B2C XML 전문: 주문체결현황",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "ccd": "1",
+          "inq_ccd": "1",
+          "cn_clsf": "1",
+          "is_typ_ccd": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "ordr_no": "",
+          "ordr_dt": "20250617",
+          "s_ccls_amt": "",
+          "b_ccls_amt": "",
+          "ccls_uprc": "",
+          "stnd_is_no": "",
+          "nxt_key": "",
+          "trd_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM0832_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 15,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM0833_B2C",
+      "label": "SSQM0833 실시간 주식체결 미체결",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm0833",
+      "transactionCode": "SSQM0833",
+      "description": "B2C XML 전문: 실시간 주식체결 미체결",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "is_cd": "005930",
+          "ccls_clsf": "1",
+          "trd_clsf": "1",
+          "srt_clsf": "1",
+          "ordr_dt": "20250617",
+          "ac_pwd": "{{pwd}}",
+          "ordr_no": "",
+          "spclz_ordr_ccd": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM0833_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM0834_B2C",
+      "label": "SSQM0834 예약주문접수 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm0834",
+      "transactionCode": "SSQM0834",
+      "description": "B2C XML 전문: 예약주문접수 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "hndl_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "nxt_key": "",
+          "chc_clsf": "1",
+          "inq_clsf": "1",
+          "strt_dt": "20250101",
+          "end_dt": "20251231",
+          "is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM0834_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM2341_B2C",
+      "label": "SSQM2341 계좌별주문체결조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm2341",
+      "transactionCode": "SSQM2341",
+      "description": "B2C XML 전문: 계좌별주문체결조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "inq_clsf": "1",
+          "ccls_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "ordr_dt": "20250617",
+          "is_cd": "005930",
+          "ordr_no": "",
+          "mthr_ordr_no": "",
+          "orgn_ordr_no": "",
+          "s_ccls_amt": "",
+          "b_ccls_amt": "",
+          "s_ccls_q": "1",
+          "b_ccls_q": "1",
+          "ac_nm": "",
+          "is_nm": "",
+          "cn_clsf": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM2341_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 18,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM5475_B2C",
+      "label": "SSQM5475 온주/소수점 주문체결내역 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm5475",
+      "transactionCode": "SSQM5475",
+      "description": "B2C XML 전문: 온주/소수점 주문체결내역 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "inq_strt_dt": "20250101",
+          "inq_end_dt": "20251231",
+          "trd_clsf": "1",
+          "is_cd": "005930",
+          "ordr_st": "",
+          "dl_clsf": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM5475_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SSQM5765_B2C",
+      "label": "SSQM5765 소수점 매매 내역 조회",
+      "method": "POST",
+      "endpoint": "/api/v1/ssqm5765",
+      "transactionCode": "SSQM5765",
+      "description": "B2C XML 전문: 소수점 매매 내역 조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "ordr_clsf": "1",
+          "trd_clsf": "1",
+          "trd_strt_dt": "20250101",
+          "trd_end_dt": "20251231",
+          "is_cd": "005930",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SSQM5765_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 9,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPAM2508_B2C",
+      "label": "SPAM2508 공휴일관리",
+      "method": "POST",
+      "endpoint": "/api/v1/spam2508",
+      "transactionCode": "SPAM2508",
+      "description": "B2C XML 전문: 공휴일관리",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "hndl_clsf": "1",
+          "iso_cd": "",
+          "dr_dt": "20250617",
+          "end_dt": "20251231",
+          "nxt_bsnss_dy": "",
+          "nxt_stlmt_dt": "20250617",
+          "hldy_ccd": "1",
+          "frgn_stk_ordr_psbl_f": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPAM2508_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 8,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SIAM4983_B2C",
+      "label": "SIAM4983 종목관리",
+      "method": "POST",
+      "endpoint": "/api/v1/siam4983",
+      "transactionCode": "SIAM4983",
+      "description": "B2C XML 전문: 종목관리",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "hndl_clsf": "1",
+          "stnd_is_cd": "005930",
+          "iso_cd": "",
+          "shrt_is_cd": "005930",
+          "symbl_is_cd": "005930",
+          "slf_is_cd": "005930",
+          "hngl_is_nm": "",
+          "eng_is_nm": "",
+          "fcrncy_scrt_knd_cd": "",
+          "dl_mkt_ccd": "1",
+          "frex_cd": "",
+          "mrkt_ccd": "1",
+          "sedol_cd": "",
+          "isng_ntn_cd": "",
+          "crncy_cd": "",
+          "stmt_crncy_cd": "",
+          "lnd_cd": "",
+          "scrt_grp_id": "",
+          "s_unt_q": "1",
+          "b_unt_q": "1",
+          "frgn_stk_ulmt_prc_p6": "",
+          "frgn_stk_llmt_prc_p6": "",
+          "frgn_stk_bdy_cls_prc_p6": "",
+          "fcrncy_scrt_pr_vl_prc": "",
+          "lstng_dt": "20250617",
+          "lstng_stk_q": "1",
+          "trd_rstn_ccd": "1",
+          "trd_rstn_strt_dt": "20250101",
+          "trd_rstn_end_dt": "20251231",
+          "io_rstn_ccd": "1",
+          "io_rstn_strt_dt": "20250101",
+          "io_rstn_end_dt": "20251231",
+          "s_askprc_unt_p6": "",
+          "b_askprc_unt_p6": "",
+          "askprc_unt_typ": "",
+          "scrt_kp_ccd": "1",
+          "prfstk_f": "",
+          "dl_crncy_cd": "",
+          "symbl_blmgrg_cd": "",
+          "symbl_rtrs_cd": "",
+          "csh_mgn_r": "",
+          "dcml_trd_f": "",
+          "frsd_instk_cnvr_psbl_f": "",
+          "frgn_stk_sprc_p6": "",
+          "trd_rstn_hndl_rsn": "",
+          "ptp_is_f": "",
+          "ptp_txtn_f": "",
+          "qn_isng_f": "",
+          "rgt_trd_rstn_cd": "",
+          "rgt_trd_rstn_rsn": "",
+          "rgt_io_stk_rstn_cd": "",
+          "rgt_io_stk_rstn_rsn": "",
+          "qn_pu_dt": "20250617",
+          "qn_pu_end_dt": "20251231",
+          "rgt_trd_rstn_strt_dt": "20250101",
+          "rgt_trd_rstn_end_dt": "20251231",
+          "frgn_stk_krx_cd": "",
+          "frgn_etf_dvd_cd": "",
+          "frsk_onl_trd_rstn_ccd": "1",
+          "sngl_is_etp_f": "",
+          "lvrg_vl_p7": "",
+          "fcr_scrt_knd_dtls_cd": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SIAM4983_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 121,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_GSS10030_B2C",
+      "label": "GSS10030 현재가",
+      "method": "POST",
+      "endpoint": "/api/v1/gss10030",
+      "transactionCode": "GSS10030",
+      "description": "B2C XML 전문: 현재가",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "krx_cd": "NAS",
+          "is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_GSS10030_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 2,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_GSS10040_B2C",
+      "label": "GSS10040 호가",
+      "method": "POST",
+      "endpoint": "/api/v1/gss10040",
+      "transactionCode": "GSS10040",
+      "description": "B2C XML 전문: 호가",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "krx_cd": "NAS",
+          "is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_GSS10040_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 2,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_GSA10020_B2C",
+      "label": "GSA10020 시간대별체결",
+      "method": "POST",
+      "endpoint": "/api/v1/gsa10020",
+      "transactionCode": "GSA10020",
+      "description": "B2C XML 전문: 시간대별체결",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "krx_cd": "NAS",
+          "is_cd": "005930",
+          "rcrd_c": "10"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_GSA10020_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 3,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_GSS10030_B2C__2",
+      "label": "GSS10030 현재가",
+      "method": "POST",
+      "endpoint": "/api/v1/gss10030",
+      "transactionCode": "GSS10030",
+      "description": "B2C XML 전문: 현재가",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "krx_cd": "NAS",
+          "is_cd": "005930"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_GSS10030_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 2,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_GSC10060_B2C",
+      "label": "GSC10060 차트",
+      "method": "POST",
+      "endpoint": "/api/v1/gsc10060",
+      "transactionCode": "GSC10060",
+      "description": "B2C XML 전문: 차트",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "krx_cd": "NAS",
+          "is_cd": "005930",
+          "chrt_clsf": "1",
+          "bndl": "",
+          "mdfy_stk_prc_use_f": "",
+          "rcrd_c": "10",
+          "srch_strt_dy": "",
+          "clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_GSC10060_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 8,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SKQM2106_B2C",
+      "label": "SKQM2106 주문가능금액조회(원마켓플러스)",
+      "method": "POST",
+      "endpoint": "/api/v1/skqm2106",
+      "transactionCode": "SKQM2106",
+      "description": "B2C XML 전문: 주문가능금액조회(원마켓플러스)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "crncy_cd": "",
+          "stnd_is_cd": "005930",
+          "iso_cd": "",
+          "frgn_ordr_prc_p4": "",
+          "ordr_prc": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SKQM2106_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 7,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SKQM3350_B2C",
+      "label": "SKQM3350 주문가능금액현황조회(원마켓플러스)",
+      "method": "POST",
+      "endpoint": "/api/v1/skqm3350",
+      "transactionCode": "SKQM3350",
+      "description": "B2C XML 전문: 주문가능금액현황조회(원마켓플러스)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SKQM3350_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 3,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SKQO3390_B2C",
+      "label": "SKQO3390 매매정산현황상세(원마켓플러스)",
+      "method": "POST",
+      "endpoint": "/api/v1/skqo3390",
+      "transactionCode": "SKQO3390",
+      "description": "B2C XML 전문: 매매정산현황상세(원마켓플러스)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SKQO3390_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 3,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM2205_B2C",
+      "label": "SPQM2205 매매가 정산 현황",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm2205",
+      "transactionCode": "SPQM2205",
+      "description": "B2C XML 전문: 매매가 정산 현황",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "strt_ordr_dt": "20250617",
+          "end_ordr_dt": "20250617",
+          "frgn_krx_ccd": "1",
+          "trd_clsf": "1",
+          "stnd_is_cd": "005930",
+          "iso_cd": "",
+          "s_stmt_amt_sum_p4": "",
+          "b_stmt_amt_sum_p4": "",
+          "tl_s_ccls_q_p6": "",
+          "tl_b_ccls_q_p6": "",
+          "fcrncy_fee_p4": "",
+          "krw_unty_mgn_rqst_f": "",
+          "dl_clsf": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM2205_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 17,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM2206_B2C",
+      "label": "SPQM2206 당일매매손익",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm2206",
+      "transactionCode": "SPQM2206",
+      "description": "B2C XML 전문: 당일매매손익",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "ordr_dt": "20250617",
+          "frgn_krx_ccd": "1",
+          "stnd_is_cd": "005930",
+          "iso_cd": "",
+          "std_crncy_f": "",
+          "exch_r_aplc_f": "",
+          "fcrncy_pl_amt_p2": "",
+          "fcrncy_pl_amt_sum_p2": "",
+          "nxt_svcst_sum_p4": "",
+          "b_svcst1_p2": "",
+          "s_svcst1_p2": "",
+          "fcrncy_trd_pl_sum_p2": "",
+          "tl_krw_val_pl_amt": "",
+          "frgn_stk_mgn_ccd": "1",
+          "dl_clsf": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM2206_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 19,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM2207_B2C",
+      "label": "SPQM2207 기간별매매손익",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm2207",
+      "transactionCode": "SPQM2207",
+      "description": "B2C XML 전문: 기간별매매손익",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "strt_ordr_dt": "20250617",
+          "end_ordr_dt": "20250617",
+          "frgn_krx_ccd": "1",
+          "stnd_is_cd": "005930",
+          "iso_cd": "",
+          "std_crncy_f": "",
+          "exch_r_aplc_f": "",
+          "frgn_stk_mgn_ccd": "1",
+          "dl_clsf": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM2207_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 13,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM5472_B2C",
+      "label": "SPQM5472 소수점 보유잔고내역조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm5472",
+      "transactionCode": "SPQM5472",
+      "description": "B2C XML 전문: 소수점 보유잔고내역조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "frgn_krx_ccd": "1",
+          "std_dt": "20250617",
+          "krw_fcrncy_ccd": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM5472_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 8,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM2220_B2C",
+      "label": "SPQM2220 계좌예수금변동현황조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm2220",
+      "transactionCode": "SPQM2220",
+      "description": "B2C XML 전문: 계좌예수금변동현황조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "exch_r_aplc_f": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM2220_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 4,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM2226_B2C",
+      "label": "SPQM2226 잔고평가조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm2226",
+      "transactionCode": "SPQM2226",
+      "description": "B2C XML 전문: 잔고평가조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "std_crncy_f": "",
+          "exch_r_aplc_f": "",
+          "fee_clsf": "1",
+          "srt_clsf": "1",
+          "rsrv_ordr_f": "",
+          "tl_asts_exch_val_amt": "",
+          "tl_tfnd_exch_val_amt": "",
+          "tl_scrts_exch_val_amt": "",
+          "tl_krw_val_amt": "",
+          "tl_krw_val_pl_amt": "",
+          "cn_f": "",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM2226_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 15,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM3390_B2C",
+      "label": "SPQM3390 원마켓 계좌증거금조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm3390",
+      "transactionCode": "SPQM3390",
+      "description": "B2C XML 전문: 원마켓 계좌증거금조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM3390_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 3,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQO2226_B2C",
+      "label": "SPQO2226 계좌잔고 평가조회(통화별예수금)",
+      "method": "POST",
+      "endpoint": "/api/v1/spqo2226",
+      "transactionCode": "SPQO2226",
+      "description": "B2C XML 전문: 계좌잔고 평가조회(통화별예수금)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "std_crncy_f": "",
+          "exch_r_aplc_f": "",
+          "tl_asts_exch_val_amt": "",
+          "tl_tfnd_exch_val_amt": "",
+          "tl_scrts_exch_val_amt": "",
+          "tl_krw_val_amt": "",
+          "tl_krw_val_pl_amt": "",
+          "cn_f": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQO2226_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 11,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SRQM3051_B2C",
+      "label": "SRQM3051 계좌권리발생내역",
+      "method": "POST",
+      "endpoint": "/api/v1/srqm3051",
+      "transactionCode": "SRQM3051",
+      "description": "B2C XML 전문: 계좌권리발생내역",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "strt_dt": "20250101",
+          "pwd": "{{pwd}}",
+          "rgt_clsf": "1",
+          "is_cd": "005930",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SRQM3051_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 7,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM2106_B2C",
+      "label": "SPQM2106 주문가능금액조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm2106",
+      "transactionCode": "SPQM2106",
+      "description": "B2C XML 전문: 주문가능금액조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "crncy_cd": "",
+          "stnd_is_cd": "005930",
+          "iso_cd": "",
+          "frgn_ordr_prc_p4": "",
+          "aplc_exch_r": "",
+          "ordr_prc": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM2106_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 8,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SKAM2101_B2C",
+      "label": "SKAM2101 매도/매수주문",
+      "method": "POST",
+      "endpoint": "/api/v1/skam2101",
+      "transactionCode": "SKAM2101",
+      "description": "B2C XML 전문: 매도/매수주문",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "frgn_krx_ccd": "1",
+          "trd_dl_ccd": "1",
+          "is_cd": "005930",
+          "frgn_ordr_typ_cd": "",
+          "frgn_ordr_q": "1",
+          "frgn_ordr_prc_p4": "",
+          "spclz_ordr_ccd": "1",
+          "set_ordr_no": "",
+          "bskt_ordr_no": "",
+          "cutn_mtr_cnfr_f": "",
+          "aplc_exch_r": "",
+          "start_tm": "090000",
+          "end_tm": "090000",
+          "frgn_stp_prc_p4": "",
+          "frgn_brkr_ccd": "1",
+          "ordr_mntnc_tm_ccd": "1",
+          "cpn_cd": "",
+          "crdt_typ_cd": "",
+          "ln_dt": "20250617",
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SKAM2101_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 23,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SKAM2102_B2C",
+      "label": "SKAM2102 정정/취소주문",
+      "method": "POST",
+      "endpoint": "/api/v1/skam2102",
+      "transactionCode": "SKAM2102",
+      "description": "B2C XML 전문: 정정/취소주문",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "frgn_krx_ccd": "1",
+          "crct_cncl_clsf": "1",
+          "is_cd": "005930",
+          "orgn_ordr_no": "",
+          "frgn_ordr_prc_p4": "",
+          "set_ordr_no": "",
+          "bskt_ordr_no": "",
+          "cutn_mtr_cnfr_f": "",
+          "aplc_exch_r": "",
+          "start_tm": "090000",
+          "end_tm": "090000",
+          "frgn_ordr_typ_cd": "",
+          "spclz_ordr_ccd": "1",
+          "frgn_stp_prc_p4": "",
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SKAM2102_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 18,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQN5472_B2C",
+      "label": "SPQN5472 소수점 주문가능금액조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqn5472",
+      "transactionCode": "SPQN5472",
+      "description": "B2C XML 전문: 소수점 주문가능금액조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "is_cd": "005930",
+          "frgn_krx_ccd": "1",
+          "ordr_amt": "",
+          "dcml_ordr_q_p6": "",
+          "amt_q_clsf": "1",
+          "crncy_ccd": "1",
+          "frgn_ordr_typ_cd": "",
+          "frgn_ordr_prc_p4": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQN5472_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SKAM2201_B2C",
+      "label": "SKAM2201 소수점매도/매수주문",
+      "method": "POST",
+      "endpoint": "/api/v1/skam2201",
+      "transactionCode": "SKAM2201",
+      "description": "B2C XML 전문: 소수점매도/매수주문",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "frgn_krx_ccd": "1",
+          "trd_dl_ccd": "1",
+          "is_cd": "005930",
+          "amt_q_clsf": "1",
+          "tv_s_est_f": "",
+          "frgn_ordr_typ_cd": "",
+          "crncy_ccd": "1",
+          "ordr_amt": "",
+          "dcml_ordr_q_p6": "",
+          "frgn_ordr_prc_p4": "",
+          "spclz_ordr_ccd": "1",
+          "cpn_cd": "",
+          "cutn_mtr_cnfr_f": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SKAM2201_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 16,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SKAM2202_B2C",
+      "label": "SKAM2202 소수점정정/취소주문",
+      "method": "POST",
+      "endpoint": "/api/v1/skam2202",
+      "transactionCode": "SKAM2202",
+      "description": "B2C XML 전문: 소수점정정/취소주문",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "frgn_krx_ccd": "1",
+          "crct_cncl_clsf": "1",
+          "orgn_ordr_no": "",
+          "spclz_ordr_ccd": "1",
+          "at_cncl_clsf": "1"
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SKAM2202_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 8,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPAO2104_B2C",
+      "label": "SPAO2104 주식예약주문미국",
+      "method": "POST",
+      "endpoint": "/api/v1/spao2104",
+      "transactionCode": "SPAO2104",
+      "description": "B2C XML 전문: 주식예약주문미국",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "trd_dl_ccd": "1",
+          "ordr_typ_cd": "",
+          "ordr_q": "1",
+          "frgn_ordr_prc_p4": "",
+          "strt_tm": "090000",
+          "end_tm": "090000",
+          "ovtm_ordr_ccd": "1",
+          "bskt_ordr_no": "",
+          "frgn_stp_prc_p4": "",
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPAO2104_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 14,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPAO2106_B2C",
+      "label": "SPAO2106 예약주문취소미국",
+      "method": "POST",
+      "endpoint": "/api/v1/spao2106",
+      "transactionCode": "SPAO2106",
+      "description": "B2C XML 전문: 예약주문취소미국",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "is_cd": "005930",
+          "trd_clsf": "1",
+          "ordr_typ": "",
+          "ordr_q": "1",
+          "frgn_ordr_prc_p4": "",
+          "cncl_ordr_no": "",
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPAO2106_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM2204_B2C",
+      "label": "SPQM2204 체결현황",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm2204",
+      "transactionCode": "SPQM2204",
+      "description": "B2C XML 전문: 체결현황",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "strt_ordr_dt": "20250617",
+          "end_ordr_dt": "20250617",
+          "ccls_clsf": "1",
+          "frgn_krx_ccd": "1",
+          "trd_clsf": "1",
+          "stnd_is_cd": "005930",
+          "iso_cd": "",
+          "krw_unty_mgn_rqst_f": "",
+          "dl_clsf": "1",
+          "drid_f": "",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM2204_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 14,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM1818_B2C",
+      "label": "SPQM1818 주문번호별주문내역",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm1818",
+      "transactionCode": "SPQM1818",
+      "description": "B2C XML 전문: 주문번호별주문내역",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "strt_ordr_dt": "20250617",
+          "end_ordr_dt": "20250617",
+          "ccls_clsf": "1",
+          "frgn_krx_ccd": "1",
+          "trd_clsf": "1",
+          "stnd_is_cd": "005930",
+          "iso_cd": "",
+          "krw_unty_mgn_rqst_f": "",
+          "start_tm": "090000",
+          "end_tm": "090000",
+          "dl_clsf": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM1818_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 14,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM2103_B2C",
+      "label": "SPQM2103 주문체결조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm2103",
+      "transactionCode": "SPQM2103",
+      "description": "B2C XML 전문: 주문체결조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "ccls_clsf": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "clsf": "1",
+          "ordr_dt": "20250617",
+          "is_cd": "005930",
+          "krw_unty_mgn_rqst_f": "",
+          "dl_clsf": "1",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM2103_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQM5473_B2C",
+      "label": "SPQM5473 소수점 주문접수내역조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqm5473",
+      "transactionCode": "SPQM5473",
+      "description": "B2C XML 전문: 소수점 주문접수내역조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "dprt_clsf": "1",
+          "brn_no": "",
+          "inq_clsf": "1",
+          "sum_clsf": "1",
+          "ordr_st": "",
+          "trd_strt_dt": "20250101",
+          "trd_end_dt": "20251231",
+          "trd_clsf": "1",
+          "krw_fcrncy_ccd": "1",
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "is_cd": "005930",
+          "frgn_krx_ccd": "1",
+          "mngr_eno": "",
+          "nxt_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQM5473_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 15,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQN5473_B2C",
+      "label": "SPQN5473 소수점 주문접수내역조회(주문용)",
+      "method": "POST",
+      "endpoint": "/api/v1/spqn5473",
+      "transactionCode": "SPQN5473",
+      "description": "B2C XML 전문: 소수점 주문접수내역조회(주문용)",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "trd_clsf": "1",
+          "is_cd": "005930",
+          "frgn_krx_ccd": "1",
+          "ordr_st": "",
+          "nxt_key": "",
+          "spclz_ordr_ccd": "1",
+          "filler": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQN5473_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 10,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    },
+    {
+      "id": "Tkb_SPQO2105_B2C",
+      "label": "SPQO2105 예약주문조회",
+      "method": "POST",
+      "endpoint": "/api/v1/spqo2105",
+      "transactionCode": "SPQO2105",
+      "description": "B2C XML 전문: 예약주문조회",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "dataHeader": {
+          "udId": "UDID",
+          "subChannel": "subChannel",
+          "deviceModel": "Android",
+          "deviceOs": "Android",
+          "carrier": "KT",
+          "connectionType": "..",
+          "appName": "..",
+          "appVersion": "..",
+          "scrNo": "0000"
+        },
+        "dataBody": {
+          "gnl_ac_no": "{{gnlAcNo}}",
+          "gds_no": "{{gdsNo}}",
+          "pwd": "{{pwd}}",
+          "rsrv_dt": "20250617",
+          "stnd_is_cd": "005930",
+          "trd_clsf": "1",
+          "krw_unty_mgn_rqst_f": "",
+          "bskt_ordr_no": "",
+          "cn_key": ""
+        }
+      },
+      "query": {},
+      "fileName": "Tkb_SPQO2105_B2C.xml",
+      "source": "kb-b2c-xml",
+      "layout": "xml",
+      "inputFieldCount": 9,
+      "menu": "",
+      "sourceEncoding": "utf-8-sig"
+    }
+  ]
+}
