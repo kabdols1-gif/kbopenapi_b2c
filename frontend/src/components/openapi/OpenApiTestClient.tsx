@@ -827,8 +827,45 @@ function asRecord(value: unknown): Record<string, unknown> {
   return value && typeof value === "object" && !Array.isArray(value) ? (value as Record<string, unknown>) : {};
 }
 
+const OMITTED_REQUEST_BODY_KEYS = new Set(["gnl_ac_no", "gds_no", "pwd"]);
+
+function stripOmittedRequestBodyKeys(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map((item) => stripOmittedRequestBodyKeys(item));
+  }
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  return Object.entries(value as Record<string, unknown>).reduce<Record<string, unknown>>((nextValue, [key, childValue]) => {
+    if (OMITTED_REQUEST_BODY_KEYS.has(key.toLowerCase())) {
+      return nextValue;
+    }
+    nextValue[key] = stripOmittedRequestBodyKeys(childValue);
+    return nextValue;
+  }, {});
+}
+
 function toPrettyBody(value: unknown) {
   return JSON.stringify(value ?? {}, null, 2);
+}
+
+function toPrettyRequestBody(value: unknown) {
+  return toPrettyBody(stripOmittedRequestBodyKeys(value ?? {}));
+}
+
+function prettyRequestBodyText(value: string) {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+  try {
+    return toPrettyRequestBody(JSON.parse(trimmed));
+  } catch {
+    return value;
+  }
+}
+
+function hasOmittedRequestBodyKeyText(value: string) {
+  return /"(gnl_ac_no|gds_no|pwd)"\s*:/.test(value);
 }
 
 function tokenDataHeader(device: Record<string, unknown>, hsKey?: string) {
@@ -847,7 +884,7 @@ function tokenDataHeader(device: Record<string, unknown>, hsKey?: string) {
 }
 
 function normalizeDataEnvelope(value: unknown) {
-  const record = asRecord(value);
+  const record = asRecord(stripOmittedRequestBodyKeys(value));
   if ("dataHeader" in record || "dataBody" in record) {
     return {
       dataHeader: {
@@ -865,7 +902,7 @@ function normalizeDataEnvelope(value: unknown) {
 }
 
 function toPrettyEnvelopeBody(value: unknown) {
-  return toPrettyBody(normalizeDataEnvelope(value));
+  return toPrettyRequestBody(normalizeDataEnvelope(value));
 }
 function asTokenRequestDefault(value: unknown): OpenApiTokenRequestDefault {
   if (!value || typeof value !== "object" || Array.isArray(value)) return {};
@@ -885,7 +922,7 @@ function tokenDraftBodyText(request: OpenApiTokenRequestDefault, fallback: unkno
 }
 
 function tokenDraftPlainBodyText(request: OpenApiTokenRequestDefault, fallback: unknown): string {
-  return toPrettyBody(request.body !== undefined ? request.body : fallback);
+  return toPrettyRequestBody(request.body !== undefined ? request.body : fallback);
 }
 
 function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApiTokenMode[]): TokenRequestDraft[] {
@@ -1534,12 +1571,28 @@ export default function OpenApiTestClient({
   }, [selectedTokenSetupStep, tokenSetupSteps]);
 
   useEffect(() => {
+    if (!isSampleEditorOpen || !hasOmittedRequestBodyKeyText(editorBodyText)) return;
+    const nextBodyText = prettyRequestBodyText(editorBodyText);
+    if (nextBodyText !== editorBodyText) {
+      setEditorBodyText(nextBodyText);
+    }
+  }, [editorBodyText, isSampleEditorOpen]);
+
+  useEffect(() => {
+    if (!isResultHistoryOpen || !hasOmittedRequestBodyKeyText(historyReplayBodyText)) return;
+    const nextBodyText = prettyRequestBodyText(historyReplayBodyText);
+    if (nextBodyText !== historyReplayBodyText) {
+      setHistoryReplayBodyText(nextBodyText);
+    }
+  }, [historyReplayBodyText, isResultHistoryOpen]);
+
+  useEffect(() => {
     if (!selectedHistoryResult) return;
     setHistoryReplayMethod(selectedHistoryResult.method);
     setHistoryReplayBaseUrl(selectedHistoryResult.baseUrl || defaultBaseUrl);
     setHistoryReplayPath(selectedHistoryResult.path || selectedHistoryResult.requestUrl);
     setHistoryReplayHeadersText(prettyJson(selectedHistoryResult.requestHeaders || "{}"));
-    setHistoryReplayBodyText(prettyJson(selectedHistoryResult.requestBody || "{}"));
+    setHistoryReplayBodyText(prettyRequestBodyText(selectedHistoryResult.requestBody || "{}"));
   }, [defaultBaseUrl, selectedHistoryResult]);
 
   useEffect(() => {
@@ -1750,7 +1803,7 @@ export default function OpenApiTestClient({
           setIsRunning(false);
           return;
         }
-        parsedBody = parsed.parsed;
+        parsedBody = stripOmittedRequestBodyKeys(parsed.parsed);
       }
 
       const headerSource = headersParse.parsed ?? {};
@@ -2272,7 +2325,7 @@ export default function OpenApiTestClient({
       const targetPath = sample.path;
       const targetHeadersText = prettyJson(JSON.stringify(sample.headers ?? {}, null, 2));
       const targetQueryText = prettyJson(JSON.stringify(sample.query ?? {}, null, 2));
-      const targetBodyText = prettyJson(JSON.stringify(normalizeDataEnvelope(sample.body ?? {}), null, 2));
+      const targetBodyText = toPrettyEnvelopeBody(sample.body ?? {});
 
       setEditorMethod(targetMethod);
       setEditorBaseUrl(targetBaseUrl);

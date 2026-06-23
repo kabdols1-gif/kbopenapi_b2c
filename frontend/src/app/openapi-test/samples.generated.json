@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2026-06-18T18:12:17+09:00",
-  "sourceXmlDirectory": "C:\\Users\\kb1\\Desktop\\workspace\\OpenAPI\\KB_B2C",
+  "generatedAt": "2026-06-23T14:15:33+09:00",
+  "sourceWorkbook": "",
+  "sourceXmlDirectory": "C:\\Users\\kb1\\Desktop\\workspace\\kbopenapi_b2c\\KB_B2C",
   "b2c": [
     {
       "id": "Tkb_SIQM4900_B2C",
@@ -1205,11 +1206,7 @@
           "appVersion": "..",
           "scrNo": "0000"
         },
-        "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}"
-        }
+        "dataBody": {}
       },
       "query": {},
       "fileName": "Tkb_SPQN3390_B2C.xml",
@@ -1242,10 +1239,7 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "filler": "",
-          "pwd": "{{pwd}}",
           "is_no": ""
         }
       },
@@ -1282,8 +1276,6 @@
         "dataBody": {
           "inq_clsf": "1",
           "rnmcno": "",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "tl_val_amt": "",
           "tl_tfnd_amt": "",
           "tl_o_amt_psbl_amt": "",
@@ -1324,9 +1316,6 @@
         },
         "dataBody": {
           "inq_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "spclz_ordr_ccd": "1",
           "trd_clsf": "1",
           "act_cd": "",
@@ -1368,9 +1357,6 @@
           "inq_clsf": "1",
           "rnmcno": "",
           "emp_no": "",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "inq_std_clsf": "1",
           "sum_cd": "",
           "q_typ": "",
@@ -1412,10 +1398,7 @@
         },
         "dataBody": {
           "inq_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "filler": "",
-          "pwd": "{{pwd}}",
           "is_no": "",
           "mkt_tm_ccd": "1",
           "spclz_ordr_ccd": "1",
@@ -1456,9 +1439,6 @@
         "dataBody": {
           "inq_clsf": "1",
           "scrts_ccd": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "bnd_val_wy_cd": "",
           "excg_mktpr_ccd": "1"
         }
@@ -1494,9 +1474,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "excg_mktpr_ccd": "1"
         }
       },
@@ -1531,11 +1508,8 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "is_cd": "005930",
           "sum_clsf": "1",
-          "pwd": "{{pwd}}",
           "spclz_ordr_ccd": "1",
           "nxt2_dy_tfnd_xcl_f": "",
           "excg_mktpr_ccd": "1"
@@ -1572,9 +1546,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "inq_clsf": "1",
           "inq_clsf1": "1",
           "inq_clsf2": "1",
@@ -1627,9 +1598,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "inq_clsf": "1",
           "inq_clsf1": "1",
           "inq_clsf2": "1",
@@ -1681,11 +1649,7 @@
           "appVersion": "..",
           "scrNo": "0000"
         },
-        "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}"
-        }
+        "dataBody": {}
       },
       "query": {},
       "fileName": "Tkb_SWQM2302_B2C.xml",
@@ -1719,8 +1683,6 @@
         },
         "dataBody": {
           "gnrl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "inq_dt": "20250617",
           "dl_sq": "",
           "nxt_key": ""
@@ -1757,10 +1719,7 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "ccd": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}"
+          "ccd": "1"
         }
       },
       "query": {},
@@ -1794,8 +1753,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "rprst_cs_no": "",
           "st_clsf": "1"
         }
@@ -1831,9 +1788,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "trd_dt": "20250617",
           "clsf": "1",
           "trd_clsf": "1",
@@ -1875,9 +1829,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_no": "",
           "ordr_dt_from": "",
           "ordr_dt_to": "",
@@ -1919,13 +1870,10 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "is_cd": "005930",
           "inq_strt_dt": "20250101",
           "inq_end_dt": "20251231",
           "md_clsf": "1",
-          "ac_pwd": "{{pwd}}",
           "nxt_key": ""
         }
       },
@@ -1960,12 +1908,9 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "inq_strt_dt": "20250101",
           "inq_end_dt": "20251231",
           "md_clsf": "1",
-          "ac_pwd": "{{pwd}}",
           "nxt_key": ""
         }
       },
@@ -2001,9 +1946,6 @@
         },
         "dataBody": {
           "jb_ccd": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "std_dt": "20250617",
           "hd_pin_no": "",
@@ -2041,10 +1983,7 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "filler": "",
-          "pwd": "{{pwd}}",
           "is_no": "",
           "bnd_mktio_ccd": "1"
         }
@@ -2083,10 +2022,7 @@
           "mkt_tm_clsf": "1",
           "ordr_jb_clsf": "1",
           "s_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "filler": "",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "ordr_q": "1",
           "ordr_uprc": "",
@@ -2095,13 +2031,10 @@
           "ln_dt": "20250617",
           "crct_clsf": "1",
           "orgn_ordr_no": "",
-          "hts_pwd": "{{pwd}}",
           "gtc_ccd": "1",
           "ordr_mng_no": "",
           "spclz_ordr_ccd": "1",
           "acct_cd": "",
-          "gnl_ac_no1": "",
-          "gds_no1": "",
           "sor_ordr_ccd": "1",
           "stpd_prc": "",
           "filler1": ""
@@ -2141,10 +2074,7 @@
           "mkt_tm_clsf": "1",
           "ordr_jb_clsf": "1",
           "s_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "filler": "",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "ordr_q": "1",
           "ordr_uprc": "",
@@ -2153,13 +2083,10 @@
           "ln_dt": "20250617",
           "crct_clsf": "1",
           "orgn_ordr_no": "",
-          "hts_pwd": "{{pwd}}",
           "gtc_ccd": "1",
           "ordr_mng_no": "",
           "spclz_ordr_ccd": "1",
           "acct_cd": "",
-          "gnl_ac_no1": "",
-          "gds_no1": "",
           "sor_ordr_ccd": "1",
           "stpd_prc": "",
           "filler1": ""
@@ -2199,10 +2126,7 @@
           "mkt_tm_clsf": "1",
           "ordr_jb_clsf": "1",
           "s_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "filler": "",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "ordr_q": "1",
           "ordr_uprc": "",
@@ -2211,13 +2135,10 @@
           "ln_dt": "20250617",
           "crct_clsf": "1",
           "orgn_ordr_no": "",
-          "hts_pwd": "{{pwd}}",
           "gtc_ccd": "1",
           "ordr_mng_no": "",
           "spclz_ordr_ccd": "1",
           "acct_cd": "",
-          "gnl_ac_no1": "",
-          "gds_no1": "",
           "sor_ordr_ccd": "1",
           "stpd_prc": "",
           "filler1": ""
@@ -2257,10 +2178,7 @@
           "mkt_tm_clsf": "1",
           "ordr_jb_clsf": "1",
           "s_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "filler": "",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "ordr_q": "1",
           "ordr_uprc": "",
@@ -2269,13 +2187,10 @@
           "ln_dt": "20250617",
           "crct_clsf": "1",
           "orgn_ordr_no": "",
-          "hts_pwd": "{{pwd}}",
           "gtc_ccd": "1",
           "ordr_mng_no": "",
           "spclz_ordr_ccd": "1",
           "acct_cd": "",
-          "gnl_ac_no1": "",
-          "gds_no1": "",
           "sor_ordr_ccd": "1",
           "stpd_prc": "",
           "filler1": ""
@@ -2312,9 +2227,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "ordr_amt": ""
         }
@@ -2350,9 +2262,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "ordr_q_p6": "",
           "ordr_amt": "",
@@ -2403,9 +2312,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "ordr_q_p6": "",
           "ordr_amt": "",
@@ -2456,9 +2362,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "ordr_q_p6": "",
           "ordr_amt": "",
@@ -2513,9 +2416,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "ordr_dt": "20250617",
           "nxt_key": "",
           "trd_clsf": "1",
@@ -2560,9 +2460,6 @@
           "inq_ccd": "1",
           "cn_clsf": "1",
           "is_typ_ccd": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "ordr_no": "",
           "ordr_dt": "20250617",
           "s_ccls_amt": "",
@@ -2604,14 +2501,11 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "is_cd": "005930",
           "ccls_clsf": "1",
           "trd_clsf": "1",
           "srt_clsf": "1",
           "ordr_dt": "20250617",
-          "ac_pwd": "{{pwd}}",
           "ordr_no": "",
           "spclz_ordr_ccd": "1"
         }
@@ -2648,9 +2542,6 @@
         },
         "dataBody": {
           "hndl_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "nxt_key": "",
           "chc_clsf": "1",
           "inq_clsf": "1",
@@ -2692,9 +2583,6 @@
         "dataBody": {
           "inq_clsf": "1",
           "ccls_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "ordr_dt": "20250617",
           "is_cd": "005930",
           "ordr_no": "",
@@ -2741,9 +2629,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "inq_strt_dt": "20250101",
           "inq_end_dt": "20251231",
           "trd_clsf": "1",
@@ -2784,9 +2669,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "ordr_clsf": "1",
           "trd_clsf": "1",
           "trd_strt_dt": "20250101",
@@ -3144,8 +3026,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "crncy_cd": "",
           "stnd_is_cd": "005930",
           "iso_cd": "",
@@ -3183,11 +3063,7 @@
           "appVersion": "..",
           "scrNo": "0000"
         },
-        "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}"
-        }
+        "dataBody": {}
       },
       "query": {},
       "fileName": "Tkb_SKQM3350_B2C.xml",
@@ -3219,11 +3095,7 @@
           "appVersion": "..",
           "scrNo": "0000"
         },
-        "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}"
-        }
+        "dataBody": {}
       },
       "query": {},
       "fileName": "Tkb_SKQO3390_B2C.xml",
@@ -3256,9 +3128,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "strt_ordr_dt": "20250617",
           "end_ordr_dt": "20250617",
           "frgn_krx_ccd": "1",
@@ -3306,9 +3175,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "ordr_dt": "20250617",
           "frgn_krx_ccd": "1",
           "stnd_is_cd": "005930",
@@ -3358,9 +3224,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "strt_ordr_dt": "20250617",
           "end_ordr_dt": "20250617",
           "frgn_krx_ccd": "1",
@@ -3404,9 +3267,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "frgn_krx_ccd": "1",
           "std_dt": "20250617",
@@ -3445,9 +3305,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "exch_r_aplc_f": ""
         }
       },
@@ -3482,9 +3339,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "std_crncy_f": "",
           "exch_r_aplc_f": "",
           "fee_clsf": "1",
@@ -3529,11 +3383,7 @@
           "appVersion": "..",
           "scrNo": "0000"
         },
-        "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}"
-        }
+        "dataBody": {}
       },
       "query": {},
       "fileName": "Tkb_SPQM3390_B2C.xml",
@@ -3566,9 +3416,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "std_crncy_f": "",
           "exch_r_aplc_f": "",
           "tl_asts_exch_val_amt": "",
@@ -3610,10 +3457,7 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "strt_dt": "20250101",
-          "pwd": "{{pwd}}",
           "rgt_clsf": "1",
           "is_cd": "005930",
           "nxt_key": ""
@@ -3650,8 +3494,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "crncy_cd": "",
           "stnd_is_cd": "005930",
           "iso_cd": "",
@@ -3691,9 +3533,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "frgn_krx_ccd": "1",
           "trd_dl_ccd": "1",
           "is_cd": "005930",
@@ -3747,9 +3586,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "frgn_krx_ccd": "1",
           "crct_cncl_clsf": "1",
           "is_cd": "005930",
@@ -3798,8 +3634,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "is_cd": "005930",
           "frgn_krx_ccd": "1",
           "ordr_amt": "",
@@ -3841,9 +3675,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "frgn_krx_ccd": "1",
           "trd_dl_ccd": "1",
           "is_cd": "005930",
@@ -3890,9 +3721,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "frgn_krx_ccd": "1",
           "crct_cncl_clsf": "1",
           "orgn_ordr_no": "",
@@ -3931,9 +3759,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "trd_dl_ccd": "1",
           "ordr_typ_cd": "",
@@ -3978,9 +3803,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "is_cd": "005930",
           "trd_clsf": "1",
           "ordr_typ": "",
@@ -4021,9 +3843,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "strt_ordr_dt": "20250617",
           "end_ordr_dt": "20250617",
           "ccls_clsf": "1",
@@ -4068,8 +3887,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "strt_ordr_dt": "20250617",
           "end_ordr_dt": "20250617",
           "ccls_clsf": "1",
@@ -4116,9 +3933,6 @@
         },
         "dataBody": {
           "ccls_clsf": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "clsf": "1",
           "ordr_dt": "20250617",
           "is_cd": "005930",
@@ -4167,8 +3981,6 @@
           "trd_end_dt": "20251231",
           "trd_clsf": "1",
           "krw_fcrncy_ccd": "1",
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
           "is_cd": "005930",
           "frgn_krx_ccd": "1",
           "mngr_eno": "",
@@ -4206,9 +4018,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "trd_clsf": "1",
           "is_cd": "005930",
           "frgn_krx_ccd": "1",
@@ -4249,9 +4058,6 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "gnl_ac_no": "{{gnlAcNo}}",
-          "gds_no": "{{gdsNo}}",
-          "pwd": "{{pwd}}",
           "rsrv_dt": "20250617",
           "stnd_is_cd": "005930",
           "trd_clsf": "1",

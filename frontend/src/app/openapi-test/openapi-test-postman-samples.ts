@@ -34,7 +34,6 @@ export const POSTMAN_B2C_SEED_SAMPLES: OpenApiSample[] = [
         hndlCcd: "APP_REG",
         tloginId: "test-user-01",
         accountNo: "0000000000",
-        pwd: "P@ssw0rd",
         cellPhone: "010-0000-0000",
         email: "test@example.com",
       },

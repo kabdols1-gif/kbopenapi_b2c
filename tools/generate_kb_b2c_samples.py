@@ -35,11 +35,17 @@ DATA_HEADER = {
     "scrNo": "0000",
 }
 
+B2C_BODY_OMITTED_FIELDS = {"gnl_ac_no", "gds_no", "pwd"}
+
 
 def clean(value: Any) -> str:
     if value is None:
         return ""
     return str(value).strip()
+
+
+def is_enabled_flag(value: Any) -> bool:
+    return clean(value).upper() in {"1", "TRUE", "Y", "YES"}
 
 
 def compact(value: str) -> str:
@@ -270,6 +276,14 @@ def build_data_body(fields: list[dict[str, str]]) -> dict[str, str]:
     body: dict[str, str] = {}
     for field in fields:
         key = field["name"]
+        upper = key.upper()
+        if (
+            is_enabled_flag(field.get("skipValue"))
+            or key.lower() in B2C_BODY_OMITTED_FIELDS
+            or upper == "PWD"
+            or upper.endswith("_PWD")
+        ):
+            continue
         if key not in body:
             body[key] = default_value(field)
     return body
@@ -407,6 +421,7 @@ def field_from_xml_node(node: ET.Element) -> dict[str, str] | None:
         "decimal": clean(node.attrib.get("portion")),
         "note": clean(node.attrib.get("IOType")),
         "default": clean(node.attrib.get("Default")),
+        "skipValue": clean(node.attrib.get("SkipValue")),
     }
 
 
