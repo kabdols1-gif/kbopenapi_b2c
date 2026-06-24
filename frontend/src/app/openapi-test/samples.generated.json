@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T17:19:07+09:00",
+  "generatedAt": "2026-06-24T17:42:30+09:00",
   "sourceWorkbook": "",
   "sourceXmlDirectory": "C:\\Users\\kb1\\Desktop\\workspace\\kbopenapi_b2c\\KB_B2C",
   "descriptionSources": {
@@ -13,6 +13,7 @@
       "method": "POST",
       "endpoint": "/api/v1/siqm4900",
       "transactionCode": "SIQM4900",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 종목기본정보",
       "headers": {
         "Content-Type": "application/json"
@@ -448,6 +449,7 @@
       "method": "POST",
       "endpoint": "/api/v1/szqm0771",
       "transactionCode": "SZQM0771",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 장운영상태 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -1204,6 +1206,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10140",
       "transactionCode": "IVU10140",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 주식현재가",
       "headers": {
         "Content-Type": "application/json"
@@ -2672,6 +2675,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10070",
       "transactionCode": "IVU10070",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 주식호가",
       "headers": {
         "Content-Type": "application/json"
@@ -4524,6 +4528,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10080",
       "transactionCode": "IVU10080",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 주식시간대별추이",
       "headers": {
         "Content-Type": "application/json"
@@ -4782,6 +4787,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivm10050",
       "transactionCode": "IVM10050",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 종목기업개요",
       "headers": {
         "Content-Type": "application/json"
@@ -5169,6 +5175,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivs11560",
       "transactionCode": "IVS11560",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 통합차트",
       "headers": {
         "Content-Type": "application/json"
@@ -5683,6 +5690,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10430",
       "transactionCode": "IVU10430",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 종목별투자자",
       "headers": {
         "Content-Type": "application/json"
@@ -6124,6 +6132,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10420",
       "transactionCode": "IVU10420",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 당일주요외국계거래원",
       "headers": {
         "Content-Type": "application/json"
@@ -6356,6 +6365,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10450",
       "transactionCode": "IVU10450",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 종목별프로그램매매추이",
       "headers": {
         "Content-Type": "application/json"
@@ -6699,6 +6709,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10020",
       "transactionCode": "IVU10020",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 외국인기관매매상위",
       "headers": {
         "Content-Type": "application/json"
@@ -7126,6 +7137,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivs11430",
       "transactionCode": "IVS11430",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 테마그룹조회",
       "headers": {
         "Content-Type": "application/json"
@@ -7381,6 +7393,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivs10920",
       "transactionCode": "IVS10920",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 프로그램매매상위",
       "headers": {
         "Content-Type": "application/json"
@@ -7882,6 +7895,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10280",
       "transactionCode": "IVU10280",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 거래량상위",
       "headers": {
         "Content-Type": "application/json"
@@ -8384,6 +8398,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10270",
       "transactionCode": "IVU10270",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 급등/급락 상위",
       "headers": {
         "Content-Type": "application/json"
@@ -8973,6 +8988,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10210",
       "transactionCode": "IVU10210",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 거래대금상위",
       "headers": {
         "Content-Type": "application/json"
@@ -9525,6 +9541,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10240",
       "transactionCode": "IVU10240",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 등락률상위",
       "headers": {
         "Content-Type": "application/json"
@@ -10052,6 +10069,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivs10910",
       "transactionCode": "IVS10910",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 시가대비등락률상위",
       "headers": {
         "Content-Type": "application/json"
@@ -10590,6 +10608,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivs11190",
       "transactionCode": "IVS11190",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 기간외등락률순위",
       "headers": {
         "Content-Type": "application/json"
@@ -11214,6 +11233,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivu10550",
       "transactionCode": "IVU10550",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 신고/신저",
       "headers": {
         "Content-Type": "application/json"
@@ -11744,6 +11764,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivsa0070",
       "transactionCode": "IVSA0070",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 시장종합",
       "headers": {
         "Content-Type": "application/json"
@@ -12632,6 +12653,7 @@
       "method": "POST",
       "endpoint": "/api/v1/iva60140",
       "transactionCode": "IVA60140",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 세계지수",
       "headers": {
         "Content-Type": "application/json"
@@ -12900,6 +12922,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ivm30010",
       "transactionCode": "IVM30010",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 업종랭킹",
       "headers": {
         "Content-Type": "application/json"
@@ -13155,6 +13178,7 @@
       "method": "POST",
       "endpoint": "/api/v1/iva60190",
       "transactionCode": "IVA60190",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 환율종합",
       "headers": {
         "Content-Type": "application/json"
@@ -13419,6 +13443,7 @@
       "method": "POST",
       "endpoint": "/api/v1/iva10370",
       "transactionCode": "IVA10370",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 증시주변자금동향",
       "headers": {
         "Content-Type": "application/json"
@@ -14031,6 +14056,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqn3390",
       "transactionCode": "SPQN3390",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 글로벌원마켓 증거금사용현황",
       "headers": {
         "Content-Type": "application/json"
@@ -14415,6 +14441,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm0004",
       "transactionCode": "SSQM0004",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 예수금내역",
       "headers": {
         "Content-Type": "application/json"
@@ -14646,6 +14673,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm0005",
       "transactionCode": "SSQM0005",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 총 잔고 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -15051,6 +15079,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm0006",
       "transactionCode": "SSQM0006",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 평가손익 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -15347,6 +15376,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm0009",
       "transactionCode": "SSQM0009",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 총 자산평가 내역 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -15970,6 +16000,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm1801",
       "transactionCode": "SSQM1801",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 보유주식 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -16218,6 +16249,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm2932",
       "transactionCode": "SSQM2932",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 종합계좌 잔고현황 조회 (종합위탁계좌, 신연금저축계좌)",
       "headers": {
         "Content-Type": "application/json"
@@ -17100,6 +17132,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm2952",
       "transactionCode": "SSQM2952",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 계좌자산평가",
       "headers": {
         "Content-Type": "application/json"
@@ -17871,6 +17904,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqn2952",
       "transactionCode": "SSQN2952",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 주식자산평가조회 (실시간)",
       "headers": {
         "Content-Type": "application/json"
@@ -18502,6 +18536,7 @@
       "method": "POST",
       "endpoint": "/api/v1/swqa2301",
       "transactionCode": "SWQA2301",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 계좌원장 거래내역 조회 (위탁, 금융상품, 저축)",
       "headers": {
         "Content-Type": "application/json"
@@ -19363,6 +19398,7 @@
       "method": "POST",
       "endpoint": "/api/v1/swqb2301",
       "transactionCode": "SWQB2301",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 계좌원장 거래내역 조회 (CMA)",
       "headers": {
         "Content-Type": "application/json"
@@ -20080,6 +20116,7 @@
       "method": "POST",
       "endpoint": "/api/v1/swqm2302",
       "transactionCode": "SWQM2302",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 예수금조회",
       "headers": {
         "Content-Type": "application/json"
@@ -21316,6 +21353,7 @@
       "method": "POST",
       "endpoint": "/api/v1/swqm2412",
       "transactionCode": "SWQM2412",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 거래내역상세 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -22329,6 +22367,7 @@
       "method": "POST",
       "endpoint": "/api/v1/swqn2302",
       "transactionCode": "SWQN2302",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 익일익익일 출금가능금액 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -23628,6 +23667,7 @@
       "method": "POST",
       "endpoint": "/api/v1/szqm6019",
       "transactionCode": "SZQM6019",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 개인별쿠폰 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -23968,6 +24008,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm2121",
       "transactionCode": "SSQM2121",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 계좌별매매가정산현황",
       "headers": {
         "Content-Type": "application/json"
@@ -24470,6 +24511,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm2392",
       "transactionCode": "SSQM2392",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 기간매매손익현황",
       "headers": {
         "Content-Type": "application/json"
@@ -24852,6 +24894,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm2442",
       "transactionCode": "SSQM2442",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 일자별실현손익상세",
       "headers": {
         "Content-Type": "application/json"
@@ -25435,6 +25478,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm2443",
       "transactionCode": "SSQM2443",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 종목별기간실현손익",
       "headers": {
         "Content-Type": "application/json"
@@ -25837,6 +25881,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm5472",
       "transactionCode": "SSQM5472",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 국내주식 소수점 매매 보유잔고내역 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -26252,6 +26297,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm1802",
       "transactionCode": "SSQM1802",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 매수주문가능금액 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -26484,6 +26530,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssam1801",
       "transactionCode": "SSAM1801",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 현금매도주문",
       "headers": {
         "Content-Type": "application/json"
@@ -26995,6 +27042,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssam1802",
       "transactionCode": "SSAM1802",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 현금매수주문",
       "headers": {
         "Content-Type": "application/json"
@@ -27506,6 +27554,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssam1805",
       "transactionCode": "SSAM1805",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 정정주문",
       "headers": {
         "Content-Type": "application/json"
@@ -28017,6 +28066,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssam1806",
       "transactionCode": "SSAM1806",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 취소주문",
       "headers": {
         "Content-Type": "application/json"
@@ -28528,6 +28578,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqn5472",
       "transactionCode": "SSQN5472",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 매매 주문가능금액 확인",
       "headers": {
         "Content-Type": "application/json"
@@ -28700,6 +28751,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssam5762",
       "transactionCode": "SSAM5762",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 매도",
       "headers": {
         "Content-Type": "application/json"
@@ -29258,6 +29310,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssam5763",
       "transactionCode": "SSAM5763",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 매수",
       "headers": {
         "Content-Type": "application/json"
@@ -29816,6 +29869,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssam5764",
       "transactionCode": "SSAM5764",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 주문 취소",
       "headers": {
         "Content-Type": "application/json"
@@ -30450,6 +30504,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm0831",
       "transactionCode": "SSQM0831",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 예약주문처리 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -30987,6 +31042,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm0832",
       "transactionCode": "SSQM0832",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 주문체결현황",
       "headers": {
         "Content-Type": "application/json"
@@ -31817,6 +31873,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm0833",
       "transactionCode": "SSQM0833",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 실시간 주식체결 미체결",
       "headers": {
         "Content-Type": "application/json"
@@ -32366,6 +32423,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm0834",
       "transactionCode": "SSQM0834",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 예약주문접수 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -32831,6 +32889,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm2341",
       "transactionCode": "SSQM2341",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 계좌별주문체결조회",
       "headers": {
         "Content-Type": "application/json"
@@ -33664,6 +33723,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm5475",
       "transactionCode": "SSQM5475",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 온주/소수점 주문체결내역 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -34525,6 +34585,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssqm5765",
       "transactionCode": "SSQM5765",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 매매 내역 조회",
       "headers": {
         "Content-Type": "application/json"
@@ -35037,6 +35098,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spam2508",
       "transactionCode": "SPAM2508",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 공휴일관리",
       "headers": {
         "Content-Type": "application/json"
@@ -35335,6 +35397,7 @@
       "method": "POST",
       "endpoint": "/api/v1/siam4983",
       "transactionCode": "SIAM4983",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 종목관리",
       "headers": {
         "Content-Type": "application/json"
@@ -38375,6 +38438,7 @@
       "method": "POST",
       "endpoint": "/api/v1/gss10030",
       "transactionCode": "GSS10030",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 현재가",
       "headers": {
         "Content-Type": "application/json"
@@ -39375,6 +39439,7 @@
       "method": "POST",
       "endpoint": "/api/v1/gss10040",
       "transactionCode": "GSS10040",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 호가",
       "headers": {
         "Content-Type": "application/json"
@@ -41263,6 +41328,7 @@
       "method": "POST",
       "endpoint": "/api/v1/gsa10020",
       "transactionCode": "GSA10020",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 시간대별체결",
       "headers": {
         "Content-Type": "application/json"
@@ -41748,6 +41814,7 @@
       "method": "POST",
       "endpoint": "/api/v1/gsc10060",
       "transactionCode": "GSC10060",
+      "businessCategory": "투자정보",
       "description": "B2C XML 전문: 차트",
       "headers": {
         "Content-Type": "application/json"
@@ -42442,6 +42509,7 @@
       "method": "POST",
       "endpoint": "/api/v1/skqm2106",
       "transactionCode": "SKQM2106",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 주문가능금액조회(원마켓플러스)",
       "headers": {
         "Content-Type": "application/json"
@@ -42761,6 +42829,7 @@
       "method": "POST",
       "endpoint": "/api/v1/skqm3350",
       "transactionCode": "SKQM3350",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 주문가능금액현황조회(원마켓플러스)",
       "headers": {
         "Content-Type": "application/json"
@@ -42989,6 +43058,7 @@
       "method": "POST",
       "endpoint": "/api/v1/skqo3390",
       "transactionCode": "SKQO3390",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 매매정산현황상세(원마켓플러스)",
       "headers": {
         "Content-Type": "application/json"
@@ -43181,6 +43251,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm2205",
       "transactionCode": "SPQM2205",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 매매가 정산 현황",
       "headers": {
         "Content-Type": "application/json"
@@ -43833,6 +43904,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm2206",
       "transactionCode": "SPQM2206",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 당일매매손익",
       "headers": {
         "Content-Type": "application/json"
@@ -44487,6 +44559,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm2207",
       "transactionCode": "SPQM2207",
+      "businessCategory": "고객계좌",
       "description": "B2C XML 전문: 기간별매매손익",
       "headers": {
         "Content-Type": "application/json"
@@ -44967,6 +45040,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm5472",
       "transactionCode": "SPQM5472",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 보유잔고내역조회",
       "headers": {
         "Content-Type": "application/json"
@@ -45382,6 +45456,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm2220",
       "transactionCode": "SPQM2220",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 계좌예수금변동현황조회",
       "headers": {
         "Content-Type": "application/json"
@@ -45697,6 +45772,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm2226",
       "transactionCode": "SPQM2226",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 잔고평가조회",
       "headers": {
         "Content-Type": "application/json"
@@ -46611,6 +46687,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm3390",
       "transactionCode": "SPQM3390",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 원마켓 계좌증거금조회",
       "headers": {
         "Content-Type": "application/json"
@@ -46995,6 +47072,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqo2226",
       "transactionCode": "SPQO2226",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 계좌잔고 평가조회(통화별예수금)",
       "headers": {
         "Content-Type": "application/json"
@@ -47485,6 +47563,7 @@
       "method": "POST",
       "endpoint": "/api/v1/srqm3051",
       "transactionCode": "SRQM3051",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 계좌권리발생내역",
       "headers": {
         "Content-Type": "application/json"
@@ -48055,6 +48134,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm2106",
       "transactionCode": "SPQM2106",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 주문가능금액조회",
       "headers": {
         "Content-Type": "application/json"
@@ -48327,6 +48407,7 @@
       "method": "POST",
       "endpoint": "/api/v1/skam2101",
       "transactionCode": "SKAM2101",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 매도/매수주문",
       "headers": {
         "Content-Type": "application/json"
@@ -48672,6 +48753,7 @@
       "method": "POST",
       "endpoint": "/api/v1/skam2102",
       "transactionCode": "SKAM2102",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 정정/취소주문",
       "headers": {
         "Content-Type": "application/json"
@@ -48952,6 +49034,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqn5472",
       "transactionCode": "SPQN5472",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 주문가능금액조회",
       "headers": {
         "Content-Type": "application/json"
@@ -49250,6 +49333,7 @@
       "method": "POST",
       "endpoint": "/api/v1/skam2201",
       "transactionCode": "SKAM2201",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점매도/매수주문",
       "headers": {
         "Content-Type": "application/json"
@@ -49529,6 +49613,7 @@
       "method": "POST",
       "endpoint": "/api/v1/skam2202",
       "transactionCode": "SKAM2202",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점정정/취소주문",
       "headers": {
         "Content-Type": "application/json"
@@ -49680,6 +49765,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spao2104",
       "transactionCode": "SPAO2104",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 주식예약주문미국",
       "headers": {
         "Content-Type": "application/json"
@@ -49896,6 +49982,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spao2106",
       "transactionCode": "SPAO2106",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 예약주문취소미국",
       "headers": {
         "Content-Type": "application/json"
@@ -50072,6 +50159,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm2204",
       "transactionCode": "SPQM2204",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 체결현황",
       "headers": {
         "Content-Type": "application/json"
@@ -50805,6 +50893,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm1818",
       "transactionCode": "SPQM1818",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 주문번호별주문내역",
       "headers": {
         "Content-Type": "application/json"
@@ -51491,6 +51580,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm2103",
       "transactionCode": "SPQM2103",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 주문체결조회",
       "headers": {
         "Content-Type": "application/json"
@@ -52028,6 +52118,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqm5473",
       "transactionCode": "SPQM5473",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 주문접수내역조회",
       "headers": {
         "Content-Type": "application/json"
@@ -52835,6 +52926,7 @@
       "method": "POST",
       "endpoint": "/api/v1/spqn5473",
       "transactionCode": "SPQN5473",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 소수점 주문접수내역조회(주문용)",
       "headers": {
         "Content-Type": "application/json"
@@ -53335,6 +53427,7 @@
       "method": "POST",
       "endpoint": "/api/v1/ssam0831",
       "transactionCode": "SSAM0831",
+      "businessCategory": "트레이딩",
       "description": "B2C XML 전문: 예약주문접수(현금신용통합)",
       "headers": {
         "Content-Type": "application/json"

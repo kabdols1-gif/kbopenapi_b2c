@@ -23,6 +23,7 @@ export type OpenApiSample = {
   method: OpenApiMethod;
   path: string;
   description: string;
+  businessCategory?: OpenApiBusinessGroup;
   headers?: Record<string, string>;
   query?: Record<string, unknown>;
   body?: unknown;
@@ -919,10 +920,11 @@ function fieldSpecRowsForSample(sample: OpenApiSample) {
   });
 }
 
-function samplesToSpecCsv(items: OpenApiSample[]) {
+function samplesToSpecCsv(items: OpenApiSample[], options: { includeBusinessCategory?: boolean } = {}) {
   const headers = [
     "전문ID",
     "전문명",
+    ...(options.includeBusinessCategory ? ["업무구분"] : []),
     "설명",
     "메서드",
     "기본URL",
@@ -943,6 +945,7 @@ function samplesToSpecCsv(items: OpenApiSample[]) {
     [
       sample.id,
       sample.label,
+      ...(options.includeBusinessCategory ? [detectSampleBusinessCategory(sample)] : []),
       sample.description,
       sample.method,
       sample.baseUrl ?? "",
@@ -2894,7 +2897,11 @@ export default function OpenApiTestClient({
   const downloadAllSampleSpecs = useCallback(() => {
     if (samplesWithSpecOverrides.length === 0) return;
     const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-    downloadTextFile(`kb-b2c-api-spec-all-${stamp}.csv`, samplesToSpecCsv(samplesWithSpecOverrides), "text/csv;charset=utf-8");
+    downloadTextFile(
+      `kb-b2c-api-spec-all-${stamp}.csv`,
+      samplesToSpecCsv(samplesWithSpecOverrides, { includeBusinessCategory: true }),
+      "text/csv;charset=utf-8"
+    );
   }, [samplesWithSpecOverrides]);
 
   const downloadSampleSpec = useCallback((sample: OpenApiSample) => {

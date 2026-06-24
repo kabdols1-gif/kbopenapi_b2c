@@ -41,6 +41,121 @@ DATA_HEADER = {
 
 B2C_BODY_OMITTED_FIELDS = {"gnl_ac_no", "gds_no", "pwd", "rnmcno"}
 B2C_SPEC_OMITTED_FIELDS = {"rnmcno"}
+CUSTOMER_ACCOUNT_CATEGORY = "\uace0\uac1d\uacc4\uc88c"
+TRADING_CATEGORY = "\ud2b8\ub808\uc774\ub529"
+INVESTMENT_INFO_CATEGORY = "\ud22c\uc790\uc815\ubcf4"
+OTHER_CATEGORY = "\uae30\ud0c0\ud56d\ubaa9"
+B2C_BUSINESS_CATEGORY_BY_CODE = {
+    **dict.fromkeys(
+        [
+            "SPQN3390",
+            "SSQM0004",
+            "SSQM0005",
+            "SSQM0006",
+            "SSQM0009",
+            "SSQM1801",
+            "SSQM2932",
+            "SSQM2952",
+            "SSQN2952",
+            "SWQA2301",
+            "SWQB2301",
+            "SWQM2302",
+            "SWQM2412",
+            "SWQN2302",
+            "SZQM6019",
+            "SSQM2121",
+            "SSQM2392",
+            "SSQM2442",
+            "SSQM2443",
+            "SSQM5472",
+            "SKQO3390",
+            "SPQM2205",
+            "SPQM2206",
+            "SPQM2207",
+        ],
+        CUSTOMER_ACCOUNT_CATEGORY,
+    ),
+    **dict.fromkeys(
+        [
+            "SSQM1802",
+            "SSAM1801",
+            "SSAM1802",
+            "SSAM1805",
+            "SSAM1806",
+            "SSQN5472",
+            "SSAM5762",
+            "SSAM5763",
+            "SSAM5764",
+            "SSQM0831",
+            "SSQM0832",
+            "SSQM0833",
+            "SSQM0834",
+            "SSQM2341",
+            "SSQM5475",
+            "SSQM5765",
+            "SSAM0831",
+            "SKQM2106",
+            "SKQM3350",
+            "SPQM5472",
+            "SPQM2220",
+            "SPQM2226",
+            "SPQM3390",
+            "SPQO2226",
+            "SRQM3051",
+            "SPQM2106",
+            "SKAM2101",
+            "SKAM2102",
+            "SPQN5472",
+            "SKAM2201",
+            "SKAM2202",
+            "SPAO2104",
+            "SPAO2106",
+            "SPQM2204",
+            "SPQM1818",
+            "SPQM2103",
+            "SPQM5473",
+            "SPQN5473",
+            "SPQO2105",
+        ],
+        TRADING_CATEGORY,
+    ),
+    **dict.fromkeys(
+        [
+            "SPAM2508",
+            "SIAM4983",
+            "GSS10030",
+            "GSS10040",
+            "GSA10020",
+            "GSC10060",
+            "SIQM4900",
+            "SZQM0771",
+            "IVU10140",
+            "IVU10070",
+            "IVU10080",
+            "IVM10050",
+            "IVS11560",
+            "IVU10430",
+            "IVU10420",
+            "IVU10450",
+            "IVU10020",
+            "IVS11430",
+            "IVS10920",
+            "IVU10280",
+            "IVU10270",
+            "IVU10210",
+            "IVU10240",
+            "IVS10910",
+            "IVS11190",
+            "IVU10550",
+            "IVSA0070",
+            "IVA60140",
+            "IVM30010",
+            "IVA60190",
+            "IVA10370",
+        ],
+        INVESTMENT_INFO_CATEGORY,
+    ),
+}
 
 
 def is_filler_field_name(value: str) -> bool:
@@ -55,6 +170,21 @@ def should_omit_b2c_body_field(value: str) -> bool:
 def should_omit_b2c_spec_field(value: str) -> bool:
     normalized = (value or "").strip().lower()
     return normalized in B2C_SPEC_OMITTED_FIELDS or is_filler_field_name(normalized)
+
+
+def b2c_business_category(tr_code: str, source_category: str = "") -> str:
+    normalized_code = normalize_tr_code(tr_code)
+    if normalized_code in B2C_BUSINESS_CATEGORY_BY_CODE:
+        return B2C_BUSINESS_CATEGORY_BY_CODE[normalized_code]
+
+    normalized_source = clean(source_category)
+    if "\uacc4\uc88c" in normalized_source or "\uc794\uace0" in normalized_source:
+        return CUSTOMER_ACCOUNT_CATEGORY
+    if "\uc8fc\ubb38" in normalized_source:
+        return TRADING_CATEGORY
+    if "\uc2dc\uc138" in normalized_source or "\ud22c\uc790\uc815\ubcf4" in normalized_source:
+        return INVESTMENT_INFO_CATEGORY
+    return OTHER_CATEGORY
 
 
 def clean(value: Any) -> str:
@@ -732,6 +862,7 @@ def build_b2c_xml_item(
         "method": "POST",
         "endpoint": f"/api/v1/{tr_code.lower()}",
         "transactionCode": tr_code,
+        "businessCategory": b2c_business_category(tr_code, category),
         "description": f"B2C XML 전문: {description_prefix}{description}",
         "headers": {"Content-Type": "application/json"},
         "body": body,

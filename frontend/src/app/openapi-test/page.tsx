@@ -23,6 +23,7 @@ type CatalogSample = {
   endpoint?: string;
   path?: string;
   transactionCode?: string;
+  businessCategory?: OpenApiSample["businessCategory"];
   description: string;
   headers?: Record<string, string>;
   query?: Record<string, unknown>;
@@ -71,6 +72,7 @@ function toOpenApiSample(entry: CatalogSample, baseUrl: string): OpenApiSample {
     method: entry.method,
     path: toKbServicePath(entry),
     description: entry.description,
+    businessCategory: entry.businessCategory,
     headers: {
       "Content-Type": "application/json",
       appKey: "{{clientId}}",
