@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24T06:45:56Z",
+  "updatedAt": "2026-06-24T09:19:42Z",
   "samples": {
     "Tkb_SIQM4900_B2C": {
-      "updatedAt": "2026-06-24T06:45:56Z",
+      "updatedAt": "2026-06-24T09:19:42Z",
       "specOverrides": {
         "inputSpec": {
           "stnd_is_cd::0": {
@@ -12,6 +12,16 @@
           }
         }
       }
+    },
+    "Tkb_SSQM0004_B2C": {
+      "note": "주문전 주문가능현금 및 주문가능금액을 조회할 수 있는 API 서비스 입니다.\nOUTPUT의 ordr_psbl_amt 컬럼을 이용하여 주문전 주문가능금액을 확인할 수 있습니다. ",
+      "verified": true,
+      "updatedAt": "2026-06-24T09:19:42Z"
+    },
+    "Tkb_SSQM0005_B2C": {
+      "note": "",
+      "verified": true,
+      "updatedAt": "2026-06-24T09:19:42Z"
     }
   }
 }

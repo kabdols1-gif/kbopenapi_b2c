@@ -295,6 +295,11 @@ const KB_B2C_TOKEN_BASE_URL = IS_OPENAPI_PRODUCTION_MODE
 const KB_B2B_BASE_URL = IS_OPENAPI_PRODUCTION_MODE
   ? process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2B_BASE_URL || "https://baasapi.kbsec.com:32484"
   : process.env.NEXT_PUBLIC_OPENAPI_DEV_KB_B2B_BASE_URL || "https://dbaasapi.kbsec.com:32484";
+const OPENAPI_TEST_BACKEND_API_BASE_URL = normalizeBaseUrl(
+  process.env.NEXT_PUBLIC_OPENAPI_TEST_API_URL ||
+    process.env.NEXT_PUBLIC_API_URL ||
+    (process.env.NODE_ENV === "development" ? "http://localhost:8020" : "")
+);
 const KIS_REAL_BASE_URL = "https://openapi.koreainvestment.com:9443";
 const KIS_PAPER_BASE_URL = "https://openapivts.koreainvestment.com:29443";
 const JSON_HEADERS_TEXT = `{\n  "Content-Type": "application/json"\n}`;
@@ -327,6 +332,11 @@ const TOKEN_SETUP_STEP_META: Record<TokenSetupStepKey, { label: string; descript
 
 function normalizeBaseUrl(raw: string) {
   return raw.trim().replace(/\/+$/, "");
+}
+
+function toBackendApiUrl(path: string) {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return OPENAPI_TEST_BACKEND_API_BASE_URL ? `${OPENAPI_TEST_BACKEND_API_BASE_URL}${normalizedPath}` : normalizedPath;
 }
 
 function ensureMethod(method: string): OpenApiMethod {
@@ -398,11 +408,15 @@ function SpecTable({
   onFieldChange?: (section: FieldSpecSectionKey, fieldKey: string, patch: FieldSpecOverride) => void;
 }) {
   const items = fields ?? [];
-  const [editingFieldKey, setEditingFieldKey] = useState<string | null>(null);
-
-  useEffect(() => {
-    setEditingFieldKey(null);
-  }, [sampleId, section]);
+  const [editingField, setEditingField] = useState<{
+    fieldKey: string;
+    sampleId?: string;
+    section: FieldSpecSectionKey;
+  } | null>(null);
+  const editingFieldKey =
+    editingField && editingField.sampleId === sampleId && editingField.section === section
+      ? editingField.fieldKey
+      : null;
 
   return (
     <section className="rounded-lg border border-slate-200 bg-white">
@@ -507,7 +521,15 @@ function SpecTable({
                       <td className="px-3 py-2 text-center">
                         <button
                           type="button"
-                          onClick={() => setEditingFieldKey((currentKey) => (currentKey === fieldKey ? null : fieldKey))}
+                          onClick={() =>
+                            setEditingField((current) =>
+                              current?.fieldKey === fieldKey &&
+                              current.sampleId === sampleId &&
+                              current.section === section
+                                ? null
+                                : { fieldKey, sampleId, section }
+                            )
+                          }
                           className={`rounded-md px-2 py-1 text-[11px] font-black transition ${
                             isEditingField
                               ? "border border-[#2c2a26] bg-[#2c2a26] text-white hover:bg-[#3b352c]"
@@ -1718,7 +1740,7 @@ export default function OpenApiTestClient({
   const [history, setHistory] = useState<RunHistory[]>([]);
   const [sampleTestMetadata, setSampleTestMetadata] = useState<SampleTestMetadataById>({});
   const [sampleSpecOverrides, setSampleSpecOverrides] = useState<SampleSpecOverrides>({});
-  const [sharedSampleMetadata, setSharedSampleMetadata] = useState<Record<string, SharedSampleMetadata>>({});
+  const [, setSharedSampleMetadata] = useState<Record<string, SharedSampleMetadata>>({});
   const [hasLoadedSharedMetadata, setHasLoadedSharedMetadata] = useState(false);
   const [selectedHistoryDeleteIds, setSelectedHistoryDeleteIds] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -2202,7 +2224,7 @@ export default function OpenApiTestClient({
 
   useEffect(() => {
     let isCancelled = false;
-    fetch("/api/openapi-test/shared-metadata")
+    fetch(toBackendApiUrl("/api/openapi-test/shared-metadata"))
       .then((response) => {
         if (!response.ok) throw new Error(`Shared metadata request failed: ${response.status}`);
         return response.json() as Promise<SharedMetadataResponse>;
@@ -2251,7 +2273,7 @@ export default function OpenApiTestClient({
           : current[sampleId]?.specOverrides,
       },
     }));
-    fetch(`/api/openapi-test/shared-metadata/samples/${encodeURIComponent(sampleId)}`, {
+    fetch(toBackendApiUrl(`/api/openapi-test/shared-metadata/samples/${encodeURIComponent(sampleId)}`), {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(patch),
@@ -2408,9 +2430,9 @@ export default function OpenApiTestClient({
   }, [isResultHistoryOpen, selectedHistoryResult?.id]);
 
   useEffect(() => {
-    const defaultsUrl = `/api/config/openapi-test/defaults?mode=${encodeURIComponent(
+    const defaultsUrl = toBackendApiUrl(`/api/config/openapi-test/defaults?mode=${encodeURIComponent(
       selectedRuntimeMode || "development"
-    )}`;
+    )}`);
 
     if (normalizedBroker === "kis") {
       let isCancelled = false;
@@ -2648,7 +2670,7 @@ export default function OpenApiTestClient({
         let responseHeaders = "";
 
         if (shouldProxyRequest(requestUrl)) {
-          const proxyResponse = await fetch("/api/openapi-test/proxy", {
+          const proxyResponse = await fetch(toBackendApiUrl("/api/openapi-test/proxy"), {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             signal,
