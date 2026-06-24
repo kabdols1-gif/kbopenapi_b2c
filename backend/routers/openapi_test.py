@@ -50,6 +50,8 @@ class SharedSampleSpecOverrides(BaseModel):
 
 class SharedSampleMetadataPatch(BaseModel):
     specOverrides: Optional[SharedSampleSpecOverrides] = None
+    note: Optional[str] = Field(default=None, max_length=20000)
+    verified: Optional[bool] = None
 
 
 SHARED_METADATA_LOCAL_STATE_KEYS = {
@@ -57,8 +59,6 @@ SHARED_METADATA_LOCAL_STATE_KEYS = {
     "lastExecutedAt",
     "lastStatus",
     "lastOk",
-    "verified",
-    "note",
 }
 
 
@@ -229,7 +229,7 @@ async def update_shared_sample_metadata(sample_id: str, patch: SharedSampleMetad
     if not sample_key:
         raise HTTPException(status_code=400, detail="sample_id is required.")
 
-    patch_data = patch.model_dump(exclude_none=True)
+    patch_data = patch.model_dump(exclude_unset=True)
     with _shared_metadata_lock:
         metadata = _load_shared_metadata()
         samples = metadata.setdefault("samples", {})
@@ -238,7 +238,9 @@ async def update_shared_sample_metadata(sample_id: str, patch: SharedSampleMetad
             metadata["samples"] = samples
 
         spec_patch = patch_data.pop("specOverrides", None)
-        if not spec_patch:
+        has_note_patch = "note" in patch_data
+        has_verified_patch = "verified" in patch_data
+        if not spec_patch and not has_note_patch and not has_verified_patch:
             return metadata
 
         current_sample = dict(samples.get(sample_key) or {})
@@ -249,6 +251,10 @@ async def update_shared_sample_metadata(sample_id: str, patch: SharedSampleMetad
                 dict(current_sample.get("specOverrides") or {}),
                 spec_patch,
             )
+        if has_note_patch:
+            current_sample["note"] = str(patch_data.get("note") or "")
+        if has_verified_patch:
+            current_sample["verified"] = patch_data.get("verified") is True
         current_sample["updatedAt"] = _now_iso()
         samples[sample_key] = current_sample
         metadata["updatedAt"] = current_sample["updatedAt"]
