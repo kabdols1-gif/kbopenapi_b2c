@@ -21,6 +21,7 @@ XML_DIR = ROOT / "KB_B2C"
 LEGACY_XML_DIR = ROOT / "trx_b2c"
 B2C_INDEX_FILE = "B2C.txt"
 JSON_SPEC_ZIP_CANDIDATES = [ROOT / "json.zip", Path.home() / "Desktop" / "json.zip"]
+JSON_SPEC_DIR_CANDIDATES = [ROOT / "json", Path.home() / "Desktop" / "json"]
 INVESTMENT_WORKBOOK_PATTERNS = ["*API*.xlsx", "*api*.xlsx"]
 
 INPUT_TEXT = "\uc785\ub825"
@@ -436,6 +437,7 @@ def merge_description(
     field_name: str,
     description: str,
     required: str = "",
+    overwrite_description: bool = True,
 ) -> None:
     normalized_code = normalize_tr_code(tr_code)
     normalized_field = normalize_field_key(field_name)
@@ -446,10 +448,48 @@ def merge_description(
     field_metadata = descriptions.setdefault(normalized_code, {"input": {}, "output": {}}).setdefault(section, {}).setdefault(
         normalized_field, {}
     )
-    if text:
+    if text and (overwrite_description or not clean(field_metadata.get("description"))):
         field_metadata["description"] = text
     if required_flag:
         field_metadata["required"] = required_flag
+
+
+def merge_json_item_descriptions(
+    descriptions: FieldDescriptionLookup,
+    item: dict[str, Any],
+    fallback_code: str,
+) -> None:
+    tr_code = normalize_tr_code(clean(item.get("code")) or fallback_code)
+    if not tr_code:
+        return
+    for section, map_key in (("input", "inputMap"), ("output", "outputMap")):
+        field_map = item.get(map_key)
+        if not isinstance(field_map, dict):
+            continue
+        for field_name, field_spec in field_map.items():
+            if not isinstance(field_spec, dict):
+                continue
+            merge_description(
+                descriptions,
+                tr_code,
+                section,
+                str(field_name),
+                clean(field_spec.get("etc")),
+                clean(field_spec.get("need")),
+            )
+
+
+def load_json_directory_descriptions(path: Path) -> FieldDescriptionLookup:
+    descriptions: FieldDescriptionLookup = {}
+    for json_path in sorted(path.rglob("*.json")):
+        try:
+            item = json.loads(decode_text_bytes(json_path.read_bytes()))
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+        if not isinstance(item, dict):
+            continue
+        merge_json_item_descriptions(descriptions, item, json_path.stem)
+    return descriptions
 
 
 def load_json_zip_descriptions(path: Path) -> FieldDescriptionLookup:
@@ -465,24 +505,7 @@ def load_json_zip_descriptions(path: Path) -> FieldDescriptionLookup:
             if not isinstance(item, dict):
                 continue
 
-            tr_code = normalize_tr_code(clean(item.get("code")) or Path(name).stem)
-            if not tr_code:
-                continue
-            for section, map_key in (("input", "inputMap"), ("output", "outputMap")):
-                field_map = item.get(map_key)
-                if not isinstance(field_map, dict):
-                    continue
-                for field_name, field_spec in field_map.items():
-                    if not isinstance(field_spec, dict):
-                        continue
-                    merge_description(
-                        descriptions,
-                        tr_code,
-                        section,
-                        str(field_name),
-                        clean(field_spec.get("etc")),
-                        clean(field_spec.get("need")),
-                    )
+            merge_json_item_descriptions(descriptions, item, Path(name).stem)
     return descriptions
 
 
@@ -543,10 +566,15 @@ def load_field_descriptions() -> tuple[FieldDescriptionLookup, dict[str, str]]:
     descriptions: FieldDescriptionLookup = {}
     sources: dict[str, str] = {}
 
-    json_zip = first_existing_path(JSON_SPEC_ZIP_CANDIDATES)
-    if json_zip:
-        descriptions = load_json_zip_descriptions(json_zip)
-        sources["jsonZip"] = str(json_zip)
+    json_dir = first_existing_path(JSON_SPEC_DIR_CANDIDATES)
+    if json_dir:
+        descriptions = load_json_directory_descriptions(json_dir)
+        sources["jsonDirectory"] = str(json_dir)
+    else:
+        json_zip = first_existing_path(JSON_SPEC_ZIP_CANDIDATES)
+        if json_zip:
+            descriptions = load_json_zip_descriptions(json_zip)
+            sources["jsonZip"] = str(json_zip)
 
     investment_workbook = find_investment_workbook()
     if investment_workbook:
@@ -554,7 +582,14 @@ def load_field_descriptions() -> tuple[FieldDescriptionLookup, dict[str, str]]:
         for tr_code, sections in investment_descriptions.items():
             for section, fields in sections.items():
                 for field_name, metadata in fields.items():
-                    merge_description(descriptions, tr_code, section, field_name, clean(metadata.get("description")))
+                    merge_description(
+                        descriptions,
+                        tr_code,
+                        section,
+                        field_name,
+                        clean(metadata.get("description")),
+                        overwrite_description=False,
+                    )
         sources["investmentWorkbook"] = str(investment_workbook)
 
     return descriptions, sources
@@ -564,7 +599,7 @@ def apply_field_descriptions(tr_code: str, section: str, fields: list[dict[str, 
     field_metadata = descriptions.get(normalize_tr_code(tr_code), {}).get(section, {})
     for field in fields:
         metadata = field_metadata.get(normalize_field_key(field.get("name", "")), {})
-        field["description"] = clean(metadata.get("description")) or field.get("description") or clean(field.get("korean"))
+        field["description"] = clean(metadata.get("description")) or clean(field.get("description"))
         field["required"] = required_text(metadata.get("required")) or field.get("required") or "N"
 
 
@@ -645,7 +680,7 @@ def field_from_xml_node(node: ET.Element) -> dict[str, str] | None:
         "note": clean(node.attrib.get("IOType")),
         "default": clean(node.attrib.get("Default")),
         "skipValue": clean(node.attrib.get("SkipValue")),
-        "description": clean(node.attrib.get("Desc")),
+        "description": "",
         "required": "N",
     }
 
