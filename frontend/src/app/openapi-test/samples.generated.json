@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T15:30:01+09:00",
+  "generatedAt": "2026-06-24T15:51:51+09:00",
   "sourceWorkbook": "",
   "sourceXmlDirectory": "C:\\Users\\kb1\\Desktop\\workspace\\kbopenapi_b2c\\KB_B2C",
   "descriptionSources": {
@@ -14871,7 +14871,6 @@
         },
         "dataBody": {
           "inq_clsf": "1",
-          "rnmcno": "",
           "tl_val_amt": "",
           "tl_tfnd_amt": "",
           "tl_o_amt_psbl_amt": "",
@@ -14892,18 +14891,6 @@
           "default": "",
           "skipValue": "",
           "description": "3: 계좌정보(고정)",
-          "required": "N"
-        },
-        {
-          "korean": "실명확인번호",
-          "name": "rnmcno",
-          "type": "char",
-          "length": "13",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
           "required": "N"
         },
         {
@@ -15260,7 +15247,7 @@
       "fileName": "Tkb_SSQM0005_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 8,
+      "inputFieldCount": 7,
       "outputFieldCount": 23,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -15585,7 +15572,6 @@
         },
         "dataBody": {
           "inq_clsf": "1",
-          "rnmcno": "",
           "emp_no": "",
           "inq_std_clsf": "1",
           "sum_cd": "",
@@ -15609,18 +15595,6 @@
           "skipValue": "",
           "description": "1: 관리자별, 2:권유/유치자별, 3:고객별",
           "required": "Y"
-        },
-        {
-          "korean": "실명확인번호",
-          "name": "rnmcno",
-          "type": "char",
-          "length": "13",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         },
         {
           "korean": "사원번호",
@@ -16204,7 +16178,7 @@
       "fileName": "Tkb_SSQM0009_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 10,
+      "inputFieldCount": 9,
       "outputFieldCount": 40,
       "menu": "",
       "sourceEncoding": "utf-8-sig"

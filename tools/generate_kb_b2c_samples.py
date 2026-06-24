@@ -38,7 +38,8 @@ DATA_HEADER = {
     "scrNo": "0000",
 }
 
-B2C_BODY_OMITTED_FIELDS = {"gnl_ac_no", "gds_no", "pwd"}
+B2C_BODY_OMITTED_FIELDS = {"gnl_ac_no", "gds_no", "pwd", "rnmcno"}
+B2C_SPEC_OMITTED_FIELDS = {"rnmcno"}
 
 
 def clean(value: Any) -> str:
@@ -610,6 +611,8 @@ def parse_xml_root(path: Path) -> tuple[ET.Element, str]:
 def field_from_xml_node(node: ET.Element) -> dict[str, str] | None:
     name = clean(node.attrib.get("Name"))
     if not name or name.startswith("_"):
+        return None
+    if name.lower() in B2C_SPEC_OMITTED_FIELDS:
         return None
     if is_enabled_flag(node.attrib.get("SkipValue")):
         return None
