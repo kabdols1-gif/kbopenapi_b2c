@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="EUC-KR"?>
 <Tkb_SKQO3390_B2C error="false">
 	<Name>SKQO3390</Name>
-	<Desc>해외주식매매정산현황상세(원마켓플러스)</Desc>
+	<Desc>�ؿ��ֽĸŸ�������Ȳ��(�������÷���)</Desc>
 	<Code></Code>
 	<Route>SKQO3390</Route>
 	<base21></base21>
@@ -16,25 +16,25 @@
 	<Page_num>3390</Page_num>
 	<HostExpireTime >15000</HostExpireTime>
 	<Input iName="" >
-		<I Name="gnl_ac_no" Desc="종합계좌번호" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
-		<I Name="gds_no" Desc="상품번호" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
-		<I Name="pwd" Desc="비밀번호" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
+		<I Name="gnl_ac_no" Desc="���հ��¹�ȣ" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
+		<I Name="gds_no" Desc="��ǰ��ȣ" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
+		<I Name="pwd" Desc="��й�ȣ" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
 	</Input>
 	<Output oName="" >
-		<O Name="o_lngth" Align="Left" Desc="출길이" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="o_clsf" Align="Left" Desc="출구분" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="o_msg" Align="Left" Desc="출메시지" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="grid_cnt" Align="Left" Desc="그리드건수" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_lngth" Align="Left" Desc="�����" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_clsf" Align="Left" Desc="�ⱸ��" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_msg" Align="Left" Desc="��޽���" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="grid_cnt" Align="Left" Desc="�׸���Ǽ�" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
 		<O Name="Record1" Align="Left" Repeat="32" Desc="" Journal="N" Pad="SPC" Size="32" SizeEN="32" SizeKR="32" Spec="struct" IOType="Record" UpperCase="N" Valid="Y" Default="" Encrypt="" >
-		    <O1 Name="idx" Align="Left" Desc="인덱스" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="iso_cd" Align="Left" Desc="ISO코드" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="crncy_cd" Align="Left" Desc="통화코드" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="item_hngl_nm" Align="Left" Desc="항목한글명" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="item_eng_nm" Align="Left" Desc="항목영문명" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="item_data1" Align="Left" Desc="항목데이터1" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="item_data2" Align="Left" Desc="항목데이터2" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="item_data3" Align="Left" Desc="항목데이터3" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="item_data4" Align="Left" Desc="항목데이터4" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="idx" Align="Left" Desc="�ε���" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="iso_cd" Align="Left" Desc="ISO�ڵ�" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="crncy_cd" Align="Left" Desc="��ȭ�ڵ�" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="item_hngl_nm" Align="Left" Desc="�׸��ѱ۸�" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="item_eng_nm" Align="Left" Desc="�׸񿵹���" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="item_data1" Align="Left" Desc="�׸�����1" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="item_data2" Align="Left" Desc="�׸�����2" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="item_data3" Align="Left" Desc="�׸�����3" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="item_data4" Align="Left" Desc="�׸�����4" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
 		</O>
 	</Output>
 </Tkb_SKQO3390_B2C>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="EUC-KR"?>
 <Tkb_SSQM2392_B2C error="false">
 	<Name>SSQM2392</Name>
-	<Desc>Í∏∞Í∞ÑÎß§Îß§ÏÜêÏùµÌòÑÌô©</Desc>
+	<Desc>±‚∞£∏≈∏≈º’¿Õ«ˆ»≤</Desc>
 	<Code></Code>
 	<Route>SSQM2392</Route>
 	<base21></base21>
@@ -16,40 +16,40 @@
 	<Page_num>2392</Page_num>
 	<HostExpireTime >15000</HostExpireTime>
 	<Input iName="" >
-		<I Name="gnl_ac_no" Desc="Ï¢ÖÌï©Í≥ÑÏ¢åÎ≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
-		<I Name="gds_no" Desc="ÏÉÅÌíàÎ≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
-		<I Name="pwd" Desc="ÎπÑÎ∞ÄÎ≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
-		<I Name="is_no" Desc="Ï¢ÖÎ™©Î≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="ordr_dt_from" Desc="Ï£ºÎ¨∏ÏùºÏûêFROM" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="ordr_dt_to" Desc="Ï£ºÎ¨∏ÏùºÏûêTO" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="trd_svrl_cst" Desc="Îß§Îß§Ï†úÎπÑÏö©" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="trd_pl" Desc="Îß§Îß§ÏÜêÏùµ" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="trd_nt_pl" Desc="Îß§Îß§ÏàúÏÜêÏùµ" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="inq_clsf" Desc="Ï°∞ÌöåÍµ¨Î∂Ñ" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="nxt_key" Desc="Îã§ÏùåÌÇ§" Align="Left" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="gnl_ac_no" Desc="¡æ«’∞Ë¡¬π¯»£" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
+		<I Name="gds_no" Desc="ªÛ«∞π¯»£" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
+		<I Name="pwd" Desc="∫Òπ–π¯»£" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
+		<I Name="is_no" Desc="¡æ∏Òπ¯»£" Align="Left" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ordr_dt_from" Desc="¡÷πÆ¿œ¿⁄FROM" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ordr_dt_to" Desc="¡÷πÆ¿œ¿⁄TO" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="trd_svrl_cst" Desc="∏≈∏≈¡¶∫ÒøÎ" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="trd_pl" Desc="∏≈∏≈º’¿Õ" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="trd_nt_pl" Desc="∏≈∏≈º¯º’¿Õ" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="inq_clsf" Desc="¡∂»∏±∏∫–" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="nxt_key" Desc="¥Ÿ¿Ω≈∞" Align="Left" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
 	</Input>
 	<Output oName="" >
-		<O Name="o_lngth" Align="Left" Desc="Ï∂úÍ∏∏Ïù¥" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="o_clsf" Align="Left" Desc="Ï∂úÍµ¨Î∂Ñ" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="o_msg" Align="Left" Desc="Ï∂úÎ©îÏãúÏßÄ" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="trd_pl" Align="Left" Desc="Îß§Îß§ÏÜêÏùµ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="trd_svrl_cst" Align="Left" Desc="Îß§Îß§Ï†úÎπÑÏö©" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="trd_nt_pl" Align="Left" Desc="Îß§Îß§ÏàúÏÜêÏùµ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="nxt_key" Align="Left" Desc="Îã§ÏùåÌÇ§" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="grid_cnt" Align="Left" Desc="Í∑∏Î¶¨ÎìúÍ±¥Ïàò" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_lngth" Align="Left" Desc="√‚±Ê¿Ã" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_clsf" Align="Left" Desc="√‚±∏∫–" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_msg" Align="Left" Desc="√‚∏ﬁΩ√¡ˆ" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="trd_pl" Align="Left" Desc="∏≈∏≈º’¿Õ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="trd_svrl_cst" Align="Left" Desc="∏≈∏≈¡¶∫ÒøÎ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="trd_nt_pl" Align="Left" Desc="∏≈∏≈º¯º’¿Õ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="nxt_key" Align="Left" Desc="¥Ÿ¿Ω≈∞" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="grid_cnt" Align="Left" Desc="±◊∏ÆµÂ∞«ºˆ" Journal="N" Pad="SPC" Size="4" SizeEN="4" SizeKR="4" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
 		<O Name="Record1" Align="Left" Repeat="30" Desc="" Journal="N" Pad="SPC" Size="30" SizeEN="30" SizeKR="30" Spec="struct" IOType="Record" UpperCase="N" Valid="Y" Default="" Encrypt="" >
-		    <O1 Name="ordr_dt" Align="Left" Desc="Ï£ºÎ¨∏ÏùºÏûê" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="trd_pl" Align="Left" Desc="Îß§Îß§ÏÜêÏùµ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="trd_svrl_cst" Align="Left" Desc="Îß§Îß§Ï†úÎπÑÏö©" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="trd_nt_pl" Align="Left" Desc="Îß§Îß§ÏàúÏÜêÏùµ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="byng_prc" Align="Left" Desc="Îß§ÏûÖÍ∞ÄÍ≤©" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="s_prc" Align="Left" Desc="Îß§ÎèÑÍ∞ÄÍ≤©" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="ccls_q" Align="Left" Desc="Ï≤¥Í≤∞ÏàòÎüâ" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="is_no" Align="Left" Desc="Ï¢ÖÎ™©Î≤àÌò∏" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="is_nm" Align="Left" Desc="Ï¢ÖÎ™©Î™Ö" Journal="N" Pad="SPC" Size="20" SizeEN="20" SizeKR="20" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="crdt_typ_cd" Align="Left" Desc="Ïã†Ïö©Ïú†ÌòïÏΩîÎìú" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="crdt_typ_nm" Align="Left" Desc="Ïã†Ïö©Ïú†ÌòïÎ™Ö" Journal="N" Pad="SPC" Size="16" SizeEN="16" SizeKR="16" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		    <O1 Name="b_q" Align="Left" Desc="Îß§ÏàòÏàòÎüâ" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="ordr_dt" Align="Left" Desc="¡÷πÆ¿œ¿⁄" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="trd_pl" Align="Left" Desc="∏≈∏≈º’¿Õ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="trd_svrl_cst" Align="Left" Desc="∏≈∏≈¡¶∫ÒøÎ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="trd_nt_pl" Align="Left" Desc="∏≈∏≈º¯º’¿Õ" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="byng_prc" Align="Left" Desc="∏≈¿‘∞°∞›" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="s_prc" Align="Left" Desc="∏≈µµ∞°∞›" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="ccls_q" Align="Left" Desc="√º∞·ºˆ∑Æ" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="is_no" Align="Left" Desc="¡æ∏Òπ¯»£" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="is_nm" Align="Left" Desc="¡æ∏Ò∏Ì" Journal="N" Pad="SPC" Size="20" SizeEN="20" SizeKR="20" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="crdt_typ_cd" Align="Left" Desc="Ω≈øÎ¿Ø«¸ƒ⁄µÂ" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="crdt_typ_nm" Align="Left" Desc="Ω≈øÎ¿Ø«¸∏Ì" Journal="N" Pad="SPC" Size="16" SizeEN="16" SizeKR="16" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		    <O1 Name="b_q" Align="Left" Desc="∏≈ºˆºˆ∑Æ" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
 		</O>
 	</Output>
 </Tkb_SSQM2392_B2C>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="EUC-KR"?>
 <Tkb_SSAM5763_B2C error="false">
 	<Name>SSAM5763</Name>
-	<Desc>Íµ≠ÎÇ¥Ï£ºÏãù ÏÜåÏàòÏ†ê Îß§Ïàò</Desc>
+	<Desc>±π≥ª¡÷Ωƒ º“ºˆ¡° ∏≈ºˆ</Desc>
 	<Code></Code>
 	<Route>SSAM5763</Route>
 	<base21></base21>
@@ -16,59 +16,59 @@
 	<Page_num>5763</Page_num>
 	<HostExpireTime >15000</HostExpireTime>
 	<Input iName="" >
-		<I Name="gnl_ac_no" Desc="Ï¢ÖÌï©Í≥ÑÏ¢åÎ≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
-		<I Name="gds_no" Desc="ÏÉÅÌíàÎ≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
-		<I Name="pwd" Desc="ÎπÑÎ∞ÄÎ≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
-		<I Name="is_cd" Desc="Ï¢ÖÎ™©ÏΩîÎìú" Align="Left" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="ordr_q_p6" Desc="Ï£ºÎ¨∏ÏàòÎüâP6" Align="Left" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="ordr_amt" Desc="Ï£ºÎ¨∏Í∏àÏï°" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="spclz_ordr_ccd" Desc="ÌäπÌôîÏ£ºÎ¨∏Íµ¨Î∂ÑÏΩîÎìú" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="dcml_ordr_std_ccd" Desc="ÏÜåÏàòÏ†êÏ£ºÎ¨∏Í∏∞Ï§ÄÍµ¨Î∂ÑÏΩîÎìú" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="rsv_typ_ordr_f" Desc="Ï†ÅÎ¶ΩÏãùÏ£ºÎ¨∏Ïó¨Î∂Ä" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="rsv_typ_ordr_acpt_dt" Desc="Ï†ÅÎ¶ΩÏãùÏ£ºÎ¨∏Ï†ëÏàòÏùºÏûê" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="rsv_typ_ordr_sq" Desc="Ï†ÅÎ¶ΩÏãùÏ£ºÎ¨∏ÏùºÎ†®Î≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="rsv_typ_ordr_sqc" Desc="Ï†ÅÎ¶ΩÏãùÏ£ºÎ¨∏ÌöåÏ∞®" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="rsv_amt" Desc="Ï†ÅÎ¶ΩÍ∏àÏï°" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="acpt_sq" Desc="Ï†ëÏàòÏùºÎ†®Î≤àÌò∏" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="cpn_cd" Desc="Ïø†Ìè∞ÏΩîÎìú" Align="Left" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="tv_s_est_f" Desc="Ï†ÑÎüâÎß§ÎèÑÏÑ§Ï†ïÏó¨Î∂Ä" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="dmstc_stk_dcml_trd_jb_ccd" Desc="Íµ≠ÎÇ¥Ï£ºÏãùÏÜåÏàòÏ†êÎß§Îß§ÏóÖÎ¨¥Íµ¨Î∂ÑÏΩîÎìú" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="ordr_sqc" Desc="Ï£ºÎ¨∏ÌöåÏ∞®" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="dmstc_stk_dcml_evnt_ccd" Desc="Íµ≠ÎÇ¥Ï£ºÏãùÏÜåÏàòÏ†êÏù¥Î≤§Ìä∏Íµ¨Î∂ÑÏΩîÎìú" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="filler" Desc="FILLER" Align="Left" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="gnl_ac_no" Desc="¡æ«’∞Ë¡¬π¯»£" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
+		<I Name="gds_no" Desc="ªÛ«∞π¯»£" Align="Left" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
+		<I Name="pwd" Desc="∫Òπ–π¯»£" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
+		<I Name="is_cd" Desc="¡æ∏Òƒ⁄µÂ" Align="Left" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ordr_q_p6" Desc="¡÷πÆºˆ∑ÆP6" Align="Left" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ordr_amt" Desc="¡÷πÆ±›æ◊" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="spclz_ordr_ccd" Desc="∆Ø»≠¡÷πÆ±∏∫–ƒ⁄µÂ" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="dcml_ordr_std_ccd" Desc="º“ºˆ¡°¡÷πÆ±‚¡ÿ±∏∫–ƒ⁄µÂ" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="rsv_typ_ordr_f" Desc="¿˚∏≥Ωƒ¡÷πÆø©∫Œ" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="rsv_typ_ordr_acpt_dt" Desc="¿˚∏≥Ωƒ¡÷πÆ¡¢ºˆ¿œ¿⁄" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="rsv_typ_ordr_sq" Desc="¿˚∏≥Ωƒ¡÷πÆ¿œ∑√π¯»£" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="rsv_typ_ordr_sqc" Desc="¿˚∏≥Ωƒ¡÷πÆ»∏¬˜" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="rsv_amt" Desc="¿˚∏≥±›æ◊" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="acpt_sq" Desc="¡¢ºˆ¿œ∑√π¯»£" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="cpn_cd" Desc="ƒÌ∆˘ƒ⁄µÂ" Align="Left" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="tv_s_est_f" Desc="¿¸∑Æ∏≈µµº≥¡§ø©∫Œ" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="dmstc_stk_dcml_trd_jb_ccd" Desc="±π≥ª¡÷Ωƒº“ºˆ¡°∏≈∏≈æ˜π´±∏∫–ƒ⁄µÂ" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ordr_sqc" Desc="¡÷πÆ»∏¬˜" Align="Left" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="dmstc_stk_dcml_evnt_ccd" Desc="±π≥ª¡÷Ωƒº“ºˆ¡°¿Ã∫•∆Æ±∏∫–ƒ⁄µÂ" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="filler" Desc="FILLER" Align="Left" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
 	</Input>
 	<Output oName="" >
-		<O Name="o_lngth" Align="Left" Desc="Ï∂úÍ∏∏Ïù¥" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="o_clsf" Align="Left" Desc="Ï∂úÍµ¨Î∂Ñ" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="o_msg" Align="Left" Desc="Ï∂úÎ©îÏãúÏßÄ" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="gnl_ac_no" Align="Left" Desc="Ï¢ÖÌï©Í≥ÑÏ¢åÎ≤àÌò∏" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt=""  SkipValue="Y"/>
-		<O Name="gds_no" Align="Left" Desc="ÏÉÅÌíàÎ≤àÌò∏" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt=""  SkipValue="Y"/>
-		<O Name="ordr_dt" Align="Left" Desc="Ï£ºÎ¨∏ÏùºÏûê" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="dmstc_stk_dcml_trd_jb_ccd" Align="Left" Desc="Íµ≠ÎÇ¥Ï£ºÏãùÏÜåÏàòÏ†êÎß§Îß§ÏóÖÎ¨¥Íµ¨Î∂ÑÏΩîÎìú" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="ordr_sqc" Align="Left" Desc="Ï£ºÎ¨∏ÌöåÏ∞®" Journal="N" Pad="SPC" Size="10" SizeEN="10" SizeKR="10" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="bnf_is_cd" Align="Left" Desc="ÏàòÏùµÏ¶ùÍ∂åÏ¢ÖÎ™©ÏΩîÎìú" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="stnd_is_cd" Align="Left" Desc="ÌëúÏ§ÄÏ¢ÖÎ™©ÏΩîÎìú" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="trd_dl_ccd" Align="Left" Desc="Îß§Îß§Í±∞ÎûòÍµ¨Î∂ÑÏΩîÎìú" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="dmstc_stk_dcml_ordr_sq" Align="Left" Desc="Íµ≠ÎÇ¥Ï£ºÏãùÏÜåÏàòÏ†êÏ£ºÎ¨∏ÏùºÎ†®Î≤àÌò∏" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="gnl_ac_no" Align="Left" Desc="Ï¢ÖÌï©Í≥ÑÏ¢åÎ≤àÌò∏" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt=""  SkipValue="Y"/>
-		<O Name="gds_no" Align="Left" Desc="ÏÉÅÌíàÎ≤àÌò∏" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt=""  SkipValue="Y"/>
-		<O Name="pwd" Align="Left" Desc="ÎπÑÎ∞ÄÎ≤àÌò∏" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt=""  SkipValue="Y"/>
-		<O Name="is_cd" Align="Left" Desc="Ï¢ÖÎ™©ÏΩîÎìú" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="ordr_q_p6" Align="Left" Desc="Ï£ºÎ¨∏ÏàòÎüâP6" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="ordr_amt" Align="Left" Desc="Ï£ºÎ¨∏Í∏àÏï°" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="spclz_ordr_ccd" Align="Left" Desc="ÌäπÌôîÏ£ºÎ¨∏Íµ¨Î∂ÑÏΩîÎìú" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="dcml_ordr_std_ccd" Align="Left" Desc="ÏÜåÏàòÏ†êÏ£ºÎ¨∏Í∏∞Ï§ÄÍµ¨Î∂ÑÏΩîÎìú" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="rsv_typ_ordr_f" Align="Left" Desc="Ï†ÅÎ¶ΩÏãùÏ£ºÎ¨∏Ïó¨Î∂Ä" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="rsv_typ_ordr_acpt_dt" Align="Left" Desc="Ï†ÅÎ¶ΩÏãùÏ£ºÎ¨∏Ï†ëÏàòÏùºÏûê" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="rsv_typ_ordr_sq" Align="Left" Desc="Ï†ÅÎ¶ΩÏãùÏ£ºÎ¨∏ÏùºÎ†®Î≤àÌò∏" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="rsv_typ_ordr_sqc" Align="Left" Desc="Ï†ÅÎ¶ΩÏãùÏ£ºÎ¨∏ÌöåÏ∞®" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="rsv_amt" Align="Left" Desc="Ï†ÅÎ¶ΩÍ∏àÏï°" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="acpt_sq" Align="Left" Desc="Ï†ëÏàòÏùºÎ†®Î≤àÌò∏" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="cpn_cd" Align="Left" Desc="Ïø†Ìè∞ÏΩîÎìú" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="tv_s_est_f" Align="Left" Desc="Ï†ÑÎüâÎß§ÎèÑÏÑ§Ï†ïÏó¨Î∂Ä" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="dmstc_stk_dcml_trd_jb_ccd" Align="Left" Desc="Íµ≠ÎÇ¥Ï£ºÏãùÏÜåÏàòÏ†êÎß§Îß§ÏóÖÎ¨¥Íµ¨Î∂ÑÏΩîÎìú" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="ordr_sqc" Align="Left" Desc="Ï£ºÎ¨∏ÌöåÏ∞®" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="dmstc_stk_dcml_evnt_ccd" Align="Left" Desc="Íµ≠ÎÇ¥Ï£ºÏãùÏÜåÏàòÏ†êÏù¥Î≤§Ìä∏Íµ¨Î∂ÑÏΩîÎìú" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
-		<O Name="filler" Align="Left" Desc="FILLER" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_lngth" Align="Left" Desc="√‚±Ê¿Ã" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_clsf" Align="Left" Desc="√‚±∏∫–" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_msg" Align="Left" Desc="√‚∏ﬁΩ√¡ˆ" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="gnl_ac_no" Align="Left" Desc="¡æ«’∞Ë¡¬π¯»£" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y"/>
+		<O Name="gds_no" Align="Left" Desc="ªÛ«∞π¯»£" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y"/>
+		<O Name="ordr_dt" Align="Left" Desc="¡÷πÆ¿œ¿⁄" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="dmstc_stk_dcml_trd_jb_ccd" Align="Left" Desc="±π≥ª¡÷Ωƒº“ºˆ¡°∏≈∏≈æ˜π´±∏∫–ƒ⁄µÂ" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="ordr_sqc" Align="Left" Desc="¡÷πÆ»∏¬˜" Journal="N" Pad="SPC" Size="10" SizeEN="10" SizeKR="10" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="bnf_is_cd" Align="Left" Desc="ºˆ¿Õ¡ı±«¡æ∏Òƒ⁄µÂ" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="stnd_is_cd" Align="Left" Desc="«•¡ÿ¡æ∏Òƒ⁄µÂ" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="trd_dl_ccd" Align="Left" Desc="∏≈∏≈∞≈∑°±∏∫–ƒ⁄µÂ" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="dmstc_stk_dcml_ordr_sq" Align="Left" Desc="±π≥ª¡÷Ωƒº“ºˆ¡°¡÷πÆ¿œ∑√π¯»£" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="gnl_ac_no" Align="Left" Desc="¡æ«’∞Ë¡¬π¯»£" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y"/>
+		<O Name="gds_no" Align="Left" Desc="ªÛ«∞π¯»£" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y"/>
+		<O Name="pwd" Align="Left" Desc="∫Òπ–π¯»£" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y"/>
+		<O Name="is_cd" Align="Left" Desc="¡æ∏Òƒ⁄µÂ" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="ordr_q_p6" Align="Left" Desc="¡÷πÆºˆ∑ÆP6" Journal="N" Pad="SPC" Size="15" SizeEN="15" SizeKR="15" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="ordr_amt" Align="Left" Desc="¡÷πÆ±›æ◊" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="spclz_ordr_ccd" Align="Left" Desc="∆Ø»≠¡÷πÆ±∏∫–ƒ⁄µÂ" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="dcml_ordr_std_ccd" Align="Left" Desc="º“ºˆ¡°¡÷πÆ±‚¡ÿ±∏∫–ƒ⁄µÂ" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="rsv_typ_ordr_f" Align="Left" Desc="¿˚∏≥Ωƒ¡÷πÆø©∫Œ" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="rsv_typ_ordr_acpt_dt" Align="Left" Desc="¿˚∏≥Ωƒ¡÷πÆ¡¢ºˆ¿œ¿⁄" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="rsv_typ_ordr_sq" Align="Left" Desc="¿˚∏≥Ωƒ¡÷πÆ¿œ∑√π¯»£" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="rsv_typ_ordr_sqc" Align="Left" Desc="¿˚∏≥Ωƒ¡÷πÆ»∏¬˜" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="rsv_amt" Align="Left" Desc="¿˚∏≥±›æ◊" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="acpt_sq" Align="Left" Desc="¡¢ºˆ¿œ∑√π¯»£" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="cpn_cd" Align="Left" Desc="ƒÌ∆˘ƒ⁄µÂ" Journal="N" Pad="SPC" Size="12" SizeEN="12" SizeKR="12" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="tv_s_est_f" Align="Left" Desc="¿¸∑Æ∏≈µµº≥¡§ø©∫Œ" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="dmstc_stk_dcml_trd_jb_ccd" Align="Left" Desc="±π≥ª¡÷Ωƒº“ºˆ¡°∏≈∏≈æ˜π´±∏∫–ƒ⁄µÂ" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="ordr_sqc" Align="Left" Desc="¡÷πÆ»∏¬˜" Journal="N" Pad="SPC" Size="18" SizeEN="18" SizeKR="18" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="dmstc_stk_dcml_evnt_ccd" Align="Left" Desc="±π≥ª¡÷Ωƒº“ºˆ¡°¿Ã∫•∆Æ±∏∫–ƒ⁄µÂ" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="filler" Align="Left" Desc="FILLER" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" SkipValue="Y" />
 	</Output>
 </Tkb_SSAM5763_B2C>

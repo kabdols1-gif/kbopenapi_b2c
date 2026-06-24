@@ -564,7 +564,7 @@ def apply_field_descriptions(tr_code: str, section: str, fields: list[dict[str, 
     field_metadata = descriptions.get(normalize_tr_code(tr_code), {}).get(section, {})
     for field in fields:
         metadata = field_metadata.get(normalize_field_key(field.get("name", "")), {})
-        field["description"] = clean(metadata.get("description"))
+        field["description"] = clean(metadata.get("description")) or field.get("description") or clean(field.get("korean"))
         field["required"] = required_text(metadata.get("required")) or field.get("required") or "N"
 
 
@@ -645,7 +645,7 @@ def field_from_xml_node(node: ET.Element) -> dict[str, str] | None:
         "note": clean(node.attrib.get("IOType")),
         "default": clean(node.attrib.get("Default")),
         "skipValue": clean(node.attrib.get("SkipValue")),
-        "description": "",
+        "description": clean(node.attrib.get("Desc")),
         "required": "N",
     }
 
