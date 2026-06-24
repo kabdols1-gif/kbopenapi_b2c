@@ -42,6 +42,20 @@ B2C_BODY_OMITTED_FIELDS = {"gnl_ac_no", "gds_no", "pwd", "rnmcno"}
 B2C_SPEC_OMITTED_FIELDS = {"rnmcno"}
 
 
+def is_filler_field_name(value: str) -> bool:
+    return re.fullmatch(r"filler\d*", (value or "").strip().lower()) is not None
+
+
+def should_omit_b2c_body_field(value: str) -> bool:
+    normalized = (value or "").strip().lower()
+    return normalized in B2C_BODY_OMITTED_FIELDS or is_filler_field_name(normalized)
+
+
+def should_omit_b2c_spec_field(value: str) -> bool:
+    normalized = (value or "").strip().lower()
+    return normalized in B2C_SPEC_OMITTED_FIELDS or is_filler_field_name(normalized)
+
+
 def clean(value: Any) -> str:
     if value is None:
         return ""
@@ -321,7 +335,7 @@ def build_data_body(fields: list[dict[str, str]]) -> dict[str, str]:
         upper = key.upper()
         if (
             is_enabled_flag(field.get("skipValue"))
-            or key.lower() in B2C_BODY_OMITTED_FIELDS
+            or should_omit_b2c_body_field(key)
             or upper == "PWD"
             or upper.endswith("_PWD")
         ):
@@ -612,7 +626,7 @@ def field_from_xml_node(node: ET.Element) -> dict[str, str] | None:
     name = clean(node.attrib.get("Name"))
     if not name or name.startswith("_"):
         return None
-    if name.lower() in B2C_SPEC_OMITTED_FIELDS:
+    if should_omit_b2c_spec_field(name):
         return None
     if is_enabled_flag(node.attrib.get("SkipValue")):
         return None

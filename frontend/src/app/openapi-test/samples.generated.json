@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T15:51:51+09:00",
+  "generatedAt": "2026-06-24T16:27:54+09:00",
   "sourceWorkbook": "",
   "sourceXmlDirectory": "C:\\Users\\kb1\\Desktop\\workspace\\kbopenapi_b2c\\KB_B2C",
   "descriptionSources": {
@@ -5204,8 +5204,6 @@
           "info_ccd": "1",
           "mkt_clsf": "1",
           "chrt_clsf": "1",
-          "filler1": "",
-          "filler2": "",
           "minute_tck_indx": "",
           "is_cd": "005930",
           "inq_clsf": "1",
@@ -5249,30 +5247,6 @@
           "default": "",
           "skipValue": "",
           "description": "D:일별 W:주별 M:월별 Y:년별(주식) B:분봉 T:틱",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER1 FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER2 FILLER2",
-          "name": "filler2",
-          "type": "char",
-          "length": "4",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
           "required": "N"
         },
         {
@@ -5431,18 +5405,6 @@
           "default": "",
           "skipValue": "",
           "description": "1:날짜로 조회 2:데이터수로 조회",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "8",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
           "required": "N"
         },
         {
@@ -5686,18 +5648,6 @@
           "required": "N"
         },
         {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
           "korean": "수정주가비율P2 MDFY_STK_PRC_RT_P2",
           "name": "mdfy_stk_prc_rt_p2",
           "type": "double",
@@ -5737,8 +5687,8 @@
       "fileName": "Tkb_IVS11560_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 10,
-      "outputFieldCount": 33,
+      "inputFieldCount": 8,
+      "outputFieldCount": 31,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -6961,18 +6911,6 @@
           "required": "N"
         },
         {
-          "korean": "FILLER FILLER (기간,투자자동일)",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "기간,투자자동일",
-          "required": "N"
-        },
-        {
           "korean": "전일대비율P2 BDY_CMPR_R_P2 (기간,투자자동일)",
           "name": "bdy_cmpr_r_p2",
           "type": "double",
@@ -7018,18 +6956,6 @@
           "default": "",
           "skipValue": "",
           "description": "연속일수 매도매수구분",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER1 FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
           "required": "N"
         },
         {
@@ -7153,18 +7079,6 @@
           "required": "N"
         },
         {
-          "korean": "FILLER2 FILLER2",
-          "name": "filler2",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
           "korean": "기간대비가 PRD_CMPR_PRC (투자자동일)",
           "name": "prd_cmpr_prc",
           "type": "long",
@@ -7217,7 +7131,7 @@
       "source": "kb-b2c-xml",
       "layout": "xml",
       "inputFieldCount": 5,
-      "outputFieldCount": 30,
+      "outputFieldCount": 27,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -11861,25 +11775,10 @@
           "appVersion": "..",
           "scrNo": "0000"
         },
-        "dataBody": {
-          "filler": ""
-        }
+        "dataBody": {}
       },
       "query": {},
-      "inputSpec": [
-        {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        }
-      ],
+      "inputSpec": [],
       "outputSpec": [
         {
           "korean": "길이C5",
@@ -12737,7 +12636,7 @@
       "fileName": "Tkb_IVSA0070_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 1,
+      "inputFieldCount": 0,
       "outputFieldCount": 71,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -12849,18 +12748,6 @@
           "korean": "조회건수 INQ_CNT",
           "name": "inq_cnt",
           "type": "long",
-          "length": "4",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
           "length": "4",
           "decimal": "0",
           "note": "Field",
@@ -13012,25 +12899,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "4",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_IVA60140_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
       "inputFieldCount": 2,
-      "outputFieldCount": 19,
+      "outputFieldCount": 17,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -13311,25 +13186,10 @@
           "appVersion": "..",
           "scrNo": "0000"
         },
-        "dataBody": {
-          "filler": ""
-        }
+        "dataBody": {}
       },
       "query": {},
-      "inputSpec": [
-        {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "32",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        }
-      ],
+      "inputSpec": [],
       "outputSpec": [
         {
           "korean": "길이C5",
@@ -13383,18 +13243,6 @@
           "korean": "조회건수 INQ_CNT",
           "name": "inq_cnt",
           "type": "long",
-          "length": "4",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
           "length": "4",
           "decimal": "0",
           "note": "Field",
@@ -13468,18 +13316,6 @@
           "name": "bdy_cmpr_ccd",
           "type": "char",
           "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "7",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -13587,8 +13423,8 @@
       "fileName": "Tkb_IVA60190_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 1,
-      "outputFieldCount": 21,
+      "inputFieldCount": 0,
+      "outputFieldCount": 19,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -13614,25 +13450,10 @@
           "appVersion": "..",
           "scrNo": "0000"
         },
-        "dataBody": {
-          "filler": ""
-        }
+        "dataBody": {}
       },
       "query": {},
-      "inputSpec": [
-        {
-          "korean": "FILLER FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        }
-      ],
+      "inputSpec": [],
       "outputSpec": [
         {
           "korean": "길이C5",
@@ -14214,7 +14035,7 @@
       "fileName": "Tkb_IVA10370_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 1,
+      "inputFieldCount": 0,
       "outputFieldCount": 48,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -14626,24 +14447,11 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "filler": "",
           "is_no": ""
         }
       },
       "query": {},
       "inputSpec": [
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
         {
           "korean": "종목번호",
           "name": "is_no",
@@ -14842,7 +14650,7 @@
       "fileName": "Tkb_SSQM0004_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 2,
+      "inputFieldCount": 1,
       "outputFieldCount": 15,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -16161,25 +15969,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "10",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SSQM0009_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
       "inputFieldCount": 9,
-      "outputFieldCount": 40,
+      "outputFieldCount": 39,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -16207,7 +16003,6 @@
         },
         "dataBody": {
           "inq_clsf": "1",
-          "filler": "",
           "is_no": "",
           "mkt_tm_ccd": "1",
           "spclz_ordr_ccd": "1",
@@ -16227,18 +16022,6 @@
           "default": "",
           "skipValue": "",
           "description": "0:현금주식매도,1:현금주식예약,2:현금주식일괄매도,3:ELW+현금,4:장외단주매도,5:ELW 전용,6:현금주식매도+코넥스+ETN,7:코넥스전용,8:ETN 전용,9:ELW+현금+ETN",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
           "required": "N"
         },
         {
@@ -16439,7 +16222,7 @@
       "fileName": "Tkb_SSQM1801_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 7,
+      "inputFieldCount": 6,
       "outputFieldCount": 11,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -22557,25 +22340,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "33",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SWQM2412_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
       "inputFieldCount": 4,
-      "outputFieldCount": 79,
+      "outputFieldCount": 78,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -26537,25 +26308,12 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "filler": "",
           "is_no": "",
           "bnd_mktio_ccd": "1"
         }
       },
       "query": {},
       "inputSpec": [
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
         {
           "korean": "종목번호",
           "name": "is_no",
@@ -26754,7 +26512,7 @@
       "fileName": "Tkb_SSQM1802_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 3,
+      "inputFieldCount": 2,
       "outputFieldCount": 14,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -26785,7 +26543,6 @@
           "mkt_tm_clsf": "1",
           "ordr_jb_clsf": "1",
           "s_clsf": "1",
-          "filler": "",
           "is_cd": "005930",
           "ordr_q": "1",
           "ordr_uprc": "",
@@ -26799,8 +26556,7 @@
           "spclz_ordr_ccd": "1",
           "acct_cd": "",
           "sor_ordr_ccd": "1",
-          "stpd_prc": "",
-          "filler1": ""
+          "stpd_prc": ""
         }
       },
       "query": {},
@@ -26840,18 +26596,6 @@
           "skipValue": "",
           "description": "1:선물대용매도,2:입고예정매도,3:공매도",
           "required": "Y"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         },
         {
           "korean": "종목코드",
@@ -27020,18 +26764,6 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "84",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "outputSpec": [
@@ -27112,18 +26844,6 @@
           "name": "s_clsf",
           "type": "char",
           "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -27298,25 +27018,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "84",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SSAM1801_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 19,
-      "outputFieldCount": 23,
+      "inputFieldCount": 17,
+      "outputFieldCount": 21,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -27346,7 +27054,6 @@
           "mkt_tm_clsf": "1",
           "ordr_jb_clsf": "1",
           "s_clsf": "1",
-          "filler": "",
           "is_cd": "005930",
           "ordr_q": "1",
           "ordr_uprc": "",
@@ -27360,8 +27067,7 @@
           "spclz_ordr_ccd": "1",
           "acct_cd": "",
           "sor_ordr_ccd": "1",
-          "stpd_prc": "",
-          "filler1": ""
+          "stpd_prc": ""
         }
       },
       "query": {},
@@ -27401,18 +27107,6 @@
           "skipValue": "",
           "description": "1:선물대용매도,2:입고예정매도,3:공매도",
           "required": "Y"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         },
         {
           "korean": "종목코드",
@@ -27581,18 +27275,6 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "84",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "outputSpec": [
@@ -27673,18 +27355,6 @@
           "name": "s_clsf",
           "type": "char",
           "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -27859,25 +27529,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "84",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SSAM1802_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 19,
-      "outputFieldCount": 23,
+      "inputFieldCount": 17,
+      "outputFieldCount": 21,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -27907,7 +27565,6 @@
           "mkt_tm_clsf": "1",
           "ordr_jb_clsf": "1",
           "s_clsf": "1",
-          "filler": "",
           "is_cd": "005930",
           "ordr_q": "1",
           "ordr_uprc": "",
@@ -27921,8 +27578,7 @@
           "spclz_ordr_ccd": "1",
           "acct_cd": "",
           "sor_ordr_ccd": "1",
-          "stpd_prc": "",
-          "filler1": ""
+          "stpd_prc": ""
         }
       },
       "query": {},
@@ -27961,18 +27617,6 @@
           "default": "",
           "skipValue": "",
           "description": "1:선물대용매도,2:입고예정매도,3:공매도",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
           "required": "N"
         },
         {
@@ -28142,18 +27786,6 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "84",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "outputSpec": [
@@ -28234,18 +27866,6 @@
           "name": "s_clsf",
           "type": "char",
           "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -28420,25 +28040,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "84",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SSAM1805_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 19,
-      "outputFieldCount": 23,
+      "inputFieldCount": 17,
+      "outputFieldCount": 21,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -28468,7 +28076,6 @@
           "mkt_tm_clsf": "1",
           "ordr_jb_clsf": "1",
           "s_clsf": "1",
-          "filler": "",
           "is_cd": "005930",
           "ordr_q": "1",
           "ordr_uprc": "",
@@ -28482,8 +28089,7 @@
           "spclz_ordr_ccd": "1",
           "acct_cd": "",
           "sor_ordr_ccd": "1",
-          "stpd_prc": "",
-          "filler1": ""
+          "stpd_prc": ""
         }
       },
       "query": {},
@@ -28523,18 +28129,6 @@
           "skipValue": "",
           "description": "1:선물대용매도,2:입고예정매도,3:공매도",
           "required": "Y"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         },
         {
           "korean": "종목코드",
@@ -28703,18 +28297,6 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "84",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "outputSpec": [
@@ -28795,18 +28377,6 @@
           "name": "s_clsf",
           "type": "char",
           "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -28981,25 +28551,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
-          "type": "char",
-          "length": "84",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SSAM1806_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 19,
-      "outputFieldCount": 23,
+      "inputFieldCount": 17,
+      "outputFieldCount": 21,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -29213,8 +28771,7 @@
           "tv_s_est_f": "",
           "dmstc_stk_dcml_trd_jb_ccd": "1",
           "ordr_sqc": "",
-          "dmstc_stk_dcml_evnt_ccd": "1",
-          "filler": ""
+          "dmstc_stk_dcml_evnt_ccd": "1"
         }
       },
       "query": {},
@@ -29404,18 +28961,6 @@
           "name": "dmstc_stk_dcml_evnt_ccd",
           "type": "char",
           "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "100",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -29736,25 +29281,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "100",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SSAM5762_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 17,
-      "outputFieldCount": 27,
+      "inputFieldCount": 16,
+      "outputFieldCount": 26,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -29796,8 +29329,7 @@
           "tv_s_est_f": "",
           "dmstc_stk_dcml_trd_jb_ccd": "1",
           "ordr_sqc": "",
-          "dmstc_stk_dcml_evnt_ccd": "1",
-          "filler": ""
+          "dmstc_stk_dcml_evnt_ccd": "1"
         }
       },
       "query": {},
@@ -29987,18 +29519,6 @@
           "name": "dmstc_stk_dcml_evnt_ccd",
           "type": "char",
           "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "100",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -30319,25 +29839,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "100",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SSAM5763_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 17,
-      "outputFieldCount": 27,
+      "inputFieldCount": 16,
+      "outputFieldCount": 26,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -30380,7 +29888,6 @@
           "dmstc_stk_dcml_trd_jb_ccd": "1",
           "ordr_sqc": "",
           "dmstc_stk_dcml_evnt_ccd": "1",
-          "filler": "",
           "ordr_dt": "20250617",
           "bnf_is_cd": "005930",
           "trd_dl_ccd": "1",
@@ -30574,18 +30081,6 @@
           "name": "dmstc_stk_dcml_evnt_ccd",
           "type": "char",
           "length": "1",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "100",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -30978,25 +30473,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "100",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SSAM5764_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 23,
-      "outputFieldCount": 27,
+      "inputFieldCount": 22,
+      "outputFieldCount": 26,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -48930,8 +48413,7 @@
           "ordr_mntnc_tm_ccd": "1",
           "cpn_cd": "",
           "crdt_typ_cd": "",
-          "ln_dt": "20250617",
-          "filler": ""
+          "ln_dt": "20250617"
         }
       },
       "query": {},
@@ -49163,18 +48645,6 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "27",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "outputSpec": [
@@ -49237,25 +48707,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "49",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SKAM2101_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 20,
-      "outputFieldCount": 6,
+      "inputFieldCount": 19,
+      "outputFieldCount": 5,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -49295,8 +48753,7 @@
           "end_tm": "090000",
           "frgn_ordr_typ_cd": "",
           "spclz_ordr_ccd": "1",
-          "frgn_stp_prc_p4": "",
-          "filler": ""
+          "frgn_stp_prc_p4": ""
         }
       },
       "query": {},
@@ -49468,18 +48925,6 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "30",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "outputSpec": [
@@ -49542,25 +48987,13 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "49",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "fileName": "Tkb_SKAM2102_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 15,
-      "outputFieldCount": 6,
+      "inputFieldCount": 14,
+      "outputFieldCount": 5,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
     },
@@ -50324,8 +49757,7 @@
           "end_tm": "090000",
           "ovtm_ordr_ccd": "1",
           "bskt_ordr_no": "",
-          "frgn_stp_prc_p4": "",
-          "filler": ""
+          "frgn_stp_prc_p4": ""
         }
       },
       "query": {},
@@ -50449,18 +49881,6 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "17",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "outputSpec": [
@@ -50516,7 +49936,7 @@
       "fileName": "Tkb_SPAO2104_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 11,
+      "inputFieldCount": 10,
       "outputFieldCount": 4,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -50549,8 +49969,7 @@
           "ordr_typ": "",
           "ordr_q": "1",
           "frgn_ordr_prc_p4": "",
-          "cncl_ordr_no": "",
-          "filler": ""
+          "cncl_ordr_no": ""
         }
       },
       "query": {},
@@ -50626,18 +50045,6 @@
           "skipValue": "",
           "description": "",
           "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "10",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         }
       ],
       "outputSpec": [
@@ -50705,7 +50112,7 @@
       "fileName": "Tkb_SPAO2106_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 7,
+      "inputFieldCount": 6,
       "outputFieldCount": 5,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -53501,8 +52908,7 @@
           "frgn_krx_ccd": "1",
           "ordr_st": "",
           "nxt_key": "",
-          "spclz_ordr_ccd": "1",
-          "filler": ""
+          "spclz_ordr_ccd": "1"
         }
       },
       "query": {},
@@ -53572,18 +52978,6 @@
           "name": "spclz_ordr_ccd",
           "type": "char",
           "length": "2",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "10",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -53981,7 +53375,7 @@
       "fileName": "Tkb_SPQN5473_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 7,
+      "inputFieldCount": 6,
       "outputFieldCount": 32,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -54010,7 +53404,6 @@
         },
         "dataBody": {
           "ordr_jb_clsf": "1",
-          "filler": "",
           "is_cd": "005930",
           "ordr_uprc": "",
           "ordr_q": "1",
@@ -54018,7 +53411,6 @@
           "crdt_typ_cd": "",
           "ln_dt": "20250617",
           "cncl_ordr_no": "",
-          "filler1": "",
           "tv_rv_ccd": "1",
           "strt_dt": "20250101",
           "end_dt": "20251231",
@@ -54038,18 +53430,6 @@
           "skipValue": "",
           "description": "1:매도,2:매수",
           "required": "Y"
-        },
-        {
-          "korean": "FILLER",
-          "name": "filler",
-          "type": "char",
-          "length": "3",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         },
         {
           "korean": "종목코드",
@@ -54126,18 +53506,6 @@
         {
           "korean": "취소주문번호",
           "name": "cncl_ordr_no",
-          "type": "char",
-          "length": "10",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "FILLER1",
-          "name": "filler1",
           "type": "char",
           "length": "10",
           "decimal": "0",
@@ -54261,7 +53629,7 @@
       "fileName": "Tkb_SSAM0831_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 14,
+      "inputFieldCount": 12,
       "outputFieldCount": 5,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
