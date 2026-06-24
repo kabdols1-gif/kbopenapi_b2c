@@ -394,6 +394,72 @@ function editableRequiredText(value: string) {
   return value === "Y" ? "Y" : "N";
 }
 
+function requiredInputFieldNameSet(fields: OpenApiFieldSpec[] | undefined) {
+  return new Set(
+    (fields ?? [])
+      .filter((field) => fieldRequiredText(field) === "Y")
+      .flatMap((field) => [field.name, field.korean])
+      .map((value) => (value ?? "").trim().toLowerCase())
+      .filter(Boolean)
+  );
+}
+
+function isRequiredJsonFieldLine(line: string, requiredFieldNames: Set<string>) {
+  if (requiredFieldNames.size === 0) return false;
+  const match = line.match(/^\s*"([^"]+)"\s*:/);
+  return match ? requiredFieldNames.has(match[1].trim().toLowerCase()) : false;
+}
+
+function RequiredJsonBodyEditor({
+  value,
+  onChange,
+  rows,
+  requiredFields,
+  className = "",
+  textClassName = "text-sm",
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  rows: number;
+  requiredFields?: OpenApiFieldSpec[];
+  className?: string;
+  textClassName?: string;
+}) {
+  const highlightRef = useRef<HTMLPreElement>(null);
+  const requiredFieldNames = useMemo(() => requiredInputFieldNameSet(requiredFields), [requiredFields]);
+  const lines = value.split("\n");
+  const textClasses = `${textClassName} font-mono leading-6`;
+
+  return (
+    <div className={`relative rounded-md border border-slate-200 bg-white focus-within:border-[#fcb514] ${className}`}>
+      <pre
+        ref={highlightRef}
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 overflow-hidden whitespace-pre-wrap break-words px-3 py-2 ${textClasses} text-slate-700`}
+      >
+        {lines.map((line, index) => (
+          <span key={`${index}-${line}`} className={isRequiredJsonFieldLine(line, requiredFieldNames) ? "font-semibold text-red-600" : undefined}>
+            {line || " "}
+            {index < lines.length - 1 ? "\n" : ""}
+          </span>
+        ))}
+      </pre>
+      <textarea
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        onScroll={(event) => {
+          if (!highlightRef.current) return;
+          highlightRef.current.scrollTop = event.currentTarget.scrollTop;
+          highlightRef.current.scrollLeft = event.currentTarget.scrollLeft;
+        }}
+        rows={rows}
+        spellCheck={false}
+        className={`relative z-10 block w-full resize-y bg-transparent px-3 py-2 ${textClasses} text-transparent caret-slate-900 outline-none selection:bg-[#fcb514]/30`}
+      />
+    </div>
+  );
+}
+
 function SpecTable({
   title,
   fields,
@@ -5292,11 +5358,11 @@ export default function OpenApiTestClient({
               {isEditorBodyMethod(editorMethod) ? (
                 <label className="mt-4 grid gap-1 text-sm font-black text-slate-700">
                   바디 (JSON)
-                  <textarea
+                  <RequiredJsonBodyEditor
                     value={editorBodyText}
-                    onChange={(event) => setEditorBodyText(event.target.value)}
+                    onChange={setEditorBodyText}
                     rows={10}
-                    className="rounded-md border border-slate-200 px-3 py-2 font-mono text-sm outline-none"
+                    requiredFields={selectedSample?.inputSpec}
                   />
                 </label>
               ) : null}
@@ -5772,11 +5838,12 @@ export default function OpenApiTestClient({
                   {isBodyMethod(historyReplayMethod) ? (
                     <label className="mt-3 grid gap-1 text-xs font-black text-slate-700">
                       전송 바디 (JSON)
-                      <textarea
+                      <RequiredJsonBodyEditor
                         value={historyReplayBodyText}
-                        onChange={(event) => setHistoryReplayBodyText(event.target.value)}
+                        onChange={setHistoryReplayBodyText}
                         rows={12}
-                        className="rounded-md border border-slate-200 bg-white px-3 py-2 font-mono text-xs outline-none"
+                        requiredFields={selectedHistorySample?.inputSpec}
+                        textClassName="text-xs"
                       />
                     </label>
                   ) : null}
