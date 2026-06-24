@@ -101,12 +101,6 @@ type FieldSpecOverride = {
 type SampleSpecOverrides = Record<string, Partial<Record<FieldSpecSectionKey, Record<string, FieldSpecOverride>>>>;
 
 type SharedSampleMetadata = {
-  executed?: boolean;
-  lastExecutedAt?: string;
-  lastStatus?: number;
-  lastOk?: boolean;
-  verified?: boolean;
-  note?: string;
   specOverrides?: Partial<Record<FieldSpecSectionKey, Record<string, FieldSpecOverride>>>;
   updatedAt?: string;
 };
@@ -435,7 +429,7 @@ function SpecTable({
                 const fieldKey = fieldSpecKey(field, index);
                 const isEditingField = editingFieldKey === fieldKey;
                 return (
-                  <tr key={`${title}-${field.name || field.korean || index}`} className="align-top">
+                  <tr key={`${title}-${fieldKey}`} className="align-top">
                     <td className="px-3 py-2">
                       <p className="break-words font-black text-slate-700">{specText(field.korean || field.name)}</p>
                       <p className="mt-1 break-all font-mono text-[11px] font-semibold text-slate-500">
@@ -1231,12 +1225,6 @@ function normalizeSharedMetadata(payload: unknown): Record<string, SharedSampleM
     if (!sampleId || !value || typeof value !== "object" || Array.isArray(value)) continue;
     const record = value as Record<string, unknown>;
     const next: SharedSampleMetadata = {};
-    if (record.executed === true || record.executed === false) next.executed = record.executed;
-    if (typeof record.lastExecutedAt === "string") next.lastExecutedAt = record.lastExecutedAt;
-    if (typeof record.lastStatus === "number") next.lastStatus = record.lastStatus;
-    if (record.lastOk === true || record.lastOk === false) next.lastOk = record.lastOk;
-    if (record.verified === true || record.verified === false) next.verified = record.verified;
-    if (typeof record.note === "string") next.note = record.note;
     if (typeof record.updatedAt === "string") next.updatedAt = record.updatedAt;
     if (record.specOverrides && typeof record.specOverrides === "object" && !Array.isArray(record.specOverrides)) {
       next.specOverrides = parseSampleSpecOverrides(JSON.stringify({ [sampleId]: record.specOverrides }))[sampleId];
@@ -1244,20 +1232,6 @@ function normalizeSharedMetadata(payload: unknown): Record<string, SharedSampleM
     normalized[sampleId] = next;
   }
   return normalized;
-}
-
-function mergeSharedSampleTestMetadata(current: SampleTestMetadataById, shared: Record<string, SharedSampleMetadata>) {
-  const next = { ...current };
-  for (const [sampleId, metadata] of Object.entries(shared)) {
-    if (metadata.verified === undefined && metadata.note === undefined) continue;
-    const currentItem = next[sampleId] ?? { note: "", verified: false };
-    next[sampleId] = {
-      note: currentItem.note || metadata.note || "",
-      verified: currentItem.verified || metadata.verified === true,
-      updatedAt: currentItem.updatedAt ?? metadata.updatedAt,
-    };
-  }
-  return next;
 }
 
 function mergeSharedSpecOverrides(current: SampleSpecOverrides, shared: Record<string, SharedSampleMetadata>) {
@@ -1899,20 +1873,15 @@ export default function OpenApiTestClient({
   );
   const sampleIdSet = useMemo(() => new Set(samples.map((sample) => sample.id)), [samples]);
   const sharedMetadataSampleIdSet = useMemo(() => {
-    const ids = new Set(samples.map((sample) => sample.id));
-    ids.add("kb-b2c-token-issue");
-    return ids;
+    return new Set(samples.map((sample) => sample.id));
   }, [samples]);
   const executedSampleIdSet = useMemo(() => {
     const ids = new Set<string>();
     for (const item of history) {
       if (sampleIdSet.has(item.sampleId)) ids.add(item.sampleId);
     }
-    for (const [sampleId, metadata] of Object.entries(sharedSampleMetadata)) {
-      if (metadata.executed && sampleIdSet.has(sampleId)) ids.add(sampleId);
-    }
     return ids;
-  }, [history, sampleIdSet, sharedSampleMetadata]);
+  }, [history, sampleIdSet]);
 
   const sampleResults = useMemo(() => {
     const keyword = searchTerm.trim().toLowerCase();
@@ -1967,15 +1936,8 @@ export default function OpenApiTestClient({
       if (!sampleIdSet.has(item.sampleId) || executions.has(item.sampleId)) continue;
       executions.set(item.sampleId, item);
     }
-    for (const [sampleId, metadata] of Object.entries(sharedSampleMetadata)) {
-      if (executions.has(sampleId) || !metadata.executed || !sampleIdSet.has(sampleId)) continue;
-      executions.set(sampleId, {
-        ok: metadata.lastOk === true,
-        status: typeof metadata.lastStatus === "number" ? metadata.lastStatus : 0,
-      });
-    }
     return executions;
-  }, [history, sampleIdSet, sharedSampleMetadata]);
+  }, [history, sampleIdSet]);
   const latestExecutedSampleId = useMemo(() => {
     const latestSampleRun = history.find((item) => sampleIdSet.has(item.sampleId));
     return latestSampleRun?.sampleId ?? null;
@@ -2217,7 +2179,6 @@ export default function OpenApiTestClient({
         if (isCancelled) return;
         const shared = normalizeSharedMetadata(payload);
         setSharedSampleMetadata(shared);
-        setSampleTestMetadata((current) => mergeSharedSampleTestMetadata(current, shared));
         setSampleSpecOverrides((current) => mergeSharedSpecOverrides(current, shared));
       })
       .catch(() => {
@@ -2255,10 +2216,6 @@ export default function OpenApiTestClient({
   const updateSampleTestMetadata = useCallback(
     (sampleId: string, patch: Partial<SampleTestMetadata>) => {
       if (!sampleId) return;
-      persistSharedSampleMetadataPatch(sampleId, {
-        ...(patch.verified !== undefined ? { verified: patch.verified } : {}),
-        ...(patch.note !== undefined ? { note: patch.note } : {}),
-      });
       setSampleTestMetadata((current) => {
         const currentItem = current[sampleId] ?? { note: "", verified: false };
         const nextItem: SampleTestMetadata = {
@@ -2282,7 +2239,7 @@ export default function OpenApiTestClient({
         return next;
       });
     },
-    [persistSharedSampleMetadataPatch, sampleTestMetadataKey]
+    [sampleTestMetadataKey]
   );
 
   const updateSampleSpecOverride = useCallback(
@@ -2328,37 +2285,17 @@ export default function OpenApiTestClient({
 
   useEffect(() => {
     if (hasMigratedLocalSharedMetadataRef.current) return;
-    const hasMetadata = Object.keys(sampleTestMetadata).length > 0;
     const hasSpecOverrides = Object.keys(sampleSpecOverrides).length > 0;
-    const hasHistory = history.some((item) => item.sampleId && sharedMetadataSampleIdSet.has(item.sampleId));
-    if (!hasMetadata && !hasSpecOverrides && !hasHistory) return;
+    if (!hasSpecOverrides) return;
 
     hasMigratedLocalSharedMetadataRef.current = true;
-    for (const [sampleId, metadata] of Object.entries(sampleTestMetadata)) {
-      if (!sharedMetadataSampleIdSet.has(sampleId)) continue;
-      persistSharedSampleMetadataPatch(sampleId, {
-        verified: metadata.verified,
-        note: metadata.note,
-      });
-    }
     for (const [sampleId, overrides] of Object.entries(sampleSpecOverrides)) {
       if (!sharedMetadataSampleIdSet.has(sampleId)) continue;
       persistSharedSampleMetadataPatch(sampleId, {
         specOverrides: overrides,
       });
     }
-    const migratedExecutionIds = new Set<string>();
-    for (const item of history) {
-      if (!item.sampleId || !sharedMetadataSampleIdSet.has(item.sampleId) || migratedExecutionIds.has(item.sampleId)) continue;
-      migratedExecutionIds.add(item.sampleId);
-      persistSharedSampleMetadataPatch(item.sampleId, {
-        executed: true,
-        lastExecutedAt: item.executedAt,
-        lastStatus: item.status,
-        lastOk: item.ok,
-      });
-    }
-  }, [history, persistSharedSampleMetadataPatch, sampleSpecOverrides, sampleTestMetadata, sharedMetadataSampleIdSet]);
+  }, [persistSharedSampleMetadataPatch, sampleSpecOverrides, sampleTestMetadata, sharedMetadataSampleIdSet]);
 
   useEffect(() => {
     if (tokenSetupSteps.length === 0) return;
@@ -2730,12 +2667,6 @@ export default function OpenApiTestClient({
           return nextHistory;
         });
         if (activeSampleId !== "unselected") {
-          persistSharedSampleMetadataPatch(activeSampleId, {
-            executed: true,
-            lastExecutedAt: executedAt,
-            lastStatus: responseStatus,
-            lastOk: responseOk,
-          });
           setSelectedSampleId(activeSampleId);
           setSelectedSampleLabel(activeSampleLabel);
           if (openHistoryAfterRun) {
@@ -2796,12 +2727,6 @@ export default function OpenApiTestClient({
           return nextHistory;
         });
         if (activeSampleId !== "unselected") {
-          persistSharedSampleMetadataPatch(activeSampleId, {
-            executed: true,
-            lastExecutedAt: executedAt,
-            lastStatus: 0,
-            lastOk: false,
-          });
           setSelectedSampleId(activeSampleId);
           setSelectedSampleLabel(activeSampleLabel);
           if (openHistoryAfterRun) {
@@ -2815,7 +2740,7 @@ export default function OpenApiTestClient({
         setIsRunning(false);
       }
     },
-    [accessToken, accountNo, accountPassword, apiKey, approvalKey, authorizationCode, ciNo, historyStorageKey, isBodyMethod, issueNo, normalizedBroker, persistSharedSampleMetadataPatch, productCode, secretKey, selectedSampleId, selectedSampleLabel, userInfo, userInfoKey]
+    [accessToken, accountNo, accountPassword, apiKey, approvalKey, authorizationCode, ciNo, historyStorageKey, isBodyMethod, issueNo, normalizedBroker, productCode, secretKey, selectedSampleId, selectedSampleLabel, userInfo, userInfoKey]
   );
 
   const clearHistory = useCallback(() => {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T15:16:24+09:00",
+  "generatedAt": "2026-06-24T15:30:01+09:00",
   "sourceWorkbook": "",
   "sourceXmlDirectory": "C:\\Users\\kb1\\Desktop\\workspace\\kbopenapi_b2c\\KB_B2C",
   "descriptionSources": {
@@ -21599,6 +21599,18 @@
       "query": {},
       "inputSpec": [
         {
+          "korean": "종합계좌번호",
+          "name": "gnl_ac_no",
+          "type": "char",
+          "length": "9",
+          "decimal": "0",
+          "note": "Field",
+          "default": "",
+          "skipValue": "",
+          "description": "",
+          "required": "Y"
+        },
+        {
           "korean": "조회일자",
           "name": "inq_dt",
           "type": "char",
@@ -22588,7 +22600,7 @@
       "fileName": "Tkb_SWQM2412_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 3,
+      "inputFieldCount": 4,
       "outputFieldCount": 79,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -25767,6 +25779,18 @@
           "required": "Y"
         },
         {
+          "korean": "계좌비밀번호",
+          "name": "pwd",
+          "type": "char",
+          "length": "8",
+          "decimal": "0",
+          "note": "Field",
+          "default": "",
+          "skipValue": "",
+          "description": "",
+          "required": "Y"
+        },
+        {
           "korean": "다음키",
           "name": "nxt_key",
           "type": "char",
@@ -26096,7 +26120,7 @@
       "fileName": "Tkb_SSQM2443_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 4,
+      "inputFieldCount": 5,
       "outputFieldCount": 26,
       "menu": "",
       "sourceEncoding": "utf-8-sig"
@@ -32464,6 +32488,18 @@
           "required": "Y"
         },
         {
+          "korean": "계좌비밀번호",
+          "name": "pwd",
+          "type": "char",
+          "length": "8",
+          "decimal": "0",
+          "note": "Field",
+          "default": "",
+          "skipValue": "",
+          "description": "* ETOE",
+          "required": "Y"
+        },
+        {
           "korean": "주문번호",
           "name": "ordr_no",
           "type": "char",
@@ -32913,7 +32949,7 @@
       "fileName": "Tkb_SSQM0833_B2C.xml",
       "source": "kb-b2c-xml",
       "layout": "xml",
-      "inputFieldCount": 7,
+      "inputFieldCount": 8,
       "outputFieldCount": 35,
       "menu": "",
       "sourceEncoding": "utf-8-sig"

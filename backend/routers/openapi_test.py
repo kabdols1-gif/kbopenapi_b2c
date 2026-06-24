@@ -49,13 +49,17 @@ class SharedSampleSpecOverrides(BaseModel):
 
 
 class SharedSampleMetadataPatch(BaseModel):
-    executed: Optional[bool] = None
-    lastExecutedAt: Optional[str] = Field(default=None, max_length=80)
-    lastStatus: Optional[int] = Field(default=None, ge=0, le=599)
-    lastOk: Optional[bool] = None
-    verified: Optional[bool] = None
-    note: Optional[str] = Field(default=None, max_length=20000)
     specOverrides: Optional[SharedSampleSpecOverrides] = None
+
+
+SHARED_METADATA_LOCAL_STATE_KEYS = {
+    "executed",
+    "lastExecutedAt",
+    "lastStatus",
+    "lastOk",
+    "verified",
+    "note",
+}
 
 
 def _is_allowed_url(url: str) -> bool:
@@ -89,6 +93,11 @@ def _load_shared_metadata() -> dict[str, Any]:
     samples = metadata.get("samples")
     if not isinstance(samples, dict):
         metadata["samples"] = {}
+    else:
+        for sample in samples.values():
+            if isinstance(sample, dict):
+                for key in SHARED_METADATA_LOCAL_STATE_KEYS:
+                    sample.pop(key, None)
     metadata["version"] = 1
     metadata.setdefault("updatedAt", "")
     return metadata
@@ -228,9 +237,13 @@ async def update_shared_sample_metadata(sample_id: str, patch: SharedSampleMetad
             samples = {}
             metadata["samples"] = samples
 
-        current_sample = dict(samples.get(sample_key) or {})
         spec_patch = patch_data.pop("specOverrides", None)
-        current_sample.update(patch_data)
+        if not spec_patch:
+            return metadata
+
+        current_sample = dict(samples.get(sample_key) or {})
+        for key in SHARED_METADATA_LOCAL_STATE_KEYS:
+            current_sample.pop(key, None)
         if isinstance(spec_patch, dict):
             current_sample["specOverrides"] = _merge_spec_overrides(
                 dict(current_sample.get("specOverrides") or {}),

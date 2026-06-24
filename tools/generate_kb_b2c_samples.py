@@ -611,9 +611,6 @@ def field_from_xml_node(node: ET.Element) -> dict[str, str] | None:
     name = clean(node.attrib.get("Name"))
     if not name or name.startswith("_"):
         return None
-    upper_name = name.upper()
-    if name.lower() in B2C_BODY_OMITTED_FIELDS or upper_name == "PWD" or upper_name.endswith("_PWD"):
-        return None
     if is_enabled_flag(node.attrib.get("SkipValue")):
         return None
 
