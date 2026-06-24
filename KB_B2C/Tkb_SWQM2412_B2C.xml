@@ -16,7 +16,7 @@
 	<Page_num>2412</Page_num>
 	<HostExpireTime >15000</HostExpireTime>
 	<Input iName="" >
-		<I Name="gnrl_ac_no" Desc="종합계좌번호" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="gnl_ac_no" Desc="종합계좌번호" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
 		<I Name="gds_no" Desc="상품번호" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
 		<I Name="pwd" Desc="비밀번호" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y"/>
 		<I Name="inq_dt" Desc="조회일자" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>

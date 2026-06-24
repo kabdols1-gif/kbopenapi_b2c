@@ -23,7 +23,7 @@
 		<I Name="trd_clsf" Desc="매매구분" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
 		<I Name="srt_clsf" Desc="정렬구분" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
 		<I Name="ordr_dt" Desc="주문일자" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
-		<I Name="ac_pwd" Desc="계좌비밀번호" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="pwd" Desc="계좌비밀번호" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
 		<I Name="ordr_no" Desc="주문번호" Align="Left" Journal="N" Pad="SPC" Size="10" SizeEN="10" SizeKR="10" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
 		<I Name="spclz_ordr_ccd" Desc="특화주문구분코드" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
 	</Input>

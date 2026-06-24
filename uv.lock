@@ -232,7 +232,7 @@ wheels = [
 ]
 
 [[package]]
-name = "openapi-test"
+name = "kb-openapi-sample"
 version = "1.0.0"
 source = { editable = "." }
 dependencies = [

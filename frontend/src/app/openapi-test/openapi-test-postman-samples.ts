@@ -4,7 +4,7 @@ const IS_OPENAPI_PRODUCTION_MODE = ["production", "prod"].includes(
   (process.env.NEXT_PUBLIC_OPENAPI_MODE || "development").toLowerCase()
 );
 const KB_B2C_POSTMAN_BASE_URL = IS_OPENAPI_PRODUCTION_MODE
-  ? process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2C_TOKEN_BASE_URL || "https://developer.kbsec.com"
+  ? process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2C_TOKEN_BASE_URL || "https://developer.kbsec.com:32484"
   : process.env.NEXT_PUBLIC_OPENAPI_DEV_KB_B2C_TOKEN_BASE_URL || "https://ddeveloper.kbsec.com:32484";
 
 export const POSTMAN_B2C_SEED_SAMPLES: OpenApiSample[] = [

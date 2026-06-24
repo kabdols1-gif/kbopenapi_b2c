@@ -22,8 +22,8 @@ DEFAULT_DEVELOPMENT_ENVIRONMENT = {
     "KB_B2C_TOKEN_BASE_URL": "https://ddeveloper.kbsec.com:32484",
 }
 DEFAULT_PRODUCTION_ENVIRONMENT = {
-    "KB_B2C_BASE_URL": "https://developer.kbsec.com",
-    "KB_B2C_TOKEN_BASE_URL": "https://developer.kbsec.com",
+    "KB_B2C_BASE_URL": "https://developer.kbsec.com:32484",
+    "KB_B2C_TOKEN_BASE_URL": "https://developer.kbsec.com:32484",
 }
 
 

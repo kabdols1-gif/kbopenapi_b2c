@@ -4,6 +4,19 @@ import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState } fro
 
 export type OpenApiMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
+export type OpenApiFieldSpec = {
+  korean?: string;
+  name?: string;
+  type?: string;
+  length?: string;
+  decimal?: string;
+  note?: string;
+  default?: string;
+  skipValue?: string;
+  description?: string;
+  required?: string | boolean;
+};
+
 export type OpenApiSample = {
   id: string;
   label: string;
@@ -15,6 +28,8 @@ export type OpenApiSample = {
   body?: unknown;
   baseUrl?: string;
   source?: "postman" | "trx-rule";
+  inputSpec?: OpenApiFieldSpec[];
+  outputSpec?: OpenApiFieldSpec[];
 };
 
 export type OpenApiTokenProcedure = {
@@ -68,6 +83,40 @@ type RunHistory = {
   headers?: string;
 };
 
+type SampleTestMetadata = {
+  note: string;
+  verified: boolean;
+  updatedAt?: string;
+};
+
+type SampleTestMetadataById = Record<string, SampleTestMetadata>;
+
+type FieldSpecSectionKey = "inputSpec" | "outputSpec";
+
+type FieldSpecOverride = {
+  required?: "Y" | "N";
+  description?: string;
+};
+
+type SampleSpecOverrides = Record<string, Partial<Record<FieldSpecSectionKey, Record<string, FieldSpecOverride>>>>;
+
+type SharedSampleMetadata = {
+  executed?: boolean;
+  lastExecutedAt?: string;
+  lastStatus?: number;
+  lastOk?: boolean;
+  verified?: boolean;
+  note?: string;
+  specOverrides?: Partial<Record<FieldSpecSectionKey, Record<string, FieldSpecOverride>>>;
+  updatedAt?: string;
+};
+
+type SharedMetadataResponse = {
+  version?: number;
+  updatedAt?: string;
+  samples?: Record<string, SharedSampleMetadata>;
+};
+
 type RequestRunOutcome = RunResult & {
   historyItem?: RunHistory;
 };
@@ -90,6 +139,14 @@ type BatchRunProgress = {
   currentIndex: number;
   currentLabel: string;
 };
+
+type SampleApiFilterKey = "executed" | "verified" | "hasNote";
+
+const SAMPLE_API_FILTER_OPTIONS: Array<{ key: SampleApiFilterKey; label: string }> = [
+  { key: "executed", label: "실행됨" },
+  { key: "verified", label: "검증완료" },
+  { key: "hasNote", label: "특이사항 있음" },
+];
 
 type ManagedRealtimeState = {
   enabled: boolean;
@@ -236,7 +293,7 @@ const IS_OPENAPI_PRODUCTION_MODE = ["production", "prod"].includes(
   (process.env.NEXT_PUBLIC_OPENAPI_MODE || "development").toLowerCase()
 );
 const KB_B2C_TOKEN_BASE_URL = IS_OPENAPI_PRODUCTION_MODE
-  ? process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2C_TOKEN_BASE_URL || "https://developer.kbsec.com"
+  ? process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2C_TOKEN_BASE_URL || "https://developer.kbsec.com:32484"
   : process.env.NEXT_PUBLIC_OPENAPI_DEV_KB_B2C_TOKEN_BASE_URL || "https://ddeveloper.kbsec.com:32484";
 const KB_B2B_BASE_URL = IS_OPENAPI_PRODUCTION_MODE
   ? process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2B_BASE_URL || "https://baasapi.kbsec.com:32484"
@@ -291,6 +348,251 @@ function prettyJson(value: string) {
   } catch {
     return value;
   }
+}
+
+function specText(value: string | undefined) {
+  const trimmed = (value ?? "").trim();
+  return trimmed || "-";
+}
+
+function fieldLengthText(field: OpenApiFieldSpec) {
+  const length = (field.length ?? "").trim();
+  const decimal = (field.decimal ?? "").trim();
+  if (!length && !decimal) return "-";
+  if (decimal && decimal !== "0") return `${length || "0"}.${decimal}`;
+  return length || "-";
+}
+
+function fieldDescriptionText(field: OpenApiFieldSpec) {
+  return (field.description ?? "").trim();
+}
+
+function fieldSpecKey(field: OpenApiFieldSpec, index: number) {
+  return `${field.name || field.korean || "field"}::${index}`;
+}
+
+function fieldRequiredText(field: OpenApiFieldSpec) {
+  const value = field.required;
+  if (typeof value === "boolean") return value ? "Y" : "N";
+  const text = (value ?? "").trim();
+  const upper = text.toUpperCase();
+  if (!text) return "N";
+  if (["1", "Y", "YES", "TRUE", "M", "MANDATORY", "REQUIRED"].includes(upper) || text.includes("필수")) {
+    return "Y";
+  }
+  return "N";
+}
+
+function editableRequiredText(value: string) {
+  return value === "Y" ? "Y" : "N";
+}
+
+function SpecTable({
+  title,
+  fields,
+  sampleId,
+  section,
+  onFieldChange,
+}: {
+  title: "Input" | "Output";
+  fields?: OpenApiFieldSpec[];
+  sampleId?: string;
+  section: FieldSpecSectionKey;
+  onFieldChange?: (section: FieldSpecSectionKey, fieldKey: string, patch: FieldSpecOverride) => void;
+}) {
+  const items = fields ?? [];
+  const [editingFieldKey, setEditingFieldKey] = useState<string | null>(null);
+
+  useEffect(() => {
+    setEditingFieldKey(null);
+  }, [sampleId, section]);
+
+  return (
+    <section className="rounded-lg border border-slate-200 bg-white">
+      <div className="flex items-center justify-between gap-2 border-b border-slate-100 px-3 py-2">
+        <h3 className="text-xs font-black text-slate-700">{title}</h3>
+        <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-black text-slate-600">
+          {items.length}개
+        </span>
+      </div>
+      {items.length === 0 ? (
+        <p className="px-3 py-4 text-xs font-semibold text-slate-500">표시할 명세가 없습니다.</p>
+      ) : (
+        <div className="max-h-72 overflow-auto">
+          <table className="w-full table-fixed border-collapse text-left text-xs">
+            <thead className="sticky top-0 bg-slate-50 text-[11px] font-black text-slate-500">
+              <tr>
+                <th className="w-[34%] px-3 py-2">컬럼</th>
+                <th className="w-[24%] px-3 py-2">속성</th>
+                <th className="w-[10%] px-3 py-2 text-center">필수</th>
+                <th className="px-3 py-2">설명</th>
+                {onFieldChange ? <th className="w-[58px] px-3 py-2 text-center">편집</th> : null}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {items.map((field, index) => {
+                const description = field.description ?? "";
+                const fieldKey = fieldSpecKey(field, index);
+                const isEditingField = editingFieldKey === fieldKey;
+                return (
+                  <tr key={`${title}-${field.name || field.korean || index}`} className="align-top">
+                    <td className="px-3 py-2">
+                      <p className="break-words font-black text-slate-700">{specText(field.korean || field.name)}</p>
+                      <p className="mt-1 break-all font-mono text-[11px] font-semibold text-slate-500">
+                        {specText(field.name)}
+                      </p>
+                    </td>
+                    <td className="px-3 py-2 text-[11px] font-semibold text-slate-600">
+                      <p>
+                        타입 <span className="font-mono text-slate-800">{specText(field.type)}</span>
+                      </p>
+                      <p className="mt-1">
+                        길이 <span className="font-mono text-slate-800">{fieldLengthText(field)}</span>
+                      </p>
+                      {field.default ? (
+                        <p className="mt-1 break-all">
+                          기본값 <span className="font-mono text-slate-800">{field.default}</span>
+                        </p>
+                      ) : null}
+                      {field.note && field.note !== "Field" ? (
+                        <p className="mt-1 break-words text-slate-500">{field.note}</p>
+                      ) : null}
+                    </td>
+                    <td className="px-3 py-2 text-center text-[11px] font-black text-slate-700">
+                      {onFieldChange && isEditingField ? (
+                        <select
+                          value={fieldRequiredText(field)}
+                          onChange={(event) =>
+                            onFieldChange(section, fieldKey, { required: editableRequiredText(event.target.value) })
+                          }
+                          className="h-8 rounded-md border border-slate-200 bg-white px-2 text-center text-[11px] font-black text-slate-700 outline-none focus:border-[#fcb514]"
+                          aria-label={`${specText(field.korean || field.name)} 필수 여부`}
+                        >
+                          <option value="N">N</option>
+                          <option value="Y">Y</option>
+                        </select>
+                      ) : (
+                        fieldRequiredText(field)
+                      )}
+                    </td>
+                    <td className="px-3 py-2 text-[11px] font-semibold text-slate-600">
+                      {onFieldChange && isEditingField ? (
+                        <div className="grid gap-1">
+                          <textarea
+                            value={description}
+                            onChange={(event) => onFieldChange(section, fieldKey, { description: event.target.value })}
+                            rows={2}
+                            className="min-h-14 resize-y rounded-md border border-slate-200 bg-white px-2 py-1 text-[11px] font-semibold leading-relaxed text-slate-700 outline-none focus:border-[#fcb514]"
+                            aria-label={`${specText(field.korean || field.name)} 설명`}
+                          />
+                          <button
+                            type="button"
+                            onClick={() => window.alert(description)}
+                            disabled={!description.trim()}
+                            className="w-fit rounded-md border border-slate-200 bg-slate-50 px-2 py-1 font-black text-slate-700 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+                          >
+                            보기
+                          </button>
+                        </div>
+                      ) : fieldDescriptionText(field) ? (
+                        <button
+                          type="button"
+                          onClick={() => window.alert(fieldDescriptionText(field))}
+                          className="rounded-md border border-slate-200 bg-slate-50 px-2 py-1 font-black text-slate-700 hover:bg-slate-100"
+                        >
+                          설명
+                        </button>
+                      ) : (
+                        <span className="text-slate-400">-</span>
+                      )}
+                    </td>
+                    {onFieldChange ? (
+                      <td className="px-3 py-2 text-center">
+                        <button
+                          type="button"
+                          onClick={() => setEditingFieldKey((currentKey) => (currentKey === fieldKey ? null : fieldKey))}
+                          className={`rounded-md px-2 py-1 text-[11px] font-black transition ${
+                            isEditingField
+                              ? "border border-[#2c2a26] bg-[#2c2a26] text-white hover:bg-[#3b352c]"
+                              : "border border-slate-200 bg-white text-slate-700 hover:bg-slate-100"
+                          }`}
+                          aria-label={`${specText(field.korean || field.name)} 명세 ${isEditingField ? "수정 완료" : "수정"}`}
+                        >
+                          {isEditingField ? "완료" : "edit"}
+                        </button>
+                      </td>
+                    ) : null}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function SampleSpecPanel({
+  sample,
+  onDownload,
+  onFieldChange,
+}: {
+  sample: OpenApiSample | null;
+  onDownload?: (sample: OpenApiSample) => void;
+  onFieldChange?: (sampleId: string, section: FieldSpecSectionKey, fieldKey: string, patch: FieldSpecOverride) => void;
+}) {
+  const canEdit = Boolean(sample && onFieldChange);
+
+  return (
+    <div className="space-y-3">
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <p className="text-[11px] font-black uppercase tracking-normal text-slate-500">Input / Output</p>
+          <h3 className="mt-1 break-words text-sm font-black text-[#2c2a26]">
+            {sample ? sample.label : "전문을 선택하세요"}
+          </h3>
+        </div>
+        <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
+          {sample && onDownload ? (
+            <button
+              type="button"
+              onClick={() => onDownload(sample)}
+              className="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[11px] font-black text-slate-700 hover:bg-slate-100"
+            >
+              명세 다운로드
+            </button>
+          ) : null}
+        </div>
+      </div>
+      {sample ? (
+        <>
+          <SpecTable
+            title="Input"
+            sampleId={sample.id}
+            section="inputSpec"
+            fields={sample.inputSpec}
+            onFieldChange={
+              canEdit && onFieldChange ? (section, fieldKey, patch) => onFieldChange(sample.id, section, fieldKey, patch) : undefined
+            }
+          />
+          <SpecTable
+            title="Output"
+            sampleId={sample.id}
+            section="outputSpec"
+            fields={sample.outputSpec}
+            onFieldChange={
+              canEdit && onFieldChange ? (section, fieldKey, patch) => onFieldChange(sample.id, section, fieldKey, patch) : undefined
+            }
+          />
+        </>
+      ) : (
+        <p className="rounded-lg border border-slate-200 bg-white px-3 py-4 text-xs font-semibold text-slate-500">
+          전문을 선택하면 입력/출력 명세가 표시됩니다.
+        </p>
+      )}
+    </div>
+  );
 }
 
 function parseJson(value: string): { parsed: Record<string, unknown> | undefined; error: string | null; text: string } {
@@ -587,6 +889,86 @@ function batchResultsToCsv(items: RunHistory[]) {
   return `\ufeff${[headers.map(csvEscape).join(","), ...rows].join("\r\n")}`;
 }
 
+function safeFileNamePart(value: string) {
+  return value.trim().replace(/[^a-zA-Z0-9._-]+/g, "_").replace(/^_+|_+$/g, "") || "api";
+}
+
+type SampleSpecCsvRow = {
+  sample: OpenApiSample;
+  section: "Input" | "Output";
+  index: string;
+  field: OpenApiFieldSpec | null;
+};
+
+function fieldSpecRowsForSample(sample: OpenApiSample) {
+  const sections: Array<{ section: "Input" | "Output"; fields: OpenApiFieldSpec[] }> = [
+    { section: "Input", fields: sample.inputSpec ?? [] },
+    { section: "Output", fields: sample.outputSpec ?? [] },
+  ];
+  return sections.flatMap<SampleSpecCsvRow>(({ section, fields }) => {
+    if (fields.length === 0) {
+      return [
+        {
+          sample,
+          section,
+          index: "",
+          field: null,
+        },
+      ];
+    }
+    return fields.map((field, fieldIndex) => ({
+      sample,
+      section,
+      index: String(fieldIndex + 1),
+      field,
+    }));
+  });
+}
+
+function samplesToSpecCsv(items: OpenApiSample[]) {
+  const headers = [
+    "전문ID",
+    "전문명",
+    "설명",
+    "메서드",
+    "기본URL",
+    "경로",
+    "구분",
+    "순번",
+    "컬럼명",
+    "한글명",
+    "타입",
+    "길이",
+    "소수",
+    "기본값",
+    "필수",
+    "설명",
+    "비고",
+  ];
+  const rows = items.flatMap(fieldSpecRowsForSample).map(({ sample, section, index, field }) =>
+    [
+      sample.id,
+      sample.label,
+      sample.description,
+      sample.method,
+      sample.baseUrl ?? "",
+      sample.path,
+      section,
+      index,
+      field?.name ?? "",
+      field?.korean ?? "",
+      field?.type ?? "",
+      field?.length ?? "",
+      field?.decimal ?? "",
+      field?.default ?? "",
+      field ? fieldRequiredText(field) : "",
+      field?.description ?? "",
+      field?.note && field.note !== "Field" ? field.note : "",
+    ].map(csvEscape).join(",")
+  );
+  return `\ufeff${[headers.map(csvEscape).join(","), ...rows].join("\r\n")}`;
+}
+
 function batchResultsToTsv(items: RunHistory[]) {
   const headers = ["실행시각", "결과", "상태", "소요ms", "메서드", "전문명", "요청URL"];
   const rows = toBatchRows(items).map((item) =>
@@ -757,6 +1139,148 @@ function keepRecentHistoryBySample(items: RunHistory[]) {
   return kept;
 }
 
+function parseSampleTestMetadata(raw: string | null): SampleTestMetadataById {
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    const metadata: SampleTestMetadataById = {};
+    for (const [sampleId, value] of Object.entries(parsed)) {
+      if (!sampleId || !value || typeof value !== "object" || Array.isArray(value)) continue;
+      const record = value as Record<string, unknown>;
+      metadata[sampleId] = {
+        note: typeof record.note === "string" ? record.note : "",
+        verified: record.verified === true,
+        updatedAt: typeof record.updatedAt === "string" ? record.updatedAt : undefined,
+      };
+    }
+    return metadata;
+  } catch {
+    return {};
+  }
+}
+
+function parseSampleSpecOverrides(raw: string | null): SampleSpecOverrides {
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    const overrides: SampleSpecOverrides = {};
+    for (const [sampleId, sampleValue] of Object.entries(parsed)) {
+      if (!sampleId || !sampleValue || typeof sampleValue !== "object" || Array.isArray(sampleValue)) continue;
+      const sampleRecord = sampleValue as Record<string, unknown>;
+      const nextSample: Partial<Record<FieldSpecSectionKey, Record<string, FieldSpecOverride>>> = {};
+      for (const section of ["inputSpec", "outputSpec"] as const) {
+        const sectionValue = sampleRecord[section];
+        if (!sectionValue || typeof sectionValue !== "object" || Array.isArray(sectionValue)) continue;
+        const fields: Record<string, FieldSpecOverride> = {};
+        for (const [fieldKey, fieldValue] of Object.entries(sectionValue)) {
+          if (!fieldKey || !fieldValue || typeof fieldValue !== "object" || Array.isArray(fieldValue)) continue;
+          const fieldRecord = fieldValue as Record<string, unknown>;
+          const patch: FieldSpecOverride = {};
+          if (typeof fieldRecord.required === "string") patch.required = editableRequiredText(fieldRecord.required);
+          if (typeof fieldRecord.description === "string") patch.description = fieldRecord.description;
+          if (patch.required || patch.description !== undefined) {
+            fields[fieldKey] = patch;
+          }
+        }
+        if (Object.keys(fields).length > 0) {
+          nextSample[section] = fields;
+        }
+      }
+      if (Object.keys(nextSample).length > 0) {
+        overrides[sampleId] = nextSample;
+      }
+    }
+    return overrides;
+  } catch {
+    return {};
+  }
+}
+
+function applyFieldSpecOverrides(fields: OpenApiFieldSpec[] | undefined, overrides?: Record<string, FieldSpecOverride>) {
+  if (!fields || fields.length === 0) return fields;
+  if (!overrides || Object.keys(overrides).length === 0) return fields;
+  return fields.map((field, index) => {
+    const patch = overrides[fieldSpecKey(field, index)];
+    if (!patch) return field;
+    return {
+      ...field,
+      required: patch.required ?? fieldRequiredText(field),
+      description: patch.description ?? field.description ?? "",
+    };
+  });
+}
+
+function applySampleSpecOverrides(sample: OpenApiSample, overrides: SampleSpecOverrides) {
+  const sampleOverrides = overrides[sample.id];
+  if (!sampleOverrides) return sample;
+  return {
+    ...sample,
+    inputSpec: applyFieldSpecOverrides(sample.inputSpec, sampleOverrides.inputSpec),
+    outputSpec: applyFieldSpecOverrides(sample.outputSpec, sampleOverrides.outputSpec),
+  };
+}
+
+function normalizeSharedMetadata(payload: unknown): Record<string, SharedSampleMetadata> {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) return {};
+  const samples = (payload as SharedMetadataResponse).samples;
+  if (!samples || typeof samples !== "object" || Array.isArray(samples)) return {};
+  const normalized: Record<string, SharedSampleMetadata> = {};
+  for (const [sampleId, value] of Object.entries(samples)) {
+    if (!sampleId || !value || typeof value !== "object" || Array.isArray(value)) continue;
+    const record = value as Record<string, unknown>;
+    const next: SharedSampleMetadata = {};
+    if (record.executed === true || record.executed === false) next.executed = record.executed;
+    if (typeof record.lastExecutedAt === "string") next.lastExecutedAt = record.lastExecutedAt;
+    if (typeof record.lastStatus === "number") next.lastStatus = record.lastStatus;
+    if (record.lastOk === true || record.lastOk === false) next.lastOk = record.lastOk;
+    if (record.verified === true || record.verified === false) next.verified = record.verified;
+    if (typeof record.note === "string") next.note = record.note;
+    if (typeof record.updatedAt === "string") next.updatedAt = record.updatedAt;
+    if (record.specOverrides && typeof record.specOverrides === "object" && !Array.isArray(record.specOverrides)) {
+      next.specOverrides = parseSampleSpecOverrides(JSON.stringify({ [sampleId]: record.specOverrides }))[sampleId];
+    }
+    normalized[sampleId] = next;
+  }
+  return normalized;
+}
+
+function mergeSharedSampleTestMetadata(current: SampleTestMetadataById, shared: Record<string, SharedSampleMetadata>) {
+  const next = { ...current };
+  for (const [sampleId, metadata] of Object.entries(shared)) {
+    if (metadata.verified === undefined && metadata.note === undefined) continue;
+    const currentItem = next[sampleId] ?? { note: "", verified: false };
+    next[sampleId] = {
+      note: currentItem.note || metadata.note || "",
+      verified: currentItem.verified || metadata.verified === true,
+      updatedAt: currentItem.updatedAt ?? metadata.updatedAt,
+    };
+  }
+  return next;
+}
+
+function mergeSharedSpecOverrides(current: SampleSpecOverrides, shared: Record<string, SharedSampleMetadata>) {
+  const next: SampleSpecOverrides = { ...current };
+  for (const [sampleId, metadata] of Object.entries(shared)) {
+    const sharedOverrides = metadata.specOverrides;
+    if (!sharedOverrides) continue;
+    const currentSample = next[sampleId] ?? {};
+    const mergedSample: Partial<Record<FieldSpecSectionKey, Record<string, FieldSpecOverride>>> = { ...currentSample };
+    for (const section of ["inputSpec", "outputSpec"] as const) {
+      const sharedSection = sharedOverrides[section];
+      if (!sharedSection) continue;
+      const currentSection = currentSample[section] ?? {};
+      mergedSample[section] = {
+        ...sharedSection,
+        ...currentSection,
+      };
+    }
+    next[sampleId] = mergedSample;
+  }
+  return next;
+}
+
 function getTokenSetupStepKey(draft: TokenRequestDraft): TokenSetupStepKey | null {
   if (draft.id === "kb-b2c-token-issue") return "b2cToken";
   if (draft.id === "kb-b2b-clause-agree-process") return "terms";
@@ -770,6 +1294,11 @@ function getStorageKey(storageKey: string | undefined, broker: string | undefine
   if (storageKey && storageKey.trim()) return storageKey.trim();
   if (broker && broker.trim()) return `${fallback}.${broker}`;
   return fallback;
+}
+
+function getRuntimeScopedStorageKey(storageKey: string, runtimeMode: RuntimeMode | undefined) {
+  const mode = runtimeMode === "production" ? "production" : "development";
+  return `${storageKey}.${mode}`;
 }
 
 function emptyCredentialStorage() {
@@ -932,7 +1461,18 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
   const b2b = defaults.kb?.b2b ?? {};
 
   if (modeSet.has("B2C")) {
-    const tokenBody = asRecord(b2c.tokenIssue);
+    const tokenIssueBody = asRecord(b2c.tokenIssue);
+    const tokenIssueDataBody = asRecord(tokenIssueBody.dataBody);
+    const tokenGrantType = asString(tokenIssueDataBody.grantType) || asString(tokenIssueBody.grantType) || "client_credentials";
+    const tokenBody = {
+      ...tokenIssueBody,
+      dataBody: {
+        ...tokenIssueDataBody,
+        clientId: "{{clientId}}",
+        clientSecret: "{{clientSecret}}",
+        grantType: tokenGrantType,
+      },
+    };
     drafts.push(
       {
         id: "kb-b2c-token-issue",
@@ -943,17 +1483,7 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
         baseUrl: b2c.tokenBaseUrl || KB_B2C_TOKEN_BASE_URL,
         path: "/oauth2/token",
         headersText: JSON_HEADERS_TEXT,
-        bodyText: toPrettyEnvelopeBody(
-          Object.keys(tokenBody).length > 0
-            ? tokenBody
-            : {
-                dataBody: {
-                  clientId: "",
-                  clientSecret: "",
-                  grantType: "client_credentials",
-                },
-              }
-        ),
+        bodyText: toPrettyEnvelopeBody(tokenBody),
       }
     );
   }
@@ -1181,8 +1711,16 @@ export default function OpenApiTestClient({
   const [error, setError] = useState("");
   const [isRunning, setIsRunning] = useState(false);
   const [history, setHistory] = useState<RunHistory[]>([]);
+  const [sampleTestMetadata, setSampleTestMetadata] = useState<SampleTestMetadataById>({});
+  const [sampleSpecOverrides, setSampleSpecOverrides] = useState<SampleSpecOverrides>({});
+  const [sharedSampleMetadata, setSharedSampleMetadata] = useState<Record<string, SharedSampleMetadata>>({});
   const [selectedHistoryDeleteIds, setSelectedHistoryDeleteIds] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sampleApiFilters, setSampleApiFilters] = useState<Record<SampleApiFilterKey, boolean>>({
+    executed: false,
+    verified: false,
+    hasNote: false,
+  });
   const [businessCategoryFilter, setBusinessCategoryFilter] = useState<OpenApiBusinessCategory>("전체목록");
   const [apiKey, setApiKey] = useState("");
   const [secretKey, setSecretKey] = useState("");
@@ -1223,6 +1761,7 @@ export default function OpenApiTestClient({
   const [selectedBatchResultId, setSelectedBatchResultId] = useState<string | null>(null);
   const [batchCopyMessage, setBatchCopyMessage] = useState("");
   const [selectedHistoryResultId, setSelectedHistoryResultId] = useState<string | null>(null);
+  const [historyCopyMessage, setHistoryCopyMessage] = useState("");
   const [historyReplayMethod, setHistoryReplayMethod] = useState<OpenApiMethod>("POST");
   const [historyReplayBaseUrl, setHistoryReplayBaseUrl] = useState("");
   const [historyReplayPath, setHistoryReplayPath] = useState("");
@@ -1253,6 +1792,7 @@ export default function OpenApiTestClient({
   const managedRealtimeStatesRef = useRef<Record<string, ManagedRealtimeState>>({});
   const batchStopRequestedRef = useRef(false);
   const batchAbortControllerRef = useRef<AbortController | null>(null);
+  const hasMigratedLocalSharedMetadataRef = useRef(false);
 
   const closeManagedRealtimeSocketQuietly = useCallback(() => {
     const socket = managedRealtimeSocketRef.current;
@@ -1270,8 +1810,20 @@ export default function OpenApiTestClient({
     managedRealtimeApprovalRetryRef.current = {};
   }, []);
 
-  const credentialKey = useMemo(() => getStorageKey(credentialStorageKey, broker, DEFAULT_CREDENTIAL_STORAGE_KEY), [credentialStorageKey, broker]);
+  const baseCredentialKey = useMemo(() => getStorageKey(credentialStorageKey, broker, DEFAULT_CREDENTIAL_STORAGE_KEY), [credentialStorageKey, broker]);
+  const credentialKey = useMemo(
+    () => getRuntimeScopedStorageKey(baseCredentialKey, selectedRuntimeMode),
+    [baseCredentialKey, selectedRuntimeMode]
+  );
   const tokenSetupStatusKey = useMemo(() => `${credentialKey}.tokenSetupStatus`, [credentialKey]);
+  const sampleTestMetadataKey = useMemo(
+    () => `${historyStorageKey}.sampleTestMetadata.${selectedRuntimeMode === "production" ? "production" : "development"}`,
+    [historyStorageKey, selectedRuntimeMode]
+  );
+  const sampleSpecOverridesKey = useMemo(
+    () => `${historyStorageKey}.sampleSpecOverrides.${selectedRuntimeMode === "production" ? "production" : "development"}`,
+    [historyStorageKey, selectedRuntimeMode]
+  );
   const normalizedBroker = useMemo(() => (broker || "").trim().toLowerCase(), [broker]);
   const normalizedTokenProcedures = useMemo(() => tokenProcedures ?? [], [tokenProcedures]);
   const requestVariables = useMemo(
@@ -1282,6 +1834,8 @@ export default function OpenApiTestClient({
       approvalKey: approvalKey.trim(),
       clientId: apiKey.trim(),
       clientSecret: secretKey.trim(),
+      b2cClientId: apiKey.trim(),
+      b2cClientSecret: secretKey.trim(),
       account: accountNo.trim(),
       accountNo: accountNo.trim(),
       gnlAcNo: accountNo.trim(),
@@ -1339,13 +1893,40 @@ export default function OpenApiTestClient({
     managedRealtimeStatesRef.current = managedRealtimeStates;
   }, [managedRealtimeStates]);
 
+  const samplesWithSpecOverrides = useMemo(
+    () => samples.map((sample) => applySampleSpecOverrides(sample, sampleSpecOverrides)),
+    [sampleSpecOverrides, samples]
+  );
+  const sampleIdSet = useMemo(() => new Set(samples.map((sample) => sample.id)), [samples]);
+  const sharedMetadataSampleIdSet = useMemo(() => {
+    const ids = new Set(samples.map((sample) => sample.id));
+    ids.add("kb-b2c-token-issue");
+    return ids;
+  }, [samples]);
+  const executedSampleIdSet = useMemo(() => {
+    const ids = new Set<string>();
+    for (const item of history) {
+      if (sampleIdSet.has(item.sampleId)) ids.add(item.sampleId);
+    }
+    for (const [sampleId, metadata] of Object.entries(sharedSampleMetadata)) {
+      if (metadata.executed && sampleIdSet.has(sampleId)) ids.add(sampleId);
+    }
+    return ids;
+  }, [history, sampleIdSet, sharedSampleMetadata]);
+
   const sampleResults = useMemo(() => {
     const keyword = searchTerm.trim().toLowerCase();
     return samples.filter((sample) => {
-      if (!keyword) return true;
-      return `${sample.id} ${sample.label} ${sample.description} ${sample.path}`.toLowerCase().includes(keyword);
+      if (keyword && !`${sample.id} ${sample.label} ${sample.description} ${sample.path}`.toLowerCase().includes(keyword)) {
+        return false;
+      }
+      const metadata = sampleTestMetadata[sample.id];
+      if (sampleApiFilters.executed && !executedSampleIdSet.has(sample.id)) return false;
+      if (sampleApiFilters.verified && metadata?.verified !== true) return false;
+      if (sampleApiFilters.hasNote && !metadata?.note?.trim()) return false;
+      return true;
     });
-  }, [searchTerm, samples]);
+  }, [executedSampleIdSet, sampleApiFilters, sampleTestMetadata, searchTerm, samples]);
 
   const categorizedSamples = useMemo(() => {
     const categories = makeBusinessGroupMap<OpenApiSample[]>(() => []);
@@ -1380,6 +1961,25 @@ export default function OpenApiTestClient({
   );
   const selectedDisplayedSampleCount = displayedSampleIds.filter((sampleId) => selectedBatchSampleIds.includes(sampleId)).length;
   const isAllDisplayedSamplesSelected = displayedSampleIds.length > 0 && selectedDisplayedSampleCount === displayedSampleIds.length;
+  const sampleExecutionById = useMemo(() => {
+    const executions = new Map<string, Pick<RunHistory, "ok" | "status">>();
+    for (const item of history) {
+      if (!sampleIdSet.has(item.sampleId) || executions.has(item.sampleId)) continue;
+      executions.set(item.sampleId, item);
+    }
+    for (const [sampleId, metadata] of Object.entries(sharedSampleMetadata)) {
+      if (executions.has(sampleId) || !metadata.executed || !sampleIdSet.has(sampleId)) continue;
+      executions.set(sampleId, {
+        ok: metadata.lastOk === true,
+        status: typeof metadata.lastStatus === "number" ? metadata.lastStatus : 0,
+      });
+    }
+    return executions;
+  }, [history, sampleIdSet, sharedSampleMetadata]);
+  const latestExecutedSampleId = useMemo(() => {
+    const latestSampleRun = history.find((item) => sampleIdSet.has(item.sampleId));
+    return latestSampleRun?.sampleId ?? null;
+  }, [history, sampleIdSet]);
 
   const resultText = useMemo(() => (result ? prettyJson(result.body) : ""), [result]);
   const filteredAllHistory = useMemo(() => {
@@ -1433,10 +2033,32 @@ export default function OpenApiTestClient({
         .includes(keyword)
     );
   }, [historySearchTerm, selectedSampleHistory]);
+  const selectedSample = useMemo(
+    () => samplesWithSpecOverrides.find((sample) => sample.id === selectedSampleId) ?? null,
+    [samplesWithSpecOverrides, selectedSampleId]
+  );
   const selectedHistoryResult = useMemo(
     () => selectedSampleHistory.find((item) => item.id === selectedHistoryResultId) ?? selectedSampleHistory[0] ?? null,
     [selectedHistoryResultId, selectedSampleHistory]
   );
+  const selectedHistorySample = useMemo(() => {
+    if (!selectedHistoryResult) return null;
+    return samplesWithSpecOverrides.find((sample) => sample.id === selectedHistoryResult.sampleId) ?? null;
+  }, [samplesWithSpecOverrides, selectedHistoryResult]);
+  const selectedSampleMetadata = selectedSampleId ? sampleTestMetadata[selectedSampleId] : undefined;
+  const selectedSampleNote = selectedSampleMetadata?.note ?? "";
+  const selectedSampleVerified = selectedSampleMetadata?.verified ?? false;
+  const selectedHistorySampleMetadata = selectedHistoryResult ? sampleTestMetadata[selectedHistoryResult.sampleId] : undefined;
+  const selectedHistorySampleNote = selectedHistorySampleMetadata?.note ?? "";
+  const selectedHistorySampleVerified = selectedHistorySampleMetadata?.verified ?? false;
+  const selectedHistoryInputText = useMemo(() => {
+    if (!selectedHistoryResult?.requestBody) return "";
+    return prettyRequestBodyText(selectedHistoryResult.requestBody);
+  }, [selectedHistoryResult]);
+  const selectedHistoryOutputText = useMemo(() => {
+    if (!selectedHistoryResult) return "";
+    return prettyJson(selectedHistoryResult.body ?? "");
+  }, [selectedHistoryResult]);
   const batchFilteredResults = useMemo(() => {
     const items = batchSummary?.results ?? [];
     if (batchResultFilter === "success") return items.filter((item) => item.ok);
@@ -1470,7 +2092,9 @@ export default function OpenApiTestClient({
   useEffect(() => {
     if (typeof window === "undefined") return;
     setHasLoadedCredentials(false);
-    const raw = window.localStorage.getItem(`${credentialKey}`);
+    const raw =
+      window.localStorage.getItem(credentialKey) ||
+      (selectedRuntimeMode === "development" ? window.localStorage.getItem(baseCredentialKey) : null);
     const parsed = parseCredentialStorage(raw);
     setApiKey(parsed.apiKey || defaultApiKey || "");
     setSecretKey(parsed.secretKey || defaultSecretKey || "");
@@ -1486,7 +2110,7 @@ export default function OpenApiTestClient({
     setProductCode(parsed.productCode || "01");
     setAccountPassword(parsed.accountPassword || "");
     setHasLoadedCredentials(true);
-  }, [credentialKey, defaultApiKey, defaultSecretKey]);
+  }, [baseCredentialKey, credentialKey, defaultApiKey, defaultSecretKey, selectedRuntimeMode]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -1565,6 +2189,178 @@ export default function OpenApiTestClient({
   }, [historyStorageKey]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      setSampleTestMetadata(parseSampleTestMetadata(window.localStorage.getItem(sampleTestMetadataKey)));
+    } catch {
+      setSampleTestMetadata({});
+    }
+  }, [sampleTestMetadataKey]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      setSampleSpecOverrides(parseSampleSpecOverrides(window.localStorage.getItem(sampleSpecOverridesKey)));
+    } catch {
+      setSampleSpecOverrides({});
+    }
+  }, [sampleSpecOverridesKey]);
+
+  useEffect(() => {
+    let isCancelled = false;
+    fetch("/api/openapi-test/shared-metadata")
+      .then((response) => {
+        if (!response.ok) throw new Error(`Shared metadata request failed: ${response.status}`);
+        return response.json() as Promise<SharedMetadataResponse>;
+      })
+      .then((payload) => {
+        if (isCancelled) return;
+        const shared = normalizeSharedMetadata(payload);
+        setSharedSampleMetadata(shared);
+        setSampleTestMetadata((current) => mergeSharedSampleTestMetadata(current, shared));
+        setSampleSpecOverrides((current) => mergeSharedSpecOverrides(current, shared));
+      })
+      .catch(() => {
+        if (!isCancelled) setSharedSampleMetadata({});
+      });
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
+  const persistSharedSampleMetadataPatch = useCallback((sampleId: string, patch: SharedSampleMetadata) => {
+    if (!sampleId || sampleId === "unselected") return;
+    setSharedSampleMetadata((current) => ({
+      ...current,
+      [sampleId]: {
+        ...(current[sampleId] ?? {}),
+        ...patch,
+        specOverrides: patch.specOverrides
+          ? {
+              ...(current[sampleId]?.specOverrides ?? {}),
+              ...patch.specOverrides,
+            }
+          : current[sampleId]?.specOverrides,
+      },
+    }));
+    fetch(`/api/openapi-test/shared-metadata/samples/${encodeURIComponent(sampleId)}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(patch),
+    }).catch(() => {
+      // Shared metadata persistence is best-effort and must not block testing.
+    });
+  }, []);
+
+  const updateSampleTestMetadata = useCallback(
+    (sampleId: string, patch: Partial<SampleTestMetadata>) => {
+      if (!sampleId) return;
+      persistSharedSampleMetadataPatch(sampleId, {
+        ...(patch.verified !== undefined ? { verified: patch.verified } : {}),
+        ...(patch.note !== undefined ? { note: patch.note } : {}),
+      });
+      setSampleTestMetadata((current) => {
+        const currentItem = current[sampleId] ?? { note: "", verified: false };
+        const nextItem: SampleTestMetadata = {
+          ...currentItem,
+          ...patch,
+          updatedAt: new Date().toISOString(),
+        };
+        const next = { ...current };
+        if (!nextItem.note.trim() && !nextItem.verified) {
+          delete next[sampleId];
+        } else {
+          next[sampleId] = nextItem;
+        }
+        if (typeof window !== "undefined") {
+          try {
+            window.localStorage.setItem(sampleTestMetadataKey, JSON.stringify(next));
+          } catch {
+            // Metadata persistence should not block API testing.
+          }
+        }
+        return next;
+      });
+    },
+    [persistSharedSampleMetadataPatch, sampleTestMetadataKey]
+  );
+
+  const updateSampleSpecOverride = useCallback(
+    (sampleId: string, section: FieldSpecSectionKey, fieldKey: string, patch: FieldSpecOverride) => {
+      if (!sampleId || !fieldKey) return;
+      persistSharedSampleMetadataPatch(sampleId, {
+        specOverrides: {
+          [section]: {
+            [fieldKey]: patch,
+          },
+        },
+      });
+      setSampleSpecOverrides((current) => {
+        const currentSample = current[sampleId] ?? {};
+        const currentSection = currentSample[section] ?? {};
+        const currentField = currentSection[fieldKey] ?? {};
+        const nextField = {
+          ...currentField,
+          ...patch,
+        };
+        const next: SampleSpecOverrides = {
+          ...current,
+          [sampleId]: {
+            ...currentSample,
+            [section]: {
+              ...currentSection,
+              [fieldKey]: nextField,
+            },
+          },
+        };
+        if (typeof window !== "undefined") {
+          try {
+            window.localStorage.setItem(sampleSpecOverridesKey, JSON.stringify(next));
+          } catch {
+            // Spec edit persistence should not block API testing.
+          }
+        }
+        return next;
+      });
+    },
+    [persistSharedSampleMetadataPatch, sampleSpecOverridesKey]
+  );
+
+  useEffect(() => {
+    if (hasMigratedLocalSharedMetadataRef.current) return;
+    const hasMetadata = Object.keys(sampleTestMetadata).length > 0;
+    const hasSpecOverrides = Object.keys(sampleSpecOverrides).length > 0;
+    const hasHistory = history.some((item) => item.sampleId && sharedMetadataSampleIdSet.has(item.sampleId));
+    if (!hasMetadata && !hasSpecOverrides && !hasHistory) return;
+
+    hasMigratedLocalSharedMetadataRef.current = true;
+    for (const [sampleId, metadata] of Object.entries(sampleTestMetadata)) {
+      if (!sharedMetadataSampleIdSet.has(sampleId)) continue;
+      persistSharedSampleMetadataPatch(sampleId, {
+        verified: metadata.verified,
+        note: metadata.note,
+      });
+    }
+    for (const [sampleId, overrides] of Object.entries(sampleSpecOverrides)) {
+      if (!sharedMetadataSampleIdSet.has(sampleId)) continue;
+      persistSharedSampleMetadataPatch(sampleId, {
+        specOverrides: overrides,
+      });
+    }
+    const migratedExecutionIds = new Set<string>();
+    for (const item of history) {
+      if (!item.sampleId || !sharedMetadataSampleIdSet.has(item.sampleId) || migratedExecutionIds.has(item.sampleId)) continue;
+      migratedExecutionIds.add(item.sampleId);
+      persistSharedSampleMetadataPatch(item.sampleId, {
+        executed: true,
+        lastExecutedAt: item.executedAt,
+        lastStatus: item.status,
+        lastOk: item.ok,
+      });
+    }
+  }, [history, persistSharedSampleMetadataPatch, sampleSpecOverrides, sampleTestMetadata, sharedMetadataSampleIdSet]);
+
+  useEffect(() => {
     if (tokenSetupSteps.length === 0) return;
     if (tokenSetupSteps.some((step) => step.stepKey === selectedTokenSetupStep)) return;
     setSelectedTokenSetupStep(tokenSetupSteps[0].stepKey);
@@ -1594,6 +2390,10 @@ export default function OpenApiTestClient({
     setHistoryReplayHeadersText(prettyJson(selectedHistoryResult.requestHeaders || "{}"));
     setHistoryReplayBodyText(prettyRequestBodyText(selectedHistoryResult.requestBody || "{}"));
   }, [defaultBaseUrl, selectedHistoryResult]);
+
+  useEffect(() => {
+    setHistoryCopyMessage("");
+  }, [isResultHistoryOpen, selectedHistoryResult?.id]);
 
   useEffect(() => {
     const defaultsUrl = `/api/config/openapi-test/defaults?mode=${encodeURIComponent(
@@ -1663,7 +2463,11 @@ export default function OpenApiTestClient({
     }
 
     let isCancelled = false;
-    const fallbackDrafts = buildKbTokenRequestDrafts({}, tokenProcedureModes);
+    const selectedB2cTokenBaseUrl = normalizedTokenProcedures.find((procedure) => procedure.mode === "B2C")?.environment;
+    const fallbackDrafts = buildKbTokenRequestDrafts(
+      selectedB2cTokenBaseUrl ? { kb: { b2c: { tokenBaseUrl: selectedB2cTokenBaseUrl } } } : {},
+      tokenProcedureModes
+    );
 
     setIsLoadingTokenDefaults(true);
     setTokenDefaultsError("");
@@ -1723,7 +2527,7 @@ export default function OpenApiTestClient({
     return () => {
       isCancelled = true;
     };
-  }, [broker, credentialKey, defaultBaseUrl, normalizedBroker, selectedRuntimeMode, tokenProcedureModes]);
+  }, [broker, credentialKey, defaultBaseUrl, normalizedBroker, normalizedTokenProcedures, selectedRuntimeMode, tokenProcedureModes]);
 
   const runRequestWithValues = useCallback(
     async ({
@@ -1761,6 +2565,8 @@ export default function OpenApiTestClient({
         approvalKey: approvalKey.trim(),
         clientId: apiKey.trim(),
         clientSecret: secretKey.trim(),
+        b2cClientId: apiKey.trim(),
+        b2cClientSecret: secretKey.trim(),
         ciNo: ciNo.trim(),
         userInfo: userInfo.trim(),
         userInfoKey: userInfoKey.trim(),
@@ -1891,9 +2697,10 @@ export default function OpenApiTestClient({
         setResult(nextResult);
         setLatestResultIsSampleTest(activeSampleId !== "unselected");
         const runId = makeId("run");
+        const executedAt = new Date().toLocaleString("en-US");
         const historyItem: RunHistory = {
           id: runId,
-          executedAt: new Date().toLocaleString("en-US"),
+          executedAt,
           method: targetMethod,
           baseUrl: targetBaseUrl,
           path: targetPath,
@@ -1923,6 +2730,12 @@ export default function OpenApiTestClient({
           return nextHistory;
         });
         if (activeSampleId !== "unselected") {
+          persistSharedSampleMetadataPatch(activeSampleId, {
+            executed: true,
+            lastExecutedAt: executedAt,
+            lastStatus: responseStatus,
+            lastOk: responseOk,
+          });
           setSelectedSampleId(activeSampleId);
           setSelectedSampleLabel(activeSampleLabel);
           if (openHistoryAfterRun) {
@@ -1950,9 +2763,10 @@ export default function OpenApiTestClient({
         setLatestResultIsSampleTest(activeSampleId !== "unselected");
         setError(message);
         const runId = makeId("run");
+        const executedAt = new Date().toLocaleString("en-US");
         const historyItem: RunHistory = {
           id: runId,
-          executedAt: new Date().toLocaleString("en-US"),
+          executedAt,
           method: targetMethod,
           baseUrl: targetBaseUrl,
           path: targetPath,
@@ -1982,6 +2796,12 @@ export default function OpenApiTestClient({
           return nextHistory;
         });
         if (activeSampleId !== "unselected") {
+          persistSharedSampleMetadataPatch(activeSampleId, {
+            executed: true,
+            lastExecutedAt: executedAt,
+            lastStatus: 0,
+            lastOk: false,
+          });
           setSelectedSampleId(activeSampleId);
           setSelectedSampleLabel(activeSampleLabel);
           if (openHistoryAfterRun) {
@@ -1995,7 +2815,7 @@ export default function OpenApiTestClient({
         setIsRunning(false);
       }
     },
-    [accessToken, accountNo, accountPassword, apiKey, approvalKey, authorizationCode, ciNo, historyStorageKey, isBodyMethod, issueNo, normalizedBroker, productCode, secretKey, selectedSampleId, selectedSampleLabel, userInfo, userInfoKey]
+    [accessToken, accountNo, accountPassword, apiKey, approvalKey, authorizationCode, ciNo, historyStorageKey, isBodyMethod, issueNo, normalizedBroker, persistSharedSampleMetadataPatch, productCode, secretKey, selectedSampleId, selectedSampleLabel, userInfo, userInfoKey]
   );
 
   const clearHistory = useCallback(() => {
@@ -2146,6 +2966,17 @@ export default function OpenApiTestClient({
     downloadTextFile(`openapi-batch-results-${stamp}.csv`, batchResultsToCsv(items), "text/csv;charset=utf-8");
   }, [batchFilteredResults]);
 
+  const downloadAllSampleSpecs = useCallback(() => {
+    if (samplesWithSpecOverrides.length === 0) return;
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+    downloadTextFile(`kb-b2c-api-spec-all-${stamp}.csv`, samplesToSpecCsv(samplesWithSpecOverrides), "text/csv;charset=utf-8");
+  }, [samplesWithSpecOverrides]);
+
+  const downloadSampleSpec = useCallback((sample: OpenApiSample) => {
+    const editedSample = applySampleSpecOverrides(sample, sampleSpecOverrides);
+    downloadTextFile(`kb-b2c-api-spec-${safeFileNamePart(sample.id)}.csv`, samplesToSpecCsv([editedSample]), "text/csv;charset=utf-8");
+  }, [sampleSpecOverrides]);
+
   const copyBatchResults = useCallback(async () => {
     const items = batchFilteredResults;
     if (items.length === 0) return;
@@ -2156,6 +2987,24 @@ export default function OpenApiTestClient({
       setBatchCopyMessage("복사에 실패했습니다.");
     }
   }, [batchFilteredResults]);
+
+  const copySelectedHistoryPayload = useCallback(
+    async (kind: "input" | "output") => {
+      const text = kind === "input" ? selectedHistoryInputText : selectedHistoryOutputText;
+      const label = kind === "input" ? "Input" : "Output";
+      if (!text.trim()) {
+        setHistoryCopyMessage(`${label} 내용이 없습니다.`);
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(text);
+        setHistoryCopyMessage(`${label} 복사됨`);
+      } catch {
+        setHistoryCopyMessage("복사에 실패했습니다.");
+      }
+    },
+    [selectedHistoryInputText, selectedHistoryOutputText]
+  );
 
   const requestStopBatchRun = useCallback(() => {
     if (!isBatchRunning) return;
@@ -3900,9 +4749,51 @@ export default function OpenApiTestClient({
                         placeholder="ID, 이름, 설명으로 검색"
                       />
                     </label>
+              <div className="flex flex-wrap items-center gap-1.5">
+                {SAMPLE_API_FILTER_OPTIONS.map((filter) => {
+                  const isActive = sampleApiFilters[filter.key];
+                  return (
+                    <button
+                      key={filter.key}
+                      type="button"
+                      aria-pressed={isActive}
+                      onClick={() =>
+                        setSampleApiFilters((current) => ({
+                          ...current,
+                          [filter.key]: !current[filter.key],
+                        }))
+                      }
+                      className={`rounded-md border px-3 py-2 text-xs font-black transition ${
+                        isActive
+                          ? "border-[#2c2a26] bg-[#2c2a26] text-white"
+                          : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100"
+                      }`}
+                    >
+                      {filter.label}
+                    </button>
+                  );
+                })}
+                {Object.values(sampleApiFilters).some(Boolean) ? (
+                  <button
+                    type="button"
+                    onClick={() => setSampleApiFilters({ executed: false, verified: false, hasNote: false })}
+                    className="rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-black text-slate-500 hover:bg-slate-100"
+                  >
+                    필터 해제
+                  </button>
+                ) : null}
+              </div>
               <span className="shrink-0 rounded-full bg-slate-100 px-3 py-2 text-xs font-black text-slate-500">
                 총 {samples.length}건 중 {displayedSampleCount}건 표시
               </span>
+              <button
+                type="button"
+                onClick={downloadAllSampleSpecs}
+                disabled={samples.length === 0}
+                className="shrink-0 rounded-md border border-[#2c2a26] bg-white px-3 py-2 text-xs font-black text-[#2c2a26] hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                전체 명세 다운로드
+              </button>
         </div>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
         </div>
@@ -4170,8 +5061,20 @@ export default function OpenApiTestClient({
                 <div className="mt-2 grid gap-2 sm:grid-cols-2">
                   {items.map((sample) => {
                     const sampleIsWebSocket = isWebSocketSample(sample);
+                    const sampleExecution = sampleExecutionById.get(sample.id);
+                    const sampleMetadata = sampleTestMetadata[sample.id] ?? { note: "", verified: false };
+                    const isLatestExecutedSample = latestExecutedSampleId === sample.id;
+                    const cardTone = isLatestExecutedSample
+                      ? "border-[#fcb514] bg-[#fff8df] shadow-sm ring-1 ring-[#fcb514]/50"
+                      : sampleMetadata.verified
+                      ? "border-sky-200 bg-sky-50"
+                      : sampleExecution
+                      ? sampleExecution.ok
+                        ? "border-emerald-200 bg-emerald-50"
+                        : "border-red-200 bg-red-50"
+                      : "border-slate-200 bg-slate-50";
                     return (
-                    <article key={sample.id} className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+                    <article key={sample.id} className={`rounded-lg border p-3 transition-colors ${cardTone}`}>
                       <div className="flex items-start justify-between gap-3">
                         <label className="flex min-w-0 flex-1 items-start gap-2">
                           <input
@@ -4181,16 +5084,49 @@ export default function OpenApiTestClient({
                             onChange={() => toggleBatchSampleSelection(sample.id)}
                             className="mt-1 h-4 w-4 shrink-0 rounded border-slate-300"
                           />
-                          <span className="mt-1 font-bold text-slate-700">
-                            {sample.label}
-                            {sampleIsWebSocket ? (
-                              <span className="ml-2 rounded-full bg-blue-100 px-2 py-0.5 text-[11px] font-black text-blue-700">
-                                WEBSOCKET
-                              </span>
-                            ) : null}
+                          <span className="mt-1 min-w-0 font-bold text-slate-700">
+                            <span className="break-words">{sample.label}</span>
+                            <span className="mt-1 flex flex-wrap items-center gap-1">
+                              {isLatestExecutedSample ? (
+                                <span className="rounded-full bg-[#fcb514] px-2 py-0.5 text-[11px] font-black text-[#2c2a26]">
+                                  방금 실행
+                                </span>
+                              ) : null}
+                              {sampleMetadata.verified ? (
+                                <span className="rounded-full bg-sky-100 px-2 py-0.5 text-[11px] font-black text-sky-700">
+                                  검증완료
+                                </span>
+                              ) : null}
+                              {sampleMetadata.note.trim() ? (
+                                <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-black text-amber-700">
+                                  특이사항 있음
+                                </span>
+                              ) : null}
+                              {sampleExecution ? (
+                                <span
+                                  className={`rounded-full px-2 py-0.5 text-[11px] font-black ${
+                                    sampleExecution.ok ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-700"
+                                  }`}
+                                >
+                                  실행됨 {sampleExecution.status}
+                                </span>
+                              ) : null}
+                              {sampleIsWebSocket ? (
+                                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[11px] font-black text-blue-700">
+                                  WEBSOCKET
+                                </span>
+                              ) : null}
+                            </span>
                           </span>
                         </label>
                         <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
+                          <button
+                            type="button"
+                            onClick={() => downloadSampleSpec(sample)}
+                            className="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-black text-slate-700 transition hover:bg-slate-100"
+                          >
+                            명세 다운로드
+                          </button>
                           <button
                             type="button"
                             onClick={() => (sampleIsWebSocket ? openRealtimeSample(sample) : openSampleInEditor(sample))}
@@ -4232,7 +5168,7 @@ export default function OpenApiTestClient({
             }
           }}
         >
-          <section className="flex max-h-[min(92vh,860px)] w-full max-w-5xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-xl">
+          <section className="flex max-h-[min(92vh,860px)] w-full max-w-[96rem] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-xl">
             <div className="mb-4 flex shrink-0 items-start justify-between gap-3">
               <div>
                 <h2 className="text-base font-black text-[#2c2a26]">
@@ -4249,7 +5185,8 @@ export default function OpenApiTestClient({
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto pr-1 pb-3">
+            <div className="grid min-h-0 flex-1 gap-4 overflow-hidden lg:grid-cols-[minmax(0,1fr)_440px]">
+              <div className="min-h-0 overflow-y-auto pr-1 pb-3">
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="grid gap-1 text-sm font-black text-slate-700">
                   API 기본 URL
@@ -4284,6 +5221,37 @@ export default function OpenApiTestClient({
                   />
                 </label>
               </div>
+
+              <section className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-3">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="text-sm font-black text-slate-700">테스트 정리</h3>
+                  <label className="flex items-center gap-2 text-xs font-black text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={selectedSampleVerified}
+                      disabled={!selectedSampleId}
+                      onChange={(event) => {
+                        if (selectedSampleId) updateSampleTestMetadata(selectedSampleId, { verified: event.target.checked });
+                      }}
+                      className="h-4 w-4 rounded border-slate-300"
+                    />
+                    검증완료
+                  </label>
+                </div>
+                <label className="mt-3 grid gap-1 text-xs font-black text-slate-700">
+                  특이사항
+                  <textarea
+                    value={selectedSampleNote}
+                    disabled={!selectedSampleId}
+                    onChange={(event) => {
+                      if (selectedSampleId) updateSampleTestMetadata(selectedSampleId, { note: event.target.value });
+                    }}
+                    rows={3}
+                    placeholder="테스트하면서 확인한 특이사항, 보류 사유, 재확인 포인트 등을 입력"
+                    className="rounded-md border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 outline-none focus:border-[#fcb514] disabled:bg-slate-100"
+                  />
+                </label>
+              </section>
 
               <label className="mt-4 grid gap-1 text-sm font-black text-slate-700">
                 헤더 (JSON)
@@ -4356,6 +5324,15 @@ export default function OpenApiTestClient({
                   </ul>
                 )}
               </section>
+              </div>
+
+              <aside className="min-h-0 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-3">
+                <SampleSpecPanel
+                  sample={selectedSample}
+                  onDownload={downloadSampleSpec}
+                  onFieldChange={updateSampleSpecOverride}
+                />
+              </aside>
             </div>
 
             <div className="mt-4 flex shrink-0 items-center justify-end gap-2 border-t border-slate-100 pt-4">
@@ -4507,7 +5484,7 @@ export default function OpenApiTestClient({
             }
           }}
         >
-          <section className="flex max-h-[min(90vh,820px)] w-full max-w-6xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-2xl">
+          <section className="flex max-h-[min(90vh,820px)] w-full max-w-[100rem] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-2xl">
             <div className="mb-4 flex shrink-0 items-start justify-between gap-3">
               <div>
                 <h2 className="text-base font-black text-[#2c2a26]">전문 테스트 결과 히스토리</h2>
@@ -4522,7 +5499,7 @@ export default function OpenApiTestClient({
               </button>
             </div>
 
-            <div className="grid min-h-0 flex-1 gap-4 overflow-hidden md:grid-cols-[320px_1fr]">
+            <div className="grid min-h-0 flex-1 gap-4 overflow-hidden md:grid-cols-[320px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)_440px]">
               <aside className="min-h-0 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-3">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="text-xs font-black text-slate-700">테스트 이력</h3>
@@ -4628,6 +5605,53 @@ export default function OpenApiTestClient({
                     상태 {selectedHistoryResult.status} / {selectedHistoryResult.ok ? "성공" : "실패"} / {selectedHistoryResult.elapsedMs}ms
                   </span>
                 </div>
+                {historyCopyMessage ? (
+                  <p className="mt-2 text-xs font-black text-slate-500">{historyCopyMessage}</p>
+                ) : null}
+
+                <section className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h4 className="text-xs font-black text-slate-700">테스트 정리</h4>
+                    <label className="flex items-center gap-2 text-xs font-black text-slate-700">
+                      <input
+                        type="checkbox"
+                        checked={selectedHistorySampleVerified}
+                        onChange={(event) =>
+                          updateSampleTestMetadata(selectedHistoryResult.sampleId, { verified: event.target.checked })
+                        }
+                        className="h-4 w-4 rounded border-slate-300"
+                      />
+                      검증완료
+                    </label>
+                  </div>
+                  <label className="mt-3 grid gap-1 text-xs font-black text-slate-700">
+                    특이사항
+                    <textarea
+                      value={selectedHistorySampleNote}
+                      onChange={(event) => updateSampleTestMetadata(selectedHistoryResult.sampleId, { note: event.target.value })}
+                      rows={3}
+                      placeholder="바로 실행 결과를 확인하며 특이사항, 보류 사유, 재확인 포인트 등을 입력"
+                      className="rounded-md border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 outline-none focus:border-[#fcb514]"
+                    />
+                  </label>
+                </section>
+
+                <section className="mt-4 rounded-lg border border-slate-200 bg-white p-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h4 className="text-xs font-black text-slate-700">요청 본문 (Input)</h4>
+                    <button
+                      type="button"
+                      onClick={() => copySelectedHistoryPayload("input")}
+                      disabled={!selectedHistoryInputText.trim()}
+                      className="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-black text-slate-700 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      Input 복사
+                    </button>
+                  </div>
+                  <pre className="mt-2 max-h-72 overflow-auto rounded-md bg-slate-50 p-3 text-xs">
+                    {selectedHistoryInputText || "요청 바디가 없습니다."}
+                  </pre>
+                </section>
 
                 {selectedHistoryResult.headers ? (
                   <details className="mt-4">
@@ -4638,10 +5662,22 @@ export default function OpenApiTestClient({
                   </details>
                 ) : null}
 
-                <h4 className="mt-4 text-xs font-black text-slate-700">응답 본문</h4>
-                <pre className="mt-2 max-h-[520px] overflow-auto rounded-md bg-slate-50 p-3 text-xs">
-                  {prettyJson(selectedHistoryResult.body ?? "")}
-                </pre>
+                <section className="mt-4 rounded-lg border border-slate-200 bg-white p-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h4 className="text-xs font-black text-slate-700">응답 본문 (Output)</h4>
+                    <button
+                      type="button"
+                      onClick={() => copySelectedHistoryPayload("output")}
+                      disabled={!selectedHistoryOutputText.trim()}
+                      className="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-black text-slate-700 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      Output 복사
+                    </button>
+                  </div>
+                  <pre className="mt-2 max-h-[520px] overflow-auto rounded-md bg-slate-50 p-3 text-xs">
+                    {selectedHistoryOutputText || "응답 본문이 없습니다."}
+                  </pre>
+                </section>
 
                 <section className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
@@ -4720,6 +5756,14 @@ export default function OpenApiTestClient({
                   ) : null}
                 </section>
               </article>
+
+              <aside className="min-h-0 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-3">
+                <SampleSpecPanel
+                  sample={selectedHistorySample}
+                  onDownload={downloadSampleSpec}
+                  onFieldChange={updateSampleSpecOverride}
+                />
+              </aside>
             </div>
           </section>
         </div>

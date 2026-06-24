@@ -75,7 +75,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
   "Start-Sleep -Seconds 2;" ^
   "if ($backend.HasExited) { throw ('Backend failed to start. See ' + $backendErr) }" ^
   "Write-Host ('[Frontend] Starting on port ' + $frontendPort + ' (' + $mode + ')...');" ^
-  "$frontendEnv='set \"NEXT_PUBLIC_API_URL=' + $backendBase + '\" && set \"NEXT_PUBLIC_OPENAPI_TEST=1\" && set \"NEXT_PUBLIC_OPENAPI_MODE=' + $mode + '\" && ';" ^
+  "$nodeOptions='--disable-warning=DEP0060';" ^
+  "if ($env:NODE_OPTIONS) { $nodeOptions = $nodeOptions + ' ' + $env:NODE_OPTIONS }" ^
+  "$frontendEnv='set \"NODE_OPTIONS=' + $nodeOptions + '\" && set \"NEXT_PUBLIC_API_URL=' + $backendBase + '\" && set \"NEXT_PUBLIC_OPENAPI_TEST=1\" && set \"NEXT_PUBLIC_OPENAPI_MODE=' + $mode + '\" && ';" ^
   "$frontendCommand = if ($mode -eq 'production') { $frontendEnv + 'npm run build && npm run start -- --port ' + $frontendPort } else { $frontendEnv + 'npm run dev -- --port ' + $frontendPort };" ^
   "$frontendProc=Start-Process -FilePath 'cmd.exe' -ArgumentList @('/d','/s','/c', $frontendCommand) -WorkingDirectory $frontend -RedirectStandardOutput $frontendOut -RedirectStandardError $frontendErr -WindowStyle Hidden -PassThru;" ^
   "$frontendProc.Id | Set-Content -Path (Join-Path $runtime 'frontend.pid') -Encoding ascii;" ^

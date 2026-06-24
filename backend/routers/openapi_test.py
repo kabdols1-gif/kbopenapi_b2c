@@ -6,6 +6,9 @@ import base64
 import hashlib
 import hmac
 import json
+from datetime import datetime, timezone
+from pathlib import Path
+from threading import Lock
 from typing import Any, Literal, Optional
 from urllib.parse import urlparse
 
@@ -20,6 +23,9 @@ from backend.settings import get_runtime_settings
 
 router = APIRouter()
 settings = get_runtime_settings()
+ROOT_DIR = Path(__file__).resolve().parents[2]
+SHARED_METADATA_PATH = ROOT_DIR / "config" / "openapi-test" / "shared-metadata.json"
+_shared_metadata_lock = Lock()
 
 
 class OpenApiProxyRequest(BaseModel):
@@ -32,6 +38,26 @@ class OpenApiProxyRequest(BaseModel):
     encryptBody: bool = False
 
 
+class SharedFieldSpecOverride(BaseModel):
+    required: Optional[Literal["Y", "N"]] = None
+    description: Optional[str] = Field(default=None, max_length=20000)
+
+
+class SharedSampleSpecOverrides(BaseModel):
+    inputSpec: Optional[dict[str, SharedFieldSpecOverride]] = None
+    outputSpec: Optional[dict[str, SharedFieldSpecOverride]] = None
+
+
+class SharedSampleMetadataPatch(BaseModel):
+    executed: Optional[bool] = None
+    lastExecutedAt: Optional[str] = Field(default=None, max_length=80)
+    lastStatus: Optional[int] = Field(default=None, ge=0, le=599)
+    lastOk: Optional[bool] = None
+    verified: Optional[bool] = None
+    note: Optional[str] = Field(default=None, max_length=20000)
+    specOverrides: Optional[SharedSampleSpecOverrides] = None
+
+
 def _is_allowed_url(url: str) -> bool:
     parsed = urlparse(url)
     host = (parsed.hostname or "").lower()
@@ -41,6 +67,56 @@ def _is_allowed_url(url: str) -> bool:
     return parsed.scheme in schemes and any(
         host == suffix or host.endswith(f".{suffix}") for suffix in settings.allowed_host_suffixes
     )
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+
+
+def _empty_shared_metadata() -> dict[str, Any]:
+    return {"version": 1, "updatedAt": "", "samples": {}}
+
+
+def _load_shared_metadata() -> dict[str, Any]:
+    if not SHARED_METADATA_PATH.exists():
+        return _empty_shared_metadata()
+    try:
+        metadata = json.loads(SHARED_METADATA_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return _empty_shared_metadata()
+    if not isinstance(metadata, dict):
+        return _empty_shared_metadata()
+    samples = metadata.get("samples")
+    if not isinstance(samples, dict):
+        metadata["samples"] = {}
+    metadata["version"] = 1
+    metadata.setdefault("updatedAt", "")
+    return metadata
+
+
+def _write_shared_metadata(metadata: dict[str, Any]) -> None:
+    SHARED_METADATA_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SHARED_METADATA_PATH.write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
+def _merge_spec_overrides(current: dict[str, Any], patch: dict[str, Any]) -> dict[str, Any]:
+    next_overrides = dict(current)
+    for section in ("inputSpec", "outputSpec"):
+        section_patch = patch.get(section)
+        if not isinstance(section_patch, dict):
+            continue
+        current_section = dict(next_overrides.get(section) or {})
+        for field_key, field_patch in section_patch.items():
+            if not isinstance(field_key, str) or not isinstance(field_patch, dict):
+                continue
+            current_field = dict(current_section.get(field_key) or {})
+            current_field.update(field_patch)
+            current_section[field_key] = current_field
+        next_overrides[section] = current_section
+    return next_overrides
 
 
 def _compact_body(body: Any) -> str:
@@ -130,3 +206,38 @@ async def proxy_openapi_request(request: OpenApiProxyRequest) -> dict[str, Any]:
         "decrypted": decrypted,
         "requestHeaders": sent_headers,
     }
+
+
+@router.get("/shared-metadata")
+async def get_shared_metadata() -> dict[str, Any]:
+    with _shared_metadata_lock:
+        return _load_shared_metadata()
+
+
+@router.put("/shared-metadata/samples/{sample_id}")
+async def update_shared_sample_metadata(sample_id: str, patch: SharedSampleMetadataPatch) -> dict[str, Any]:
+    sample_key = sample_id.strip()
+    if not sample_key:
+        raise HTTPException(status_code=400, detail="sample_id is required.")
+
+    patch_data = patch.model_dump(exclude_none=True)
+    with _shared_metadata_lock:
+        metadata = _load_shared_metadata()
+        samples = metadata.setdefault("samples", {})
+        if not isinstance(samples, dict):
+            samples = {}
+            metadata["samples"] = samples
+
+        current_sample = dict(samples.get(sample_key) or {})
+        spec_patch = patch_data.pop("specOverrides", None)
+        current_sample.update(patch_data)
+        if isinstance(spec_patch, dict):
+            current_sample["specOverrides"] = _merge_spec_overrides(
+                dict(current_sample.get("specOverrides") or {}),
+                spec_patch,
+            )
+        current_sample["updatedAt"] = _now_iso()
+        samples[sample_key] = current_sample
+        metadata["updatedAt"] = current_sample["updatedAt"]
+        _write_shared_metadata(metadata)
+        return metadata

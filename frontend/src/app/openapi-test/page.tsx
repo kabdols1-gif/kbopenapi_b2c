@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import kbCatalog from "./samples.generated.json";
 import OpenApiTestClient, {
+  type OpenApiFieldSpec,
   type OpenApiSample,
   type OpenApiTokenProcedure,
 } from "@/components/openapi/OpenApiTestClient";
@@ -26,6 +27,8 @@ type CatalogSample = {
   headers?: Record<string, string>;
   query?: Record<string, unknown>;
   body?: Record<string, unknown>;
+  inputSpec?: OpenApiFieldSpec[];
+  outputSpec?: OpenApiFieldSpec[];
 };
 
 type KbCatalog = {
@@ -39,9 +42,9 @@ const DEFAULT_ENVIRONMENTS: Record<RuntimeMode, { kbB2cBaseUrl: string; kbB2cTok
       process.env.NEXT_PUBLIC_OPENAPI_DEV_KB_B2C_TOKEN_BASE_URL || "https://ddeveloper.kbsec.com:32484",
   },
   production: {
-    kbB2cBaseUrl: process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2C_BASE_URL || "https://developer.kbsec.com",
+    kbB2cBaseUrl: process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2C_BASE_URL || "https://developer.kbsec.com:32484",
     kbB2cTokenBaseUrl:
-      process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2C_TOKEN_BASE_URL || "https://developer.kbsec.com",
+      process.env.NEXT_PUBLIC_OPENAPI_PROD_KB_B2C_TOKEN_BASE_URL || "https://developer.kbsec.com:32484",
   },
 };
 
@@ -78,6 +81,8 @@ function toOpenApiSample(entry: CatalogSample, baseUrl: string): OpenApiSample {
     body: entry.body,
     baseUrl,
     source: "trx-rule",
+    inputSpec: entry.inputSpec,
+    outputSpec: entry.outputSpec,
   };
 }
 
@@ -101,15 +106,17 @@ function tokenProcedureForMode(mode: RuntimeMode): OpenApiTokenProcedure {
 }
 
 export default function OpenApiTestPage() {
-  const [runtimeMode, setRuntimeMode] = useState<RuntimeMode>(() => {
-    if (typeof window === "undefined" || BUILD_RUNTIME_MODE === "production") return BUILD_RUNTIME_MODE;
+  const [runtimeMode, setRuntimeMode] = useState<RuntimeMode>(BUILD_RUNTIME_MODE);
+
+  useEffect(() => {
+    if (BUILD_RUNTIME_MODE === "production") return;
     try {
       const cached = window.localStorage.getItem("kb.openapi.runtimeMode");
-      return cached ? normalizeRuntimeMode(cached) : BUILD_RUNTIME_MODE;
+      if (cached) setRuntimeMode(normalizeRuntimeMode(cached));
     } catch {
-      return BUILD_RUNTIME_MODE;
+      // Runtime mode persistence is optional.
     }
-  });
+  }, []);
 
   function selectRuntimeMode(mode: RuntimeMode) {
     setRuntimeMode(mode);

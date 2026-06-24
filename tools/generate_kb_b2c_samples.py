@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import xml.etree.ElementTree as ET
+import zipfile
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -19,6 +20,8 @@ WORKBOOK_PATTERN = "KB_B2C_OpenAPI*.xlsx"
 XML_DIR = ROOT / "KB_B2C"
 LEGACY_XML_DIR = ROOT / "trx_b2c"
 B2C_INDEX_FILE = "B2C.txt"
+JSON_SPEC_ZIP_CANDIDATES = [ROOT / "json.zip", Path.home() / "Desktop" / "json.zip"]
+INVESTMENT_WORKBOOK_PATTERNS = ["*API*.xlsx", "*api*.xlsx"]
 
 INPUT_TEXT = "\uc785\ub825"
 OUTPUT_TEXT = "\ucd9c\ub825"
@@ -59,6 +62,40 @@ def normalize_tr_code(raw_code: str, sheet_name: str = "") -> str:
     return source.upper()
 
 
+def normalize_field_key(value: str) -> str:
+    return re.sub(r"[^0-9A-Za-z]", "", value or "").lower()
+
+
+def decode_text_bytes(raw: bytes) -> str:
+    for encoding in ("utf-8-sig", "utf-8", "cp949", "euc-kr"):
+        try:
+            return raw.decode(encoding)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
+def first_existing_path(candidates: list[Path]) -> Path | None:
+    for path in candidates:
+        if path.exists():
+            return path
+    return None
+
+
+def find_investment_workbook() -> Path | None:
+    candidates: list[Path] = []
+    for base_dir in (ROOT, Path.home() / "Desktop"):
+        for pattern in INVESTMENT_WORKBOOK_PATTERNS:
+            candidates.extend(path for path in base_dir.glob(pattern) if not path.name.startswith("~$"))
+    if not candidates:
+        return None
+
+    for path in candidates:
+        if "\uc2dc\uc138" in path.name:
+            return path
+    return sorted(candidates)[0]
+
+
 def is_field_name(value: str) -> bool:
     if not value:
         return False
@@ -80,6 +117,8 @@ def field_from_standard_row(row: tuple[Any, ...]) -> dict[str, str] | None:
         "length": clean(row[5] if len(row) > 5 else ""),
         "decimal": clean(row[6] if len(row) > 6 else ""),
         "note": clean(row[7] if len(row) > 7 else ""),
+        "description": clean(row[7] if len(row) > 7 else ""),
+        "required": "N",
     }
 
 
@@ -95,6 +134,8 @@ def field_from_realtime_row(row: tuple[Any, ...]) -> dict[str, str] | None:
         "length": "",
         "decimal": "",
         "note": "",
+        "description": "",
+        "required": "N",
     }
 
 
@@ -359,6 +400,169 @@ def read_text_file(path: Path) -> str:
     return raw.decode("utf-8", errors="replace")
 
 
+FieldMetadata = dict[str, str]
+FieldDescriptionLookup = dict[str, dict[str, dict[str, FieldMetadata]]]
+
+
+def required_text(value: Any) -> str:
+    text = clean(value)
+    upper = text.upper()
+    if not text:
+        return ""
+    if upper in {"1", "Y", "YES", "TRUE", "M", "MANDATORY", "REQUIRED"} or "\ud544\uc218" in text:
+        return "Y"
+    return "N"
+
+
+def merge_description(
+    descriptions: FieldDescriptionLookup,
+    tr_code: str,
+    section: str,
+    field_name: str,
+    description: str,
+    required: str = "",
+) -> None:
+    normalized_code = normalize_tr_code(tr_code)
+    normalized_field = normalize_field_key(field_name)
+    text = clean(description)
+    required_flag = required_text(required)
+    if not normalized_code or not normalized_field or (not text and not required_flag):
+        return
+    field_metadata = descriptions.setdefault(normalized_code, {"input": {}, "output": {}}).setdefault(section, {}).setdefault(
+        normalized_field, {}
+    )
+    if text:
+        field_metadata["description"] = text
+    if required_flag:
+        field_metadata["required"] = required_flag
+
+
+def load_json_zip_descriptions(path: Path) -> FieldDescriptionLookup:
+    descriptions: FieldDescriptionLookup = {}
+    with zipfile.ZipFile(path) as archive:
+        for name in archive.namelist():
+            if not name.lower().endswith(".json"):
+                continue
+            try:
+                item = json.loads(decode_text_bytes(archive.read(name)))
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                continue
+            if not isinstance(item, dict):
+                continue
+
+            tr_code = normalize_tr_code(clean(item.get("code")) or Path(name).stem)
+            if not tr_code:
+                continue
+            for section, map_key in (("input", "inputMap"), ("output", "outputMap")):
+                field_map = item.get(map_key)
+                if not isinstance(field_map, dict):
+                    continue
+                for field_name, field_spec in field_map.items():
+                    if not isinstance(field_spec, dict):
+                        continue
+                    merge_description(
+                        descriptions,
+                        tr_code,
+                        section,
+                        str(field_name),
+                        clean(field_spec.get("etc")),
+                        clean(field_spec.get("need")),
+                    )
+    return descriptions
+
+
+def field_name_and_description_from_workbook_row(row: tuple[Any, ...]) -> tuple[str, str] | None:
+    cells = [clean(cell) for cell in row]
+    if len(cells) > 3 and is_field_name(cells[3]):
+        return cells[3], clean(cells[7] if len(cells) > 7 else "")
+    if len(cells) > 6 and is_field_name(cells[6]):
+        return cells[6], clean(cells[12] if len(cells) > 12 else cells[7] if len(cells) > 7 else "")
+    return None
+
+
+def workbook_section_from_row(row: tuple[Any, ...], current_section: str) -> str:
+    cells = [clean(cell) for cell in row]
+    row_text = " ".join(cells)
+    upper_cells = {cell.upper() for cell in cells}
+    if (
+        INPUT_TEXT in row_text
+        or "RQ" in upper_cells
+        or "IN" in upper_cells
+        or any(cell.lower() == "input" for cell in cells)
+    ):
+        return "input"
+    if (
+        OUTPUT_TEXT in row_text
+        or "RP" in upper_cells
+        or "OUT" in upper_cells
+        or any(cell.lower() == "output" for cell in cells)
+    ):
+        return "output"
+    return current_section
+
+
+def load_investment_workbook_descriptions(path: Path) -> FieldDescriptionLookup:
+    descriptions: FieldDescriptionLookup = {}
+    if load_workbook is None:
+        return descriptions
+
+    workbook = load_workbook(path, read_only=True, data_only=True)
+    for sheet in workbook.worksheets:
+        tr_code = normalize_tr_code(sheet.title)
+        if not tr_code:
+            continue
+        section = ""
+        for row in sheet.iter_rows(values_only=True):
+            section = workbook_section_from_row(row, section)
+            if not section:
+                continue
+            parsed = field_name_and_description_from_workbook_row(row)
+            if not parsed:
+                continue
+            field_name, description = parsed
+            merge_description(descriptions, tr_code, section, field_name, description)
+    return descriptions
+
+
+def load_field_descriptions() -> tuple[FieldDescriptionLookup, dict[str, str]]:
+    descriptions: FieldDescriptionLookup = {}
+    sources: dict[str, str] = {}
+
+    json_zip = first_existing_path(JSON_SPEC_ZIP_CANDIDATES)
+    if json_zip:
+        descriptions = load_json_zip_descriptions(json_zip)
+        sources["jsonZip"] = str(json_zip)
+
+    investment_workbook = find_investment_workbook()
+    if investment_workbook:
+        investment_descriptions = load_investment_workbook_descriptions(investment_workbook)
+        for tr_code, sections in investment_descriptions.items():
+            for section, fields in sections.items():
+                for field_name, metadata in fields.items():
+                    merge_description(descriptions, tr_code, section, field_name, clean(metadata.get("description")))
+        sources["investmentWorkbook"] = str(investment_workbook)
+
+    return descriptions, sources
+
+
+def apply_field_descriptions(tr_code: str, section: str, fields: list[dict[str, str]], descriptions: FieldDescriptionLookup) -> None:
+    field_metadata = descriptions.get(normalize_tr_code(tr_code), {}).get(section, {})
+    for field in fields:
+        metadata = field_metadata.get(normalize_field_key(field.get("name", "")), {})
+        field["description"] = clean(metadata.get("description"))
+        field["required"] = required_text(metadata.get("required")) or field.get("required") or "N"
+
+
+def count_field_descriptions(items: list[dict[str, Any]]) -> int:
+    count = 0
+    for item in items:
+        for section_name in ("inputSpec", "outputSpec"):
+            for field in item.get(section_name, []):
+                if clean(field.get("description")):
+                    count += 1
+    return count
+
+
 def load_b2c_index(xml_dir: Path) -> list[dict[str, Any]]:
     index_path = xml_dir / B2C_INDEX_FILE
     if not index_path.exists():
@@ -407,6 +611,11 @@ def field_from_xml_node(node: ET.Element) -> dict[str, str] | None:
     name = clean(node.attrib.get("Name"))
     if not name or name.startswith("_"):
         return None
+    upper_name = name.upper()
+    if name.lower() in B2C_BODY_OMITTED_FIELDS or upper_name == "PWD" or upper_name.endswith("_PWD"):
+        return None
+    if is_enabled_flag(node.attrib.get("SkipValue")):
+        return None
 
     io_type = clean(node.attrib.get("IOType")).lower()
     spec = clean(node.attrib.get("Spec") or node.attrib.get("format"))
@@ -422,17 +631,19 @@ def field_from_xml_node(node: ET.Element) -> dict[str, str] | None:
         "note": clean(node.attrib.get("IOType")),
         "default": clean(node.attrib.get("Default")),
         "skipValue": clean(node.attrib.get("SkipValue")),
+        "description": "",
+        "required": "N",
     }
 
 
-def parse_xml_input_fields(root: ET.Element) -> list[dict[str, str]]:
-    input_node = root.find("Input")
-    if input_node is None:
+def parse_xml_fields(root: ET.Element, section_name: str) -> list[dict[str, str]]:
+    section_node = root.find(section_name)
+    if section_node is None:
         return []
 
     fields: list[dict[str, str]] = []
-    for node in input_node.iter():
-        if node is input_node:
+    for node in section_node.iter():
+        if node is section_node:
             continue
         field = field_from_xml_node(node)
         if field:
@@ -445,6 +656,7 @@ def build_b2c_xml_item(
     root: ET.Element,
     encoding: str,
     metadata: dict[str, Any] | None = None,
+    descriptions: FieldDescriptionLookup | None = None,
 ) -> dict[str, Any]:
     metadata = metadata or {}
     tr_code = normalize_tr_code(
@@ -453,10 +665,14 @@ def build_b2c_xml_item(
     description = clean(metadata.get("label")) or clean(root.findtext("Desc")) or tr_code
     category = clean(metadata.get("category"))
     duplicate_index = int(metadata.get("duplicateIndex") or 1)
-    fields = parse_xml_input_fields(root)
+    input_fields = parse_xml_fields(root, "Input")
+    output_fields = parse_xml_fields(root, "Output")
+    descriptions = descriptions or {}
+    apply_field_descriptions(tr_code, "input", input_fields, descriptions)
+    apply_field_descriptions(tr_code, "output", output_fields, descriptions)
     body = {
         "dataHeader": dict(DATA_HEADER),
-        "dataBody": build_data_body(fields),
+        "dataBody": build_data_body(input_fields),
     }
     item_id = xml_path.stem if duplicate_index <= 1 else f"{xml_path.stem}__{duplicate_index}"
     description_prefix = f"{category}: " if category else ""
@@ -471,16 +687,19 @@ def build_b2c_xml_item(
         "headers": {"Content-Type": "application/json"},
         "body": body,
         "query": {},
+        "inputSpec": input_fields,
+        "outputSpec": output_fields,
         "fileName": xml_path.name,
         "source": "kb-b2c-xml",
         "layout": "xml",
-        "inputFieldCount": len(fields),
+        "inputFieldCount": len(input_fields),
+        "outputFieldCount": len(output_fields),
         "menu": category,
         "sourceEncoding": encoding,
     }
 
 
-def load_b2c_xml_catalog(xml_dir: Path) -> dict[str, Any]:
+def load_b2c_xml_catalog(xml_dir: Path, descriptions: FieldDescriptionLookup | None = None) -> dict[str, Any]:
     b2c: list[dict[str, Any]] = []
     encodings: dict[str, int] = {}
     index_entries = load_b2c_index(xml_dir)
@@ -495,17 +714,19 @@ def load_b2c_xml_catalog(xml_dir: Path) -> dict[str, Any]:
     consumed_codes: set[str] = set()
     for entry in index_entries:
         tr_code = clean(entry.get("trCode"))
+        if tr_code in consumed_codes:
+            continue
         xml_entry = xml_entries.get(tr_code)
         if not xml_entry:
             continue
         xml_path, root, encoding = xml_entry
-        b2c.append(build_b2c_xml_item(xml_path, root, encoding, entry))
+        b2c.append(build_b2c_xml_item(xml_path, root, encoding, entry, descriptions))
         consumed_codes.add(tr_code)
 
     for tr_code, (xml_path, root, encoding) in sorted(xml_entries.items()):
         if tr_code in consumed_codes:
             continue
-        b2c.append(build_b2c_xml_item(xml_path, root, encoding))
+        b2c.append(build_b2c_xml_item(xml_path, root, encoding, descriptions=descriptions))
 
     return {"b2c": b2c, "encodings": encodings, "indexCount": len(index_entries)}
 
@@ -530,7 +751,12 @@ def merge_b2c_catalogs(excel_items: list[dict[str, Any]], xml_items: list[dict[s
 
 def main() -> None:
     xml_dir = XML_DIR if XML_DIR.exists() else LEGACY_XML_DIR
-    xml_loaded = load_b2c_xml_catalog(xml_dir) if xml_dir.exists() else {"b2c": [], "encodings": {}, "indexCount": 0}
+    field_descriptions, description_sources = load_field_descriptions()
+    xml_loaded = (
+        load_b2c_xml_catalog(xml_dir, field_descriptions)
+        if xml_dir.exists()
+        else {"b2c": [], "encodings": {}, "indexCount": 0}
+    )
     workbook_path: Path | None = None
     loaded: dict[str, Any] = {"b2c": [], "layoutCounts": {}}
 
@@ -548,6 +774,7 @@ def main() -> None:
         "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
         "sourceWorkbook": str(workbook_path) if workbook_path else "",
         "sourceXmlDirectory": str(xml_dir) if xml_loaded["b2c"] else "",
+        "descriptionSources": description_sources,
         "b2c": b2c_catalog,
     }
 
@@ -558,6 +785,8 @@ def main() -> None:
         print("Layouts:", loaded["layoutCounts"])
     if xml_loaded["b2c"]:
         print(f"XML samples: {len(xml_loaded['b2c'])}, index entries: {xml_loaded.get('indexCount', 0)}, encodings: {xml_loaded['encodings']}")
+    if description_sources:
+        print(f"Description fields: {count_field_descriptions(catalog['b2c'])}, sources: {description_sources}")
 
 
 if __name__ == "__main__":

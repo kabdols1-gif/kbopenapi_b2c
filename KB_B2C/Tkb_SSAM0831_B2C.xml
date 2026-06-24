@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<Tkb_SSAM0831_B2C error="false">
+	<Name>SSAM0831</Name>
+	<Desc>예약주문접수(현금신용통합)</Desc>
+	<Code></Code>
+	<Route>SSAM0831</Route>
+	<base21></base21>
+	<blocktype></blocktype>
+	<attytype></attytype>
+	<headtype></headtype>
+	<Journal>true</Journal>
+	<screenid>9999</screenid>
+	<Mid>false</Mid>
+	<Processor_info>hts</Processor_info>
+	<Tr_info>OPER01</Tr_info>
+	<Page_num>0831</Page_num>
+	<HostExpireTime >15000</HostExpireTime>
+	<Input iName="" >
+		<I Name="ordr_jb_clsf" Desc="주문업무구분" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="gnl_ac_no" Desc="종합계좌번호" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
+		<I Name="gds_no" Desc="상품번호" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
+		<I Name="filler" Desc="FILLER" Align="Left" Journal="N" Pad="SPC" Size="3" SizeEN="3" SizeKR="3" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="pwd" Desc="비밀번호" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt="" SkipValue="Y" />
+		<I Name="is_cd" Desc="종목코드" Align="Left" Journal="N" Pad="SPC" Size="7" SizeEN="7" SizeKR="7" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ordr_uprc" Desc="주문단가" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ordr_q" Desc="주문수량" Align="Left" Journal="N" Pad="SPC" Size="9" SizeEN="9" SizeKR="9" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ordr_ccd" Desc="주문구분코드" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="crdt_typ_cd" Desc="신용유형코드" Align="Left" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="ln_dt" Desc="대출일자" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="cncl_ordr_no" Desc="취소주문번호" Align="Left" Journal="N" Pad="SPC" Size="10" SizeEN="10" SizeKR="10" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="filler1" Desc="FILLER1" Align="Left" Journal="N" Pad="SPC" Size="10" SizeEN="10" SizeKR="10" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="tv_rv_ccd" Desc="전량잔량구분코드" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="strt_dt" Desc="시작일자" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="end_dt" Desc="종료일자" Align="Left" Journal="N" Pad="SPC" Size="8" SizeEN="8" SizeKR="8" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+		<I Name="mkt_tm_ccd" Desc="시장시간구분코드" Align="Left" Journal="N" Pad="SPC" Size="1" SizeEN="1" SizeKR="1" Spec="char" format="char" Default="" IOType="Field" portion="0" UpperCase="N" Valid="Y" Encrypt=""/>
+	</Input>
+	<Output oName="" >
+		<O Name="o_lngth" Align="Left" Desc="출길이" Journal="N" Pad="SPC" Size="5" SizeEN="5" SizeKR="5" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_clsf" Align="Left" Desc="출구분" Journal="N" Pad="SPC" Size="2" SizeEN="2" SizeKR="2" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="o_msg" Align="Left" Desc="출메시지" Journal="N" Pad="SPC" Size="80" SizeEN="80" SizeKR="80" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="ordr_no" Align="Left" Desc="주문번호" Journal="N" Pad="SPC" Size="10" SizeEN="10" SizeKR="10" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+		<O Name="inpt_vl" Align="Left" Desc="입력값" Journal="N" Pad="SPC" Size="100" SizeEN="100" SizeKR="100" Spec="char" format="char" portion="0" IOType="Field" UpperCase="N" Valid="Y" Default="" Encrypt="" />
+	</Output>
+</Tkb_SSAM0831_B2C>
