@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T06:14:22Z",
+  "updatedAt": "2026-06-25T23:01:30Z",
   "samples": {
     "Tkb_SIQM4900_B2C": {
-      "updatedAt": "2026-06-25T06:14:22Z",
+      "updatedAt": "2026-06-25T23:01:30Z",
       "specOverrides": {
         "inputSpec": {
           "stnd_is_cd::0": {
@@ -22,18 +22,18 @@
           }
         }
       },
-      "updatedAt": "2026-06-25T06:14:22Z",
+      "updatedAt": "2026-06-25T23:01:30Z",
       "note": "계좌 잔고 현황 조회 하는 API",
       "verified": true
     },
     "Tkb_SSQM2121_B2C": {
-      "note": "계좌별 매매가 정산현황",
-      "updatedAt": "2026-06-25T06:14:22Z",
+      "note": "해당 일자의 매매 정산 현황을 조회 하는 API",
+      "updatedAt": "2026-06-25T23:01:30Z",
       "verified": true
     },
     "Tkb_SWQA2301_B2C": {
       "note": "위탁, 금융상품, 저축 계좌 거래 내역을 조회하는 API\n\ninq_clsf1 : 입금 내역 조회 여부\ninq_clsf2 : 출금 내역 조회 여부\ninq_clsf3 : 입고 내역 조회 여부\ninq_clsf4 : 출고 내역 조회 여부\ninq_clsf5 : 매수 내역 조회 여부\ninq_clsf6 : 매도 내역 조회 여부\ninq_clsf 이 1 인 경우 위의 전체 내역 조회 \n",
-      "updatedAt": "2026-06-25T06:14:22Z",
+      "updatedAt": "2026-06-25T23:01:30Z",
       "specOverrides": {
         "inputSpec": {
           "inq_clsf1::1": {
@@ -46,7 +46,7 @@
           }
         }
       },
-      "verified": false
+      "verified": true
     },
     "Tkb_SSQM2952_B2C": {
       "specOverrides": {
@@ -59,7 +59,7 @@
       },
       "note": "token 에 연동된 계좌의 평가 자산을 조회하는 API\n주식, 금융상품 및 예수금 등 모든 자산의 평가를 조회 한다.",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SSQM1801_B2C": {
       "specOverrides": {
@@ -74,7 +74,7 @@
       },
       "note": "보유한 주식들의 정보를 조회화는 api",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SSQN2952_B2C": {
       "specOverrides": {
@@ -93,12 +93,12 @@
       },
       "note": "계좌내 특정 주식의 평가 금액 조회하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SSQM0004_B2C": {
       "note": "주문전 주문가능현금 및 주문가능금액을 조회할 수 있는 API 서비스 입니다.\nOUTPUT의 ordr_psbl_amt 컬럼을 이용하여 주문전 주문가능금액을 확인할 수 있습니다. ",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SWQB2301_B2C": {
       "specOverrides": {
@@ -110,43 +110,71 @@
         }
       },
       "note": "CMA 계좌 거래 내역을 조회하는 API\n\ninq_clsf1 : 입금 내역 조회 여부\ninq_clsf2 : 출금 내역 조회 여부\ninq_clsf3 : 입고 내역 조회 여부\ninq_clsf4 : 출고 내역 조회 여부\ninq_clsf5 : 매수 내역 조회 여부\ninq_clsf6 : 매도 내역 조회 여부\ninq_clsf 이 1 인 경우 위의 전체 내역 조회 \n",
-      "verified": false,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "verified": true,
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SSQM0005_B2C": {
       "note": "token 에 연결된 계좌 기준 잔고를 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SPQN3390_B2C": {
       "note": "증거금 현황 조회하는 api\n국내, 해외 예수금, 증거금 모두 조회",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SSQM0006_B2C": {
       "note": "특정 종목의 평가손익을 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SSQM0009_B2C": {
       "note": "token 에 연결된 계좌의 자산평가를 조회 하는 api\ninput 의 조회기준구분(inq_std_clsf) 값에 따라 output 값이 변경됨",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SWQM2302_B2C": {
       "note": "계좌 예수금 조회 API",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SWQM2412_B2C": {
       "note": "특정일자의 상세 거래내역 조회하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
     },
     "Tkb_SWQN2302_B2C": {
       "note": "D+1, D+2 일 출근가능금액 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T06:14:22Z"
+      "updatedAt": "2026-06-25T23:01:30Z"
+    },
+    "Tkb_SZQM6019_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "st_clsf::0": {
+            "required": "Y",
+            "description": "0: 전체 1: 사용가능 2: 사용완료 3: 기간만료 9: 사용완료+기간만료"
+          }
+        }
+      },
+      "updatedAt": "2026-06-25T23:01:30Z",
+      "verified": true,
+      "note": "개인이 보유한 KB증권 쿠폰을 조회 하는 API"
+    },
+    "Tkb_SSQM2392_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ordr_dt_from::1": {
+            "required": "Y",
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "ordr_dt_to::2": {
+            "required": "Y",
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-25T23:01:30Z"
     }
   }
 }
