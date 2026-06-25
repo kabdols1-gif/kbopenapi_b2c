@@ -23685,24 +23685,11 @@
           "scrNo": "0000"
         },
         "dataBody": {
-          "rprst_cs_no": "",
           "st_clsf": "1"
         }
       },
       "query": {},
       "inputSpec": [
-        {
-          "korean": "대표고객번호",
-          "name": "rprst_cs_no",
-          "type": "char",
-          "length": "10",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "*계좌 또는 고객번호 필수",
-          "required": "N"
-        },
         {
           "korean": "상태구분",
           "name": "st_clsf",
