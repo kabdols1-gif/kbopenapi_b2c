@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T23:01:30Z",
+  "updatedAt": "2026-06-26T04:18:05Z",
   "samples": {
     "Tkb_SIQM4900_B2C": {
-      "updatedAt": "2026-06-25T23:01:30Z",
+      "updatedAt": "2026-06-26T03:27:22Z",
       "specOverrides": {
         "inputSpec": {
           "stnd_is_cd::0": {
@@ -22,18 +22,28 @@
           }
         }
       },
-      "updatedAt": "2026-06-25T23:01:30Z",
+      "updatedAt": "2026-06-26T03:27:22Z",
       "note": "계좌 잔고 현황 조회 하는 API",
       "verified": true
     },
     "Tkb_SSQM2121_B2C": {
       "note": "해당 일자의 매매 정산 현황을 조회 하는 API",
-      "updatedAt": "2026-06-25T23:01:30Z",
-      "verified": true
+      "updatedAt": "2026-06-26T04:18:05Z",
+      "verified": true,
+      "specOverrides": {
+        "inputSpec": {
+          "trd_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "stmt_dt::6": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      }
     },
     "Tkb_SWQA2301_B2C": {
       "note": "위탁, 금융상품, 저축 계좌 거래 내역을 조회하는 API\n\ninq_clsf1 : 입금 내역 조회 여부\ninq_clsf2 : 출금 내역 조회 여부\ninq_clsf3 : 입고 내역 조회 여부\ninq_clsf4 : 출고 내역 조회 여부\ninq_clsf5 : 매수 내역 조회 여부\ninq_clsf6 : 매도 내역 조회 여부\ninq_clsf 이 1 인 경우 위의 전체 내역 조회 \n",
-      "updatedAt": "2026-06-25T23:01:30Z",
+      "updatedAt": "2026-06-26T04:18:05Z",
       "specOverrides": {
         "inputSpec": {
           "inq_clsf1::1": {
@@ -43,6 +53,12 @@
           "inq_clsf::0": {
             "required": "N",
             "description": "전체 (1: 설정, 0:미설정)"
+          },
+          "strt_dt::7": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_dt::8": {
+            "description": "yyyymmdd\n예) 20260101"
           }
         }
       },
@@ -59,7 +75,7 @@
       },
       "note": "token 에 연동된 계좌의 평가 자산을 조회하는 API\n주식, 금융상품 및 예수금 등 모든 자산의 평가를 조회 한다.",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SSQM1801_B2C": {
       "specOverrides": {
@@ -74,7 +90,7 @@
       },
       "note": "보유한 주식들의 정보를 조회화는 api",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SSQN2952_B2C": {
       "specOverrides": {
@@ -93,12 +109,12 @@
       },
       "note": "계좌내 특정 주식의 평가 금액 조회하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SSQM0004_B2C": {
       "note": "주문전 주문가능현금 및 주문가능금액을 조회할 수 있는 API 서비스 입니다.\nOUTPUT의 ordr_psbl_amt 컬럼을 이용하여 주문전 주문가능금액을 확인할 수 있습니다. ",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SWQB2301_B2C": {
       "specOverrides": {
@@ -106,47 +122,67 @@
           "inq_clsf::0": {
             "required": "N",
             "description": "전체 (1:설정, 0:미설정)"
+          },
+          "strt_dt::7": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_dt::8": {
+            "description": "yyyymmdd\n예) 20260101"
           }
         }
       },
       "note": "CMA 계좌 거래 내역을 조회하는 API\n\ninq_clsf1 : 입금 내역 조회 여부\ninq_clsf2 : 출금 내역 조회 여부\ninq_clsf3 : 입고 내역 조회 여부\ninq_clsf4 : 출고 내역 조회 여부\ninq_clsf5 : 매수 내역 조회 여부\ninq_clsf6 : 매도 내역 조회 여부\ninq_clsf 이 1 인 경우 위의 전체 내역 조회 \n",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T04:18:05Z"
     },
     "Tkb_SSQM0005_B2C": {
       "note": "token 에 연결된 계좌 기준 잔고를 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SPQN3390_B2C": {
       "note": "증거금 현황 조회하는 api\n국내, 해외 예수금, 증거금 모두 조회",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SSQM0006_B2C": {
       "note": "특정 종목의 평가손익을 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SSQM0009_B2C": {
       "note": "token 에 연결된 계좌의 자산평가를 조회 하는 api\ninput 의 조회기준구분(inq_std_clsf) 값에 따라 output 값이 변경됨",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T04:18:05Z",
+      "specOverrides": {
+        "inputSpec": {
+          "inq_dt::6": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      }
     },
     "Tkb_SWQM2302_B2C": {
       "note": "계좌 예수금 조회 API",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SWQM2412_B2C": {
       "note": "특정일자의 상세 거래내역 조회하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T04:18:05Z",
+      "specOverrides": {
+        "inputSpec": {
+          "inq_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      }
     },
     "Tkb_SWQN2302_B2C": {
       "note": "D+1, D+2 일 출근가능금액 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
     },
     "Tkb_SZQM6019_B2C": {
       "specOverrides": {
@@ -157,7 +193,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-25T23:01:30Z",
+      "updatedAt": "2026-06-26T03:27:22Z",
       "verified": true,
       "note": "개인이 보유한 KB증권 쿠폰을 조회 하는 API"
     },
@@ -174,7 +210,329 @@
           }
         }
       },
-      "updatedAt": "2026-06-25T23:01:30Z"
+      "updatedAt": "2026-06-26T03:27:22Z"
+    },
+    "Tkb_SSQM2442_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "inq_strt_dt::1": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "inq_end_dt::2": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM2443_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "inq_strt_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "inq_end_dt::1": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM5472_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "std_dt::2": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSAM1801_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ln_dt::8": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSAM1802_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ln_dt::8": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSAM1805_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ln_dt::8": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSAM1806_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ln_dt::8": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSAM5762_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "rsv_typ_ordr_acpt_dt::6": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSAM5763_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "rsv_typ_ordr_acpt_dt::6": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSAM5764_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "rsv_typ_ordr_acpt_dt::6": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "ordr_dt::16": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM0831_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ordr_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_dt::5": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM0832_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ordr_dt::5": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM0833_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ordr_dt::4": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM0834_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "strt_dt::4": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_dt::5": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM2341_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ordr_dt::2": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM5475_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "inq_strt_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "inq_end_dt::1": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSQM5765_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "trd_strt_dt::2": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "trd_end_dt::3": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SPQM2205_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "strt_ordr_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_ordr_dt::1": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SPQM2206_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ordr_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SPQM2207_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "strt_ordr_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_ordr_dt::1": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SPQM5472_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "std_dt::2": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SRQM3051_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "strt_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SKAM2101_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ln_dt::18": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SPQM2204_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "strt_ordr_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_ordr_dt::1": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SPQM1818_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "strt_ordr_dt::0": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_ordr_dt::1": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SPQM2103_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ordr_dt::2": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SPQM5473_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "trd_strt_dt::5": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "trd_end_dt::6": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
+    },
+    "Tkb_SSAM0831_B2C": {
+      "specOverrides": {
+        "inputSpec": {
+          "ln_dt::6": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "strt_dt::9": {
+            "description": "yyyymmdd\n예) 20260101"
+          },
+          "end_dt::10": {
+            "description": "yyyymmdd\n예) 20260101"
+          }
+        }
+      },
+      "updatedAt": "2026-06-26T04:18:05Z"
     }
   }
 }
