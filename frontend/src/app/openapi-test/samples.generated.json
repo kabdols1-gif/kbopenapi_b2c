@@ -24519,10 +24519,6 @@
           "is_no": "",
           "ordr_dt_from": "",
           "ordr_dt_to": "",
-          "trd_svrl_cst": "",
-          "trd_pl": "",
-          "trd_nt_pl": "",
-          "inq_clsf": "1",
           "nxt_key": ""
         }
       },
@@ -24557,54 +24553,6 @@
           "name": "ordr_dt_to",
           "type": "char",
           "length": "8",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "매매제비용",
-          "name": "trd_svrl_cst",
-          "type": "char",
-          "length": "18",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "매매손익",
-          "name": "trd_pl",
-          "type": "char",
-          "length": "18",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "매매순손익",
-          "name": "trd_nt_pl",
-          "type": "char",
-          "length": "18",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "조회구분",
-          "name": "inq_clsf",
-          "type": "char",
-          "length": "1",
           "decimal": "0",
           "note": "Field",
           "default": "",
@@ -25888,8 +25836,6 @@
         "dataBody": {
           "jb_ccd": "1",
           "is_cd": "005930",
-          "std_dt": "20250617",
-          "hd_pin_no": "",
           "nxt_key": ""
         }
       },
@@ -25912,30 +25858,6 @@
           "name": "is_cd",
           "type": "char",
           "length": "12",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "기준일자",
-          "name": "std_dt",
-          "type": "char",
-          "length": "8",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "현대PIN번호",
-          "name": "hd_pin_no",
-          "type": "char",
-          "length": "13",
           "decimal": "0",
           "note": "Field",
           "default": "",
