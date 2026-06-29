@@ -30819,9 +30819,6 @@
           "is_typ_ccd": "1",
           "ordr_no": "",
           "ordr_dt": "20250617",
-          "s_ccls_amt": "",
-          "b_ccls_amt": "",
-          "ccls_uprc": "",
           "stnd_is_no": "",
           "nxt_key": "",
           "trd_clsf": "1"
@@ -30900,42 +30897,6 @@
           "skipValue": "",
           "description": "",
           "required": "Y"
-        },
-        {
-          "korean": "매도체결금액",
-          "name": "s_ccls_amt",
-          "type": "char",
-          "length": "18",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "매수체결금액",
-          "name": "b_ccls_amt",
-          "type": "char",
-          "length": "18",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
-        },
-        {
-          "korean": "체결단가",
-          "name": "ccls_uprc",
-          "type": "char",
-          "length": "18",
-          "decimal": "0",
-          "note": "Field",
-          "default": "",
-          "skipValue": "",
-          "description": "",
-          "required": "N"
         },
         {
           "korean": "표준종목번호",
