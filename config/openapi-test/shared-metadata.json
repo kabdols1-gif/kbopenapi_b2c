@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T00:44:16Z",
+  "updatedAt": "2026-06-30T04:25:33Z",
   "samples": {
     "Tkb_SIQM4900_B2C": {
-      "updatedAt": "2026-06-30T00:17:01Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "specOverrides": {
         "inputSpec": {
           "stnd_is_cd::0": {
@@ -24,13 +24,13 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:01Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "계좌 잔고 현황 조회 하는 API",
       "verified": true
     },
     "Tkb_SSQM2121_B2C": {
       "note": "해당 일자의 매매 정산 현황을 조회 하는 API",
-      "updatedAt": "2026-06-30T00:17:01Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "specOverrides": {
         "inputSpec": {
@@ -45,7 +45,7 @@
     },
     "Tkb_SWQA2301_B2C": {
       "note": "위탁, 금융상품, 저축 계좌 거래 내역을 조회하는 API\n\ninq_clsf1 : 입금 내역 조회 여부\ninq_clsf2 : 출금 내역 조회 여부\ninq_clsf3 : 입고 내역 조회 여부\ninq_clsf4 : 출고 내역 조회 여부\ninq_clsf5 : 매수 내역 조회 여부\ninq_clsf6 : 매도 내역 조회 여부\ninq_clsf 이 1 인 경우 위의 전체 내역 조회 \n",
-      "updatedAt": "2026-06-30T00:17:01Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "specOverrides": {
         "inputSpec": {
           "inq_clsf1::1": {
@@ -77,7 +77,7 @@
       },
       "note": "token 에 연동된 계좌의 평가 자산을 조회하는 API\n주식, 금융상품 및 예수금 등 모든 자산의 평가를 조회 한다.",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:01Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQM1801_B2C": {
       "specOverrides": {
@@ -92,7 +92,7 @@
       },
       "note": "보유한 주식들의 정보를 조회화는 api",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:01Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQN2952_B2C": {
       "specOverrides": {
@@ -111,12 +111,12 @@
       },
       "note": "계좌내 특정 주식의 평가 금액 조회하는 API",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:01Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQM0004_B2C": {
       "note": "주문전 주문가능현금 및 주문가능금액을 조회할 수 있는 API 서비스 입니다.\nOUTPUT의 ordr_psbl_amt 컬럼을 이용하여 주문전 주문가능금액을 확인할 수 있습니다. ",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SWQB2301_B2C": {
       "specOverrides": {
@@ -135,27 +135,27 @@
       },
       "note": "CMA 계좌 거래 내역을 조회하는 API\n\ninq_clsf1 : 입금 내역 조회 여부\ninq_clsf2 : 출금 내역 조회 여부\ninq_clsf3 : 입고 내역 조회 여부\ninq_clsf4 : 출고 내역 조회 여부\ninq_clsf5 : 매수 내역 조회 여부\ninq_clsf6 : 매도 내역 조회 여부\ninq_clsf 이 1 인 경우 위의 전체 내역 조회 \n",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:01Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQM0005_B2C": {
       "note": "token 에 연결된 계좌 기준 잔고를 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SPQN3390_B2C": {
       "note": "증거금 현황 조회하는 api\n국내, 해외 예수금, 증거금 모두 조회",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQM0006_B2C": {
       "note": "특정 종목의 평가손익을 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQM0009_B2C": {
       "note": "token 에 연결된 계좌의 자산평가를 조회 하는 api\ninput 의 조회기준구분(inq_std_clsf) 값에 따라 output 값이 변경됨",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:01Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "specOverrides": {
         "inputSpec": {
           "inq_dt::6": {
@@ -167,12 +167,12 @@
     "Tkb_SWQM2302_B2C": {
       "note": "계좌 예수금 조회 API",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SWQM2412_B2C": {
       "note": "특정일자의 상세 거래내역 조회하는 API",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "specOverrides": {
         "inputSpec": {
           "inq_dt::0": {
@@ -184,7 +184,7 @@
     "Tkb_SWQN2302_B2C": {
       "note": "D+1, D+2 일 출근가능금액 조회 하는 API",
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SZQM6019_B2C": {
       "specOverrides": {
@@ -195,7 +195,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "note": "개인이 보유한 KB증권 쿠폰을 조회 하는 API"
     },
@@ -215,7 +215,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "특정기간동안 계좌의 손익을 조회하는 api\n종목코드의 경우 빈값일 경우 모든 종목의 손익을 조회, 특정 종목만 조회하고 싶을 때 해당 종목 코드 입력하면 됨",
       "verified": true
     },
@@ -230,7 +230,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "note": ""
     },
@@ -245,7 +245,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "note": "기간 실현 손익을 종목별로 조회하는 API"
     },
@@ -263,7 +263,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "note": "보유한 소수점 주식 보유잔고 내역을 조회하는 api\n종목코드의 경우 빈값일 경우 모든 종목 조회, 특정 종목만의 잔고를 보고 싶을 때 해당 종목 코드 입력하면 됨"
     },
@@ -275,7 +275,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "note": "국내주식 현금 매도를 요청하는 API"
     },
@@ -305,7 +305,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "국내 주식 매수 요청 API \n\n주문구분코드 (ordr_typ_cd) 값이 스톱지정가격일 때 스톱지정가격(stpd_prc) 값은 반드시 입력되어야 한다.\n스톱지정가격(stpd_prc) 값은 반드시 숫자 형태로 입력되어야 한다.\n\n",
       "verified": true
     },
@@ -323,7 +323,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "미체결 주문에 대해 정정 주문 할 때 사용하는 API\n\n정정구분에서 2.전부정정 으로 선택시 주문수량은 빈값으로 입력하여야 함\n반대로 1. 일부정정 으로 선택시 주문수량을 반드시 입력해야 한다.",
       "verified": true
     },
@@ -332,10 +332,30 @@
         "inputSpec": {
           "ln_dt::8": {
             "description": "yyyymmdd\n예) 20260101"
+          },
+          "ordr_q::4": {
+            "required": "Y"
+          },
+          "mkt_tm_clsf::0": {
+            "required": "N"
+          },
+          "ordr_jb_clsf::1": {
+            "required": "N"
+          },
+          "s_clsf::2": {
+            "required": "N"
+          },
+          "ordr_ccd::6": {
+            "required": "N"
+          },
+          "crdt_typ_cd::7": {
+            "required": "N"
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "verified": true,
+      "note": "국내 주식 미체결 주문에 대한 취소 주문 API"
     },
     "Tkb_SSAM5762_B2C": {
       "specOverrides": {
@@ -345,7 +365,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSAM5763_B2C": {
       "specOverrides": {
@@ -355,7 +375,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSAM5764_B2C": {
       "specOverrides": {
@@ -368,7 +388,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQM0831_B2C": {
       "specOverrides": {
@@ -381,7 +401,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "note": "예약 주문 현황을 조회하는 API"
     },
@@ -392,14 +412,22 @@
             "description": "yyyymmdd\n예) 20260101"
           },
           "trd_clsf::8": {
-            "description": ""
+            "description": "0. 전체 1 : 매도 2: 매수"
           },
           "trd_clsf::11": {
             "description": ""
           }
+        },
+        "outputSpec": {
+          "crct_cncl_ccd::35": {
+            "description": "30 : 정정 주문  03 : 취소 주문"
+          },
+          "crct_cncl_clsf_nm::36": {
+            "description": "ex) 10주취완, 10주정완"
+          }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": false,
       "note": "주문에 대한 체결, 미체결 내역을 조회 하는 API"
     },
@@ -411,7 +439,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQM0834_B2C": {
       "specOverrides": {
@@ -424,17 +452,20 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSQM2341_B2C": {
       "specOverrides": {
         "inputSpec": {
           "ordr_dt::2": {
-            "description": "yyyymmdd\n예) 20260101"
+            "description": "yyyymmdd\n예) 20260101",
+            "required": "Y"
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "note": "지점 번호를 확인 하십시오 라고 뜸",
+      "verified": false
     },
     "Tkb_SSQM5475_B2C": {
       "specOverrides": {
@@ -447,7 +478,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:40:01Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "온주/소수점 주문체결 내역 조회 하는 API",
       "verified": true
     },
@@ -469,7 +500,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:32:26Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "note": "국내주식 소수점 매매내역 조회"
     },
@@ -500,7 +531,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "해외 주식 매매가 정산 현황 조회하는 API\n",
       "verified": true
     },
@@ -518,7 +549,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "해외 주식 당일 매매 손익 조회하는 API",
       "verified": true
     },
@@ -539,7 +570,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true,
       "note": "해외주식 기간별 매매손익 조회 하는 API"
     },
@@ -548,10 +579,18 @@
         "inputSpec": {
           "std_dt::2": {
             "description": "yyyymmdd\n예) 20260101"
+          },
+          "frgn_krx_ccd::1": {
+            "description": "US: 미국 CN : 상해, 심천 HK : 홍콩 JP : 일본 VN : 베트남 "
+          },
+          "is_cd::0": {
+            "description": "해외종목코드\nex) NDVA"
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "note": "해외주식 소수점 보유잔고 내역 조회 API",
+      "verified": true
     },
     "Tkb_SRQM3051_B2C": {
       "specOverrides": {
@@ -561,7 +600,9 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "note": "계좌 권리 발생 내역 조회 하는 API",
+      "verified": true
     },
     "Tkb_SKAM2101_B2C": {
       "specOverrides": {
@@ -571,7 +612,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SPQM2204_B2C": {
       "specOverrides": {
@@ -587,7 +628,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SPQM1818_B2C": {
       "specOverrides": {
@@ -603,7 +644,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SPQM2103_B2C": {
       "specOverrides": {
@@ -613,7 +654,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SPQM5473_B2C": {
       "specOverrides": {
@@ -626,7 +667,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SSAM0831_B2C": {
       "specOverrides": {
@@ -642,21 +683,21 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SKQO3390_B2C": {
       "note": "해외주식용 통합증거금 포함 매매정산현황 조회 하는 API\n\n",
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true
     },
     "Tkb_SSQM1802_B2C": {
       "note": "현재 계좌내에서 특정 종목을 얼마나 살 수 있는지 조회 하는 API",
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true
     },
     "Tkb_SZQM0771_B2C": {
       "note": "당일, 전일, 익일 등 장운영 상태를 조회 한다.\n마켓별 운영 여부 정보도 같이 조회한다.",
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true
     },
     "Tkb_IVU10140_B2C": {
@@ -671,18 +712,18 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "조회 시점의 주식 현재가를 조회 하는 API",
       "verified": true
     },
     "Tkb_IVM10050_B2C": {
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "종목의 간략한 기업 정보를 조회하는 API"
     },
     "Tkb_IVU10430_B2C": {
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "일자별 투자자별 매수/매도 현황(거래량, 수량) 을 조회 하는 API\n투자자 : 개인, 외국인, 기관 (증권, 보험, 투신, 종금, 은행, 기금, 사모펀드, 기타 법인 등)\n프로그램 매매, 외국인 거래 합계 조회"
     },
     "Tkb_IVS11430_B2C": {
@@ -693,28 +734,28 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "모든 결과값이 조회 안되는 느낌?",
       "verified": false
     },
     "Tkb_IVU10070_B2C": {
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "특정 종목의 조회 시점 호가 정보 조회 하는 API"
     },
     "Tkb_IVA60190_B2C": {
       "note": "현재 환율을 조회 한다.\n\n20260630 현재 아래 국가, 통화 데이터가 조회 됨\n한국 원/달러\n일본 엔/달러\n일본 원/엔\n한국 원/유로\n중국 위안/달러\n홍콩 홍콩달러/달러\n브라질 원/레알\n유럽 달러/유로\n영국 달러/파운드\n스위스 프랑/달러\n대만 대만달러/달러\n싱가포르 (싱)달러/달러\n러시아 루블/달러\n인도 루피/달러\n브라질 레알/달러\n호주 달러/호주달러\n멕시코 페소/달러\n캐나다 (캐)달러/달러\n아르헨티나 페소/달러\n칠레 페소/달러\n덴마크 크로네/달러\n인도네시아 루피아/달러\n쿠웨이트 디나르/달러",
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true
     },
     "Tkb_GSS10030_B2C": {
       "note": "해외주식 현재가를 조회 하는 API",
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "verified": true
     },
     "Tkb_IVA10370_B2C": {
       "verified": true,
-      "updatedAt": "2026-06-30T00:17:02Z",
+      "updatedAt": "2026-06-30T04:25:33Z",
       "note": "증시주변자금동향 조회 하는 API"
     },
     "Tkb_SPAM2508_B2C": {
@@ -725,7 +766,7 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SIAM4983_B2C": {
       "specOverrides": {
@@ -738,17 +779,25 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
     },
     "Tkb_SKQM2106_B2C": {
       "specOverrides": {
         "inputSpec": {
           "iso_cd::2": {
             "description": "US: 미국, HK: 홍콩, JP: 일본, VN:베트남, CH: 중국"
+          },
+          "frgn_ordr_prc_p4::3": {
+            "description": "외화 기준 조회시 외화 금액 입력"
+          },
+          "ordr_prc::4": {
+            "description": "원화 기준 조회시 원화 금액 입력"
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z"
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "note": "해외주식 주문가능금액 조회하는 API\n\n해외주문가격P4 (frgn_ordr_prc_p4) 는 외화 금액\n주문가격 (ordr_prc) 는 원화 금액",
+      "verified": true
     },
     "Tkb_SPQM2106_B2C": {
       "specOverrides": {
@@ -758,7 +807,27 @@
           }
         }
       },
-      "updatedAt": "2026-06-30T00:44:16Z"
+      "updatedAt": "2026-06-30T04:25:33Z"
+    },
+    "Tkb_SKQM3350_B2C": {
+      "note": "주문 가능한 예수금 현황을 통화별 조회 하는 API\n\n20260630 기준 아래 통화 조회 가능\nKRW,  CNY, USD, HKD, JPY, VND",
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "verified": true
+    },
+    "Tkb_SPQM2220_B2C": {
+      "note": "계좌내 외화 예수금을 조회 하는 API\n- 해외주식 통합증거금(원마켓플러스) 신청이 되어 있는 계좌는 조회가 안된다.\n\n외화별 예수금이 존재시 리스트로 출력됨\n결과 리스트에서 crncy_cd.trim() 값이 빈값은 제외하고 참조하면 된다.\n",
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "verified": true
+    },
+    "Tkb_SPQM3390_B2C": {
+      "note": "글로벌원마켓 (통합증거금) 신청된 계좌 대상으로 증거금 사용현황 조회 하는 API",
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "verified": true
+    },
+    "Tkb_SPQO2226_B2C": {
+      "note": "해외주식 계좌잔고평가조회 하는 API",
+      "updatedAt": "2026-06-30T04:25:33Z",
+      "verified": true
     }
   }
 }
